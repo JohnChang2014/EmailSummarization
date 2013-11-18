@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+	<configuration id="server_list" plugin="config.ServerConfigurationPlugin">
+		<servers host="www.server1.com" port="80" />
+		<servers host="www.server2.com" port="80" />
+	</configuration>
+</configurations>
