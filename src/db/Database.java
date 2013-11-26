@@ -1,8 +1,8 @@
 package db;
 
 abstract class Database {
-	String dbURL, username, password;
+	String ip, port, db, username, password;
 
-	public abstract boolean connect(String dbURL, String username, String password);
+	public abstract boolean connect(String ip, String port, String db, String username, String password);
 	public abstract void close();
 }
