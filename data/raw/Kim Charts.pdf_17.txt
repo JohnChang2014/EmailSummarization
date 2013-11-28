@@ -1,0 +1,9 @@
+From: Lee von Kraus <lee@haloneuro.com>
+Date: 2013-07-24 13:38:00
+To: rosenthal.dleon@gmail.co
+Cc: 
+Subject: Re: KimCharts
+could you make a bar graph with one bar showing status quo recovery time and the other bar showing tDCS
+recovery time based on the lindenberg paper?
+[Quoted text hidden]
+

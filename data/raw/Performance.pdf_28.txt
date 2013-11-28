@@ -1,0 +1,11 @@
+From: Long Liangyou <forallandiyou@gmail.com>
+Date: 2013-07-10 23:17:00
+To: lingmin.zhou@smart4c.co
+Cc: a@sarva.co, ifunafu@gmail.com, david@knotable.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+I am familar with mailgun, so I will do the mailgun stuff.
+Lingmin and Pokka, please debug the performance.
+Thanks.
+Long
+[Quoted text hidden]
+

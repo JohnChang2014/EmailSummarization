@@ -1,0 +1,16 @@
+From: Lee von Kraus <leevonk@gmail.com>
+Date: 2013-07-31 16:38:00
+To: amol@haloneuro.co
+Cc: brett@wingeier.com, rosenthal.dleon@gmail.com, daniel.s.chao@gmail.co
+Subject: Re: Stroke Patient Savings w/Halo
+"Perhaps if we are averaging across all 800k stroke patients we can defines a narrower xyz above? With
+higher t and s?"
+yeah, tDCS can only treat a % of stroke patients so the savings per patient that would get tDCS is higher (we'll
+get on calculating that). 
+The ~4k savings we presented is the savings for only 30% of patients but averaged across all 100% of patients.
+ 
+( The tDCS-?savings are for only 30% of stroke patients because only 63% of stroke patients have intact
+corticospinal tracts and only 48% of patients are discharged to inpatient post-?acute care after acute
+hospitalization )
+[Quoted text hidden]
+

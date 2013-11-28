@@ -1,0 +1,31 @@
+From: lingmin zhou <lingmin.zhou@smart4c.com>
+Date: 2013-07-10 07:40:00
+To: forallandiyou@gmail.co
+Cc: ifunafu@gmail.com, david@knotable.com, a@sarva.co, yan.make@gmail.co
+Subject: Re: Performance!!!
+Long, you're a genius.
+I thought of a method to simulate the knotable server in local machine, and we can get more details about server logs at local machine.In order to
+implement the simulation, we need to set a port forward in the local router to let outer requests be forwarded to the local machine on which knotable is
+running.
+On Wed, 10 Jul 2013 17:04:33 +0800
+Long Liangyou <forallandiyou@gmail.com> wrote:
+> Hello All
+>
+> Today I checked the code and find out why our app is so slow.
+>
+> When user logged in, client side will recieve user's data and stored to
+> local database.
+>
+> The main reason slow down is the transferring of data.
+> When client start subscribe the data from server database, it is 16:55:16
+> But when client recieved all the data, it is 16:56:34
+>
+> *It takes 18 seconds to recieved data from server.*
+>
+> I will limit the size of data to see if it can improve.
+>
+> [image: Inline image 2]
+>
+> Another problem is that we have *152 request* now, it will also slow down
+[Quoted text hidden]
+

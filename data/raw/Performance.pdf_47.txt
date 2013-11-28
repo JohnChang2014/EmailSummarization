@@ -1,0 +1,11 @@
+From: Long Liangyou <forallandiyou@gmail.com>
+Date: 2013-07-14 22:12:00
+To: rosenthal.dleon@gmail.co
+Cc: a@sarva.co, lingmin.zhou@smart4c.com, ifunafu@gmail.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+Hi all,
+We are adding paging and lazy loading today and fixing all the stuff related to sending/receiving/combinging subject lines.
+Best
+Long
+[Quoted text hidden]
+

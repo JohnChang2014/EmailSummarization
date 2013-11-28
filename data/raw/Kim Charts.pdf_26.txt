@@ -1,0 +1,10 @@
+From: Lee von Kraus <lee@haloneuro.com>
+Date: 2013-07-24 15:21:00
+To: rosenthal.dleon@gmail.co
+Cc: 
+Subject: Re: KimCharts
+next project is to look into the costs of individual treatments that currently are used (i.e. look up the insurance
+codes for each treatment). Then we'll come up with an estimated cost of tDCS and just compare the total cost of
+tDCS (cost of 1 use * 5) vs. the total cost of other treatments (e.g. 20 days of physical therapy, etc)
+[Quoted text hidden]
+

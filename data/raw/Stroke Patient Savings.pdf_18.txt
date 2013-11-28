@@ -1,0 +1,14 @@
+From: Lee von Kraus <leevonk@gmail.com>
+Date: 2013-08-01 11:24:00
+To: amol@haloneuro.co
+Cc: brett@haloneuro.com, daniel.s.chao@gmail.com, rosenthal.dleon@gmail.co
+Subject: Re: Stroke Patient Savings w/Halo
+I think it would be best to hold off the call until monday since David is gone for the weekend and he's the one that
+did 95% of the literature searching for useful stats.
+I remember one paper that showed the Barthel Index improvement curves of the worst, medium, and best
+functionality stroke survivors. We could pick out the worst, correlate the Barthel Index (BI) scores with Fugl Meyr
+(FM) scores (which is what most tDCS papers use) (although the fit of the FM-?BI correlation regression curve is
+kind of shitty), and then see if any tDCS papers specifically mention/show its effects on people with that FM
+score.
+[Quoted text hidden]
+

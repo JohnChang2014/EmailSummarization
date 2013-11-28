@@ -20,7 +20,6 @@ public class DataPreProcessor {
 	private static final String storage_path = "./data/raw/";
 	private static final String dataset_path = "/Volumes/Data/03-ShareData/Dropbox/00-Courses Data/Fall 2013/Natural Language Processing/Final Project/Dataset/Original Mails/";
 	// dataset ignores Permathreads 2.mbox and permathreads.mbox temperarily
-	// Apt for Video Shoot.pdf not working
 	// works     => 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
 	// not works => 4(no need to remove whitespace)
 	private static final String[] dataset = { 
@@ -69,13 +68,18 @@ public class DataPreProcessor {
 		// read each PDF file one by one
 		for (String file : dataset) {
 			n++;
-			if (n != 4) continue;
+			//if (n != 3) continue;
 
 			// parse raw data from PDF dataset
 			filename = dataset_path + file;
-			if (n == 4 ) content = reader.readPDFFile(filename, false);
-			else content = reader.readPDFFile(filename, true);
-			emailset = parseDataFromPDF(content);
+			if (n == 4 ) {
+				content = reader.readPDFFile(filename, false);
+				emailset = parseDataFromPDF(content, 2);
+			} else {
+				content = reader.readPDFFile(filename, true);
+				emailset = parseDataFromPDF(content, 1);
+			}
+			
 			writeDataIntoStorage(file, emailset);
 			emailset.clear();
 		}
@@ -83,7 +87,7 @@ public class DataPreProcessor {
 
 	// parseDataFromPDF takes responsibilities for separating contents from PDF
 	// into couple email ones and store in the ArrayList for each
-	private ArrayList<HashMap<String, String>> parseDataFromPDF(ArrayList<String> content) throws ParseException {
+	private ArrayList<HashMap<String, String>> parseDataFromPDF(ArrayList<String> content, int type) throws ParseException {
 		RegexMatches regMatcher = new RegexMatches();
 
 		// collectors of parts of emails
@@ -100,36 +104,36 @@ public class DataPreProcessor {
 		String email_body = "";
 		int n_emails = 0;
 		int n_line   = 0;
-		content.add("<-end line->");
+		content.add("<-end line->");  // a line to tell program it reaches the end of file
+		
 		for (String sen : content) {
 			n_line++;
 			if (n_line == 3) subject = sen;
 			
-			//if (emailset.size() == 5) break;
 			// skip the footer line located between pages
 			if (sen.indexOf("http") >= 0) {
 				skip = true;
 				continue;
 			}
-			System.out.println(skip + " ---> " + sen);
 			// check if it is a start of email block
-			header = regMatcher.isEmailStart(sen);
+			header = regMatcher.isEmailStart(sen, type);
 			if (header.size() > 0 || sen == "<-end line->") {
 				System.out.println(email_body);
 
 				System.out.println("======> email body start!!");
 				System.out.println(header.get("sender"));
 				System.out.println(header.get("sendingtime"));
-				//System.out.println("----------------------");
 				headerset.add(header);
 				// store email content before resetting for next round
-				//System.out.println(n_emails + " <----> " + (emailset.size() + 1));
 				if (n_emails == (emailset.size() + 1)) {
 					System.out.println("store -> " + n_emails + " email content!");
 					HashMap<String, String> email = new HashMap<String, String>();
+					
 					// transform date format into mysql datetime format
 					HashMap<String, String> tmp_header = headerset.get(n_emails-1);
-					String datetime = getSQLDateTimeformat(tmp_header.get("sendingtime").replaceAll("(\\d{1,4}\\S)[aA][tT]\\S", "$1").replaceAll("([\\w]+),\\S([\\w]+)\\S([\\d]{1,2}),\\S([\\d]{1,4})\\S([\\d]{1,2}:[\\d]{1,2})\\S([aApP][mM])", "$1, $2 $3, $4 $5 $6"));
+					String datetime = new String();
+					if (type == 1) datetime = getSQLDateTimeformat(tmp_header.get("sendingtime").replaceAll("(\\d{1,4}\\S)[aA][tT]\\S", "$1").replaceAll("([\\w]+),\\S([\\w]+)\\S([\\d]{1,2}),\\S([\\d]{1,4})\\S([\\d]{1,2}:[\\d]{1,2})\\S([aApP][mM])", "$1, $2 $3, $4 $5 $6"));
+					else if (type == 2) datetime = getSQLDateTimeformat(tmp_header.get("sendingtime").replaceAll("(\\d{1,4}\\s)[aA][tT]\\s", "$1").replaceAll("([\\w]+),\\S([\\w]+)\\s([\\d]{1,2}),\\s([\\d]{1,4})\\s([\\d]{1,2}:[\\d]{1,2})\\s([aApP][mM])", "$1, $2 $3, $4 $5 $6"));
 					
 					if (n_emails == 2) subject = "Re: " + subject;
 					email.put("sender", headerset.get(n_emails - 1).get("sender"));
@@ -156,30 +160,25 @@ public class DataPreProcessor {
 			}
 			
 			if (receivers_check) {
-				ArrayList<String> tmp_receivers = regMatcher.getReceivers(sen);
-				// System.out.println("receivers: " + tmp_receivers.size() +
-				// " -> " + sen.indexOf("Cc:"));
+				ArrayList<String> tmp_receivers = regMatcher.getReceivers(sen, type);
 				if (tmp_receivers.size() > 0 && sen.indexOf("Cc:") == -1) {
 					receivers.addAll(tmp_receivers);
 					continue;
 				} else {
-					System.out.println(receivers);
 					receivers_check = false;
 					ccreceivers_check = true;
 				}
 			}
 			
 			if (ccreceivers_check) {
-				ArrayList<String> tmp_receivers = regMatcher.getReceivers(sen);
+				ArrayList<String> tmp_receivers = regMatcher.getReceivers(sen, type);
 				if (tmp_receivers.size() > 0) {
 					ccreceivers.addAll(tmp_receivers);
 					continue;
 				} else {
 					ccreceivers_check = false;
-					System.out.println(ccreceivers);
 				}
 			}
-			// if (email_body_check)
 			email_body = email_body + sen + System.getProperty("line.separator");
 		}
 		System.out.println("< " + emailset.size() + " >");
@@ -187,8 +186,7 @@ public class DataPreProcessor {
 	}
 
 	// writeDataIntoStorage in charge of storing data parsing from PDF files
-	// into
-	// plain text files and MySQL database at the same time
+	// into plain text files and MySQL database at the same time
 	private void writeDataIntoStorage(String prefix, ArrayList<HashMap<String, String>> emailset) throws IOException, SQLException, ParseException {
 		int email_index = 0;
 		for (HashMap<String, String> email : emailset) {
@@ -204,8 +202,8 @@ public class DataPreProcessor {
 			email.put("raw_content", raw_content);
 			
 			// write to plain text file
-			fw.write("Sender: " + sender);
-			fw.write("Time: " + time);
+			fw.write("From: " + sender);
+			fw.write("Date: " + time);
 			fw.write("To: " + receivers);
 			fw.write("Cc: " + ccreceivers);
 			fw.write("Subject: " + subject);
@@ -214,7 +212,7 @@ public class DataPreProcessor {
 			fw.close();
 			
 			// write to MySQL database
-			//insertData(email);
+			insertData(email);
 		}
 	}
 
