@@ -1,0 +1,11 @@
+From: Amol Sarva <a@sarva.co>
+Date: 2013-07-10 09:41:00
+To: ifunafu@gmail.co
+Cc: lingmin.zhou@smart4c.com, forallandiyou@gmail.com, david@knotable.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+Performance problem right now is due to bugs. We don't have a heavy load.
+But still, when I log in the app is slow. I will do some tests today.
+Question: how do we sort the topics list when nothing is filtered/no people checked? It is a strange order... should be by date I guess. Most recent on
+top.
+[Quoted text hidden]
+

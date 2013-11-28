@@ -1,0 +1,12 @@
+From: lingmin zhou <lingmin.zhou@smart4c.com>
+Date: 2013-07-12 05:34:00
+To: ifunafu@gmail.co
+Cc: forallandiyou@gmail.com, david@knotable.com, a@sarva.co, yan.make@gmail.co
+Subject: Re: Performance!!!
+It seems the knotable.meteor.com was injected a doping, becomes faster...
+Long should find the root case or at least one of the root cases.
+On Fri, 12 Jul 2013 17:25:03 +0800
+pokka <ifunafu@gmail.com> wrote:
+> I had found it's faster more.
+[Quoted text hidden]
+

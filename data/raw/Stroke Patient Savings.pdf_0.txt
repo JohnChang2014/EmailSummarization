@@ -1,0 +1,21 @@
+From: David Leon Rosenthal <rosenthal.dleon@gmail.com>
+Date: 2013-07-31 10:00:00
+To: brett@wingeier.com, leevonk@gmail.com, daniel.s.chao@gmail.com, amol@haloneuro.co
+Cc: 
+Subject: Stroke Patient Savings w/Halo
+Hello All,
+Here is the latest write-?up of savings for stroke patients. Lee and I have been working on refining it to give a clear
+overview of our calculations:
+1) The effect sizes from Kim et al were not deemed statistically significant, but we decided to keep them in there
+for now anyway. 
+2) For converting BI score (Barthel Index = measure of functional ability) improvement into dollars saved, we
+used a number from Meijer (2005) which correlates BI score to the likelihood of independent living. Unfortunately,
+what Meijer considers independent seems to overlap significantly with our definition of dependent (i.e. inpatient
+living, including nursing and rehab facilities, he considers independent-?-?has to do with differences in Dutch and
+US systems), which would seem to make them more liberal estimates.
+3) The amount of time post-?stroke that tDCS was administered varies widely by paper (Lindenberg did it 30-?40
+mo. after;? Nair almost 3 years post stroke;? Khedr about 2 weeks after;?  Kim <2mo). However, our analysis
+assumes that tDCS is administered in the early stages of post-?acute care (beginning about a week after stroke).
+All the Best,
+David
+

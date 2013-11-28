@@ -1,0 +1,9 @@
+From: Amol Sarva <a@sarva.co>
+Date: 2013-07-10 23:07:00
+To: forallandiyou@gmail.co
+Cc: ifunafu@gmail.com, lingmin.zhou@smart4c.com, david@knotable.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+OK -? please choose who will work on it. Performance stuff is more critical right now. Mailgun (because it avoids needing Gmail), and then real
+performance stuff...
+[Quoted text hidden]
+

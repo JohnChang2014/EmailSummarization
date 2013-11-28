@@ -1,0 +1,11 @@
+From: Amol Sarva <a@sarva.co>
+Date: 2013-07-09 07:03:00
+To: forallandiyou@gmail.co
+Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, david@knotable.co
+Subject: Re: Performance!!!
+Opened a new browser Firefox -? I see the login screen
+In Chrome though there must be a dead session.... We need to wipe it. Can you check to see the cause? I have had this problem before I think!
+Except in the past our welcome screen was a login box. I would type the login and wait. But because session was dead nothing happened. Maybe
+this is why I thought the system was so slow. How can we check if the browser/meteor have an active live session?
+[Quoted text hidden]
+

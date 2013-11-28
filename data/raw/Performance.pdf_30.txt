@@ -1,0 +1,18 @@
+From: Long Liangyou <forallandiyou@gmail.com>
+Date: 2013-07-11 06:29:00
+To: lingmin.zhou@smart4c.co
+Cc: a@sarva.co, ifunafu@gmail.com, david@knotable.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+Hi
+Send and Recive messages with mailgun has been done.
+The topics from mailgun will show in the top topic list.
+Deployed to knot.meteor.com and knotable.meteor.com
+Send mail to your email address which it was used to sign up. 
+for example:
+if your email address is forallandiyou@gmail.com,
+send mail to forallandiyou..gmail.com@gmail.com
+notice the two dots.
+Best
+Long
+[Quoted text hidden]
+

@@ -1,0 +1,9 @@
+From: Amol Sarva <a@sarva.co>
+Date: 2013-07-09 07:29:00
+To: lingmin.zhou@smart4c.co
+Cc: forallandiyou@gmail.com, ifunafu@gmail.com, david@knotable.co
+Subject: Re: Performance!!!
+Good Lingmin!
+Long -?-?> please ask Lingmin to add more logging and find which calls are failing for us.
+[Quoted text hidden]
+

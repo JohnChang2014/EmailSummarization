@@ -1,0 +1,11 @@
+From: lingmin zhou <lingmin.zhou@smart4c.com>
+Date: 2013-07-11 06:40:00
+To: forallandiyou@gmail.co
+Cc: a@sarva.co, ifunafu@gmail.com, david@knotable.com, yan.make@gmail.co
+Subject: Re: Performance!!!
+Sorting function is working now.The topics are ordered by uid descending which is same to order by date descending, that is the more recent topic
+having important label will be closer to the top of Topic list.
+In addtion, fixed some bugs about displaying the messages with same topic or thrid in one topic.
+On Thu, 11 Jul 2013 09:46:16 +0800
+[Quoted text hidden]
+
