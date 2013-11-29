@@ -38,4 +38,8 @@ public class Transaction extends MySQL {
 		params.put("g_id", args[8]);
 		this.insert("emails", params);
 	}
+
+	public void searchRecord(String colums, String table) {
+		
+	}
 }
