@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import Date.DateTime;
+import date.DateTime;
 
 public class MySQL extends Database implements QueryAction {
 	Connection dbCon = null;
