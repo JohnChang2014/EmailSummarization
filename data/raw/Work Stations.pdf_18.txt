@@ -5,7 +5,7 @@ Cc: a@sarva.c
 Subject: Re: Workstations
 Hi Alex,
 Here's the layout.
--?David
+-David
 [Quoted text hidden]
 image.jpg
 123K

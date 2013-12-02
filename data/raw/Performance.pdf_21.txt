@@ -7,6 +7,6 @@ I think there were some rendering bug was found in my test today,it make you fee
 The lost socket problem mostly is server side problem,I see it was fixed.
 In my opinion,the performance problem would be a long way in future,do different works in different timing.
 I want to find a way to optimize the processes.
-Meteor was not good at this because of its always re-?render mechanism,but we can still do some work to prevent it became too often.
+Meteor was not good at this because of its always re-render mechanism,but we can still do some work to prevent it became too often.
 [Quoted text hidden]
 

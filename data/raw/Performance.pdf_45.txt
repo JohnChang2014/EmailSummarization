@@ -4,6 +4,6 @@ To: a@sarva.c
 Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, forallandiyou@gmail.com, yan.make@gmail.co
 Subject: Re: Performance!!!
 Please see the new Trello dev list "most important do this first." 
--?David
+-David
 [Quoted text hidden]
 

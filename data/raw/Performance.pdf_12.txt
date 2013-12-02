@@ -4,8 +4,8 @@ To: forallandiyou@gmail.co
 Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, david@knotable.co
 Subject: Re: Performance!!!
 I tried in a new incognito window in Chrome. It works!
-Some error there, though different -?-?> Super slow
-I get the login, I log in. Logs show success. But app window does not change -?-?> still looking at login
+Some error there, though different --> Super slow
+I get the login, I log in. Logs show success. But app window does not change --> still looking at login
 After some delay... Then I get the inbox. So this means the login is just going slowly. Can we provide a text notification to user? E.g., we update the
 text of the Login button as the login process goes
 Login (initial state)

@@ -4,7 +4,7 @@ To: rosenthal.dleon@gmail.co
 Cc: 
 Subject: Re: KimCharts
 in the abstract they say:
-"At 6-?mo follow-?up, cathodal transcranial direct current stimulation led to a greater improvement in Fugl-?Meyer
+"At 6-mo follow-up, cathodal transcranial direct current stimulation led to a greater improvement in Fugl-Meyer
 Assessment than the sham procedure (P < 0.05)"
 p<0.05 is statistically significant
 [Quoted text hidden]

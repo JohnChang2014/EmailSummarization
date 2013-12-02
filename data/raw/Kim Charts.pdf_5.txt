@@ -4,7 +4,7 @@ To: lee@haloneuro.co
 Cc: 
 Subject: Re: KimCharts
 Hate to do this again, but there was an error of about 3 percentage points. I used .69 instead of .63 as the
-proportion of non-?CST damage. Updated xls attached.
+proportion of non-CST damage. Updated xls attached.
 [Quoted text hidden]
 TdCSDataII.xlsx
 43K

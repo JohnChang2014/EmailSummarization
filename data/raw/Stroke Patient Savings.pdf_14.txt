@@ -4,7 +4,7 @@ To: amol@haloneuro.co
 Cc: brett@wingeier.com, rosenthal.dleon@gmail.com, daniel.s.chao@gmail.co
 Subject: Re: Stroke Patient Savings w/Halo
 I guess that would make it around 13k savings / patient  for the 30% of patients (~240,000) that have an intact
-CST and have been discharged to inpatient post-?acute care. Anyway, we'll work on addressing that and Amol's
+CST and have been discharged to inpatient post-acute care. Anyway, we'll work on addressing that and Amol's
 other suggestions more thoroughly.
 Brett, good idea, we can look into that. The way the savings were calculated was by looking at tDCS increasing
 function in less time leading to faster discharge to independent living. But we could also do calculations in which

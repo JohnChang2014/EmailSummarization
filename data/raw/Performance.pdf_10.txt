@@ -4,13 +4,13 @@ To: a@sarva.c
 Cc: forallandiyou@gmail.com, ifunafu@gmail.com, david@knotable.co
 Subject: Re: Performance!!!
 Working on these:
-1.make sure the tokens for oauth aren't expiring -?-?>> It should be valid for at least two hours after refreshing it, except we manully make it
+1.make sure the tokens for oauth aren't expiring -->> It should be valid for at least two hours after refreshing it, except we manully make it
 expire.When we login, the access token will be refreshed by our code.That is, the slow issue isn't because the token expire.
-2.add logging for checking mails -?-?>> Added more log statements to trace loop downloading emails, often get the error saying "Invalid request" while
+2.add logging for checking mails -->> Added more log statements to trace loop downloading emails, often get the error saying "Invalid request" while
 generating tokens for Imap.
 3.make sure we check mails frequently when user is actively logged in
--?-?>> The loop transaction for downloading emails indeed run, but wasn't able to get emails because of the above problem.
-On Tue, 9 Jul 2013 06:58:19 -?0400
+-->> The loop transaction for downloading emails indeed run, but wasn't able to get emails because of the above problem.
+On Tue, 9 Jul 2013 06:58:19 -0400
 Amol Sarva <a@sarva.co> wrote:
 > Long and Lingmin
 >
@@ -26,23 +26,23 @@ Amol Sarva <a@sarva.co> wrote:
 > > Hello all
 > >
 > > Please focus on these items today
-> > -? add logging like observatory js
-> > -? deploy to knotable.meteor.com and knot.meteor.com
-> > -? make sure the tokens for oauth are not expiring
-> > -? make sure we don't get stuck in infinite loop on adding gmail (in sign
+> > - add logging like observatory js
+> > - deploy to knotable.meteor.com and knot.meteor.com
+> > - make sure the tokens for oauth are not expiring
+> > - make sure we don't get stuck in infinite loop on adding gmail (in sign
 > > up...)
-> > -? make sure the main index.html screen does NOT show log in boxes. it
+> > - make sure the main index.html screen does NOT show log in boxes. it
 > > should show progress. Otherwise we see login too much
-> > -? add logging for checking mails
-> > -? make sure we check mails frequently when user is actively logged in
-> > -? check mailgun -?-?> sending/receiving replies needs to work
+> > - add logging for checking mails
+> > - make sure we check mails frequently when user is actively logged in
+> > - check mailgun --> sending/receiving replies needs to work
 > >
-> > -?-?
+> > --
 > >
--?-?
+--
 Best Regards,
 Zhou
-Tel:+86-?18252083875
-Skype-?id:zhoulingmin001
+Tel:+86-18252083875
+Skype-id:zhoulingmin001
 Addr:?1???2206
 

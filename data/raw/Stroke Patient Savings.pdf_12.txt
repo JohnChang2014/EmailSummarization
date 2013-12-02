@@ -9,8 +9,8 @@ yeah, tDCS can only treat a % of stroke patients so the savings per patient that
 get on calculating that). 
 The ~4k savings we presented is the savings for only 30% of patients but averaged across all 100% of patients.
  
-( The tDCS-?savings are for only 30% of stroke patients because only 63% of stroke patients have intact
-corticospinal tracts and only 48% of patients are discharged to inpatient post-?acute care after acute
+( The tDCS-savings are for only 30% of stroke patients because only 63% of stroke patients have intact
+corticospinal tracts and only 48% of patients are discharged to inpatient post-acute care after acute
 hospitalization )
 [Quoted text hidden]
 

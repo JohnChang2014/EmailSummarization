@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data>
+<countries>
+	<country>
+		<name>Austria</name>
+		<cities>
+			<city><name>Salzburg</name><longitude>13.033</longitude><latitude>47.800</latitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Argentina</name>
+		<cities>
+			<city><name>Cataratas del Iguazu</name><latitude>-25.667</latitude><longitude>-54.450</longitude></city>
+			<city><name>Bariloche</name><latitude>-41.150</latitude><longitude>-71.300</longitude></city>
+			<city><name>Buenos Aires</name><latitude>-34.613</latitude><longitude>-58.470</longitude></city>
+			<city><name>El Calafate</name><latitude>-50.333</latitude><longitude>-72.300</longitude></city>
+			<city><name>El Chalten</name><latitude>-49.32437</latitude><longitude>-72.89256</longitude></city>
+			<city><name>Gaiman</name><latitude>-43.283</latitude><longitude>-65.483</longitude></city>
+			<city><name>Puente del Inca</name><latitude>-32.817</latitude><longitude>-69.917</longitude></city>
+			<city><name>Puerto Iguazu</name><latitude>-25.567</latitude><longitude>-54.567</longitude></city>
+			<city><name>Puerto Madryn</name><latitude>-42.767</latitude><longitude>-65.050</longitude></city>
+			<city><name>Rio Gallegos</name><latitude>-51.633</latitude><longitude>-69.217</longitude></city>
+			<city><name>Salta</name><latitude>-24.783</latitude><longitude>-65.417</longitude></city>
+			<city><name>Trelew</name><latitude>-43.250</latitude><longitude>-65.300</longitude></city>
+			<city><name>Ushuaia</name><latitude>-54.800</latitude><longitude>-68.300</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Belgium</name>
+		<cities>
+			<city><name>Antwerp</name><latitude>51.217</latitude><longitude>4.417</longitude></city>
+			<city><name>Brussel</name><latitude>50.833</latitude><longitude>4.333</longitude></city>
+			<city><name>Brugge</name><latitude>51.217</latitude><longitude>3.233</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Denmark</name>
+		<cities>
+			<city><name>Kopenhagen</name><latitude>55.667</latitude><longitude>12.583</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Bolivia</name>
+		<cities>
+			<city><name>Cochabamba</name><latitude>-17.383</latitude><longitude>-66.150</longitude></city>
+			<city><name>Copacabana</name><latitude>-18.167</latitude><longitude>-68.150</longitude></city>
+			<city><name>La Paz</name><latitude>-16.500</latitude><longitude>-68.150</longitude></city>
+			<city><name>Oruro</name><latitude>-17.767</latitude><longitude>-67.483</longitude></city>
+			<city><name>Potosi</name><latitude>-19.583</latitude><longitude>-65.750</longitude></city>
+			<city><name>Puerto Quijarro</name><latitude>-17.783</latitude><longitude>-57.767</longitude></city>	
+			<city><name>Santa Cruz de La Sierra</name><latitude>-17.800</latitude><longitude>-63.167</longitude></city>	
+			<city><name>Sucre</name><latitude>-21.617</latitude><longitude>-66.133</longitude></city>	
+			<city><name>Uyuni</name><latitude>-21.117</latitude><longitude>-66.483</longitude></city>			
+		</cities>
+	</country>
+	<country>
+		<name>Brazil</name>
+		<cities>
+			<city><name>Aguas de São Pedro</name><latitude>-22.600</latitude><longitude>-47.883</longitude></city>
+			<city><name>Belo Horizonte</name><latitude>-19.917</latitude><longitude>-43.933</longitude></city>
+			<city><name>Bento Gonçalves</name><latitude>-29.167</latitude><longitude>-51.517</longitude></city>
+			<city><name>Brasilia</name><latitude>-16.200</latitude><longitude>-44.433</longitude></city>
+			<city><name>Brotas</name><latitude>-22.283</latitude><longitude>-48.117</longitude></city>
+			<city><name>Campinas</name><latitude>-22.900</latitude><longitude>-47.083</longitude></city>
+			<city><name>Campos do Jordão</name><latitude>-22.733</latitude><longitude>-45.583</longitude></city>
+			<city><name>Caraguatatuba</name><latitude>-23.617</latitude><longitude>-45.417</longitude></city>
+			<city><name>Corumbá</name><latitude>-19.017</latitude><longitude>-57.650</longitude></city>
+			<city><name>Curitiba</name><latitude>-25.417</latitude><longitude>-49.250</longitude></city>
+			<city><name>Florianopolis</name><latitude>-27.583</latitude><longitude>-48.567</longitude></city>
+			<city><name>Foz do Iguaçu</name><latitude>-25.550</latitude><longitude>-54.583</longitude></city>
+			<city><name>Goiania</name><latitude>-16.667</latitude><longitude>-49.267</longitude></city>
+			<city><name>Gramado</name><latitude>-28.400</latitude><longitude>-52.150</longitude></city>	
+			<city><name>Guarujá</name><latitude>-24.000</latitude><longitude>-46.267</longitude></city>
+			<city><name>Maceió</name><latitude>-9.667</latitude><longitude>-35.717</longitude></city>
+			<city><name>Monte Verde</name><latitude>-21.800</latitude><longitude>-42.933</longitude></city>
+			<city><name>Natal</name><latitude>-5.783</latitude><longitude>-35.217</longitude></city>
+			<city><name>Niterói</name><latitude>-22.883</latitude><longitude>-43.117</longitude></city>
+			<city><name>Ouro Preto</name><latitude>-20.383</latitude><longitude>-43.500</longitude></city>			
+			<city><name>Piracicaba</name><latitude>-22.717</latitude><longitude>-47.633</longitude></city>
+			<city><name>Porto Alegre</name><latitude>-30.033</latitude><longitude>-51.200</longitude></city>	
+			<city><name>Porto Seguro</name><latitude>-16.433</latitude><longitude>-39.083</longitude></city>
+			<city><name>Recife</name><latitude>-8.050</latitude><longitude>-34.900</longitude></city>
+			<city><name>Rio de Janeiro</name><latitude>-22.900</latitude><longitude>-43.233</longitude></city>
+			<city><name>São Carlos</name><latitude>-22.017</latitude><longitude>-47.900</longitude></city>
+			<city><name>Salvador</name><latitude>-12.983</latitude><longitude>-38.517</longitude></city>
+			<city><name>Santos</name><latitude>-23.950</latitude><longitude>-46.333</longitude></city>
+			<city><name>São Francisco Xavier</name><latitude>-22.900</latitude><longitude>-45.967</longitude></city>	
+			<city><name>São José do Rio Preto</name><latitude>-20.800</latitude><longitude>-49.383</longitude></city>	
+			<city><name>São José dos Campos</name><latitude>-23.183</latitude><longitude>-45.883</longitude></city>	
+			<city><name>São Pedro</name><latitude>-23.300</latitude><longitude>-49.600</longitude></city>	
+			<city><name>São Paulo</name><latitude>-23.533</latitude><longitude>-46.617</longitude></city>				
+			<city><name>Tiradentes</name><latitude>-21.117</latitude><longitude>-44.183</longitude></city>
+			<city><name>Ubatuba</name><latitude>-23.433</latitude><longitude>-45.067</longitude></city>
+			<city><name>Uberaba</name><latitude>-19.750</latitude><longitude>-47.917</longitude></city>
+			<city><name>Vitória</name><latitude>-20.317</latitude><longitude>-40.350</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Chile</name>
+		<cities>
+			<city><name>Ancud</name><latitude>-41.870</latitude><longitude>-73.820</longitude></city>
+			<city><name>Antofagasta</name><latitude>-23.650</latitude><longitude>-70.400</longitude></city>
+			<city><name>Calama</name><latitude>-22.467</latitude><longitude>-68.933</longitude></city>
+			<city><name>Cholchol</name><latitude>-38.600</latitude><longitude>-72.850</longitude></city>
+			<city><name>Pucón</name><latitude>-39.267</latitude><longitude>-71.967</longitude></city>
+			<city><name>Puerto Montt</name><latitude>-41.472</latitude><longitude>-72.937</longitude></city>
+			<city><name>Puerto Natales</name><latitude>-51.733</latitude><longitude>-72.517</longitude></city>
+			<city><name>Punta Arenas</name><latitude>-53.150</latitude><longitude>-70.917</longitude></city>
+			<city><name>Reñaca</name><latitude>-32.966</latitude><longitude>-71.545</longitude></city>
+			<city><name>San Pedro de Atacama</name><latitude>-22.917</latitude><longitude>-68.217</longitude></city>	
+			<city><name>Santiago</name><latitude>-33.450</latitude><longitude>-70.667</longitude></city>	
+			<city><name>Temuco</name><latitude>-38.733</latitude><longitude>-72.600</longitude></city>	
+			<city><name>Valparaiso</name><latitude>-33.048</latitude><longitude>-71.601</longitude></city>	
+			<city><name>Viña del Mar</name><latitude>-33.008</latitude><longitude>-71.520</longitude></city>			
+		</cities>
+	</country>
+	<country>
+		<name>Czeck Republic</name>
+		<cities>
+			<city><name>Kutna Hora</name><longitude>15.267</longitude><latitude>49.950</latitude></city>
+			<city><name>Praha</name><longitude>14.467</longitude><latitude>50.083</latitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>England</name>
+		<cities>
+			<city><name>Avebury</name><longitude>-1.849</longitude><latitude>51.424</latitude></city>
+			<city><name>Bath</name><longitude>-2.366</longitude><latitude>51.378</latitude></city>
+			<city><name>London</name><longitude>-0.105</longitude><latitude>51.517</latitude></city>
+			<city><name>Liverpool</name><longitude>-2.940</longitude><latitude>53.416</latitude></city>
+			<city><name>Manchester</name><longitude>-2.249</longitude><latitude>53.483</latitude></city>
+			<city><name>Oxford</name><longitude>-1.254</longitude><latitude>51.754</latitude></city>
+			<city><name>Stonehenge (Salisbury)</name><longitude>-1.793</longitude><latitude>51.073</latitude></city>
+		</cities>
+	</country>	
+	<country>
+		<name>France</name>
+		<cities>
+			<city><name>Aix-en-Provence</name><longitude>5.433</longitude><latitude>43.533</latitude></city>
+			<city><name>Blois</name><longitude>1.333</longitude><latitude>47.583</latitude></city>
+			<city><name>Avignon</name><longitude>4.817</longitude><latitude>43.950</latitude></city>
+			<city><name>Cannes</name><longitude>7.017</longitude><latitude>43.550</latitude></city>
+			<city><name>Carcassone</name><longitude>2.350</longitude><latitude>43.217</latitude></city>
+			<city><name>Chambord</name><longitude>1.517</longitude><latitude>47.617</latitude></city>
+			<city><name>Chenonceaux</name><longitude>1.067</longitude><latitude>47.333</latitude></city>
+			<city><name>Lascaux</name><longitude>1.367</longitude><latitude>45.333</latitude></city>
+			<city><name>Les Beaux</name><longitude>5.217</longitude><latitude>44.117</latitude></city>
+			<city><name>Nice</name><longitude>7.250</longitude><latitude>43.700</latitude></city>
+			<city><name>Nimes</name><longitude>4.350</longitude><latitude>43.833</latitude></city>
+			<city><name>Paris</name><longitude>2.333</longitude><latitude>48.867</latitude></city>
+			<city><name>Poitiers</name><longitude>0.333</longitude><latitude>46.583</latitude></city>
+			<city><name>Rocamadour</name><longitude>1.633</longitude><latitude>44.800</latitude></city>
+			<city><name>Strasbourg</name><longitude>7.750</longitude><latitude>48.583</latitude></city>
+			<city><name>St. Remy de Provence</name><longitude>4.833</longitude><latitude>43.783</latitude></city>
+			<city><name>Toulouse</name><longitude>1.433</longitude><latitude>43.600</latitude></city>			
+			<city><name>Weyersheim</name><longitude>7.800</longitude><latitude>48.717</latitude></city>
+		</cities>
+	</country>	
+	<country>
+		<name>Germany</name>
+		<cities>
+			<city><name>Altenberg</name><longitude>13.767</longitude><latitude>50.767</latitude></city>
+  			<city><name>Augustusburg</name><longitude>13.0870257941116</longitude><latitude>50.8153848210334</latitude></city>
+ 			<city><name>Bastei</name><longitude>14.083</longitude><latitude>50.950</latitude></city>
+			<city><name>Berlin</name><longitude>13.380007</longitude><latitude>52.520021</latitude></city>
+			<city><name>Bonn</name><longitude>7.10170028857816</longitude><latitude>50.7323126452532</latitude></city>
+			<city><name>Braunschweig</name><longitude>10.5269419733702</longitude><latitude>52.265410076165</latitude></city>
+			<city><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></city>
+			<city><name>Buchenwald</name><longitude>11.3177865254776</longitude><latitude>51.0</latitude></city>
+			<city><name>Chemnitz</name><longitude>12.921467985046</longitude><latitude>50.8363671621637</latitude></city>
+			<city><name>Coswig</name><longitude>13.5803481597468</longitude><latitude>51.1253251451903</latitude></city>
+			<city><name>Darmstadt</name><longitude>8.64970887622184</longitude><latitude>49.8726616212208</latitude></city>
+			<city><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude>
+				<attractions><attraction>Frauenkirche</attraction></attractions></city>
+			<city><name>Düsseldorf</name><longitude>6.77608339961567</longitude><latitude>51.2157090384771</latitude></city>
+			<city><name>Erfurt</name><longitude>11.023098867511</longitude><latitude>50.9776803609967</latitude></city>
+			<city><name>Fichtelberg</name><longitude>12.98</longitude><latitude>50.4</latitude></city>
+			<city><name>Furtwangen</name><longitude>8.200</longitude><latitude>48.050</latitude></city>	
+			<city><name>Goslar</name><longitude>10.433</longitude><latitude>51.900</latitude></city>
+			<city><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></city>
+			<city><name>Günne</name><longitude>8.033</longitude><latitude>51.500</latitude></city>
+			<city><name>Gutach</name><longitude>8.217</longitude><latitude>48.250</latitude></city>	
+			<city><name>Hamburg</name><longitude>10.000</longitude><latitude>53.550</latitude></city>
+			<city><name>Hannover</name><longitude>9.7381609921659</longitude><latitude>52.3722478951624</latitude></city>
+			<city><name>Heidelberg</name><longitude>8.70821627665216</longitude><latitude>49.4135260599288</latitude></city>
+			<city><name>Heidenau</name><longitude>13.867</longitude><latitude>50.983</latitude></city>
+			<city><name>Hildesheim</name><longitude>9.95157281410388</longitude><latitude>52.1508473132164</latitude></city>
+			<city><name>Karlsruhe</name><longitude>8.40923413724497</longitude><latitude>49.0104390309659</latitude></city>
+			<city><name>Kassel</name><longitude>9.49124196970712</longitude><latitude>51.3117756491533</latitude></city>
+			<city><name>Köln</name><longitude>6.95504332049329</longitude><latitude>50.9416886791653</latitude></city>
+			<city><name>Leipzig</name><longitude>12.333</longitude><latitude>51.300</latitude>
+				<attractions>
+					<attraction>Bachs Museum</attraction>
+					<attraction>Musikinstrumentenmuseum</attraction>
+					<attraction>StaSi Museum</attraction>
+					<attraction>Opera</attraction>
+					<attraction>Gewandhaus</attraction>
+					<attraction>SanktNikolai-Kirche</attraction>
+				</attractions></city>
+			<city><name>Lübeck</name><longitude>10.6829631308072</longitude><latitude>53.8663893421431</latitude></city>
+			<city><name>Meissen</name><longitude>13.4744144870409</longitude><latitude>51.137827806466</latitude></city>
+			<city><name>Moritzburg</name><longitude>13.683</longitude><latitude>51.167</latitude></city>
+			<city><name>Mühlberg</name><longitude>13.217</longitude><latitude>51.4330</latitude></city>
+			<city><name>München</name><longitude>11.5775061762146</longitude><latitude>48.1364377794873</latitude></city>
+			<city><name>Münster</name><longitude>7.633</longitude><latitude>51.967</latitude></city> 
+			<city><name>Nürnberg</name><longitude>11.0739607249392</longitude><latitude>49.4543671760708</latitude></city>
+			<city><name>Oldenburg</name><longitude>8.21094264658209</longitude><latitude>53.1554178759636</latitude></city>
+			<city><name>Pirna</name><longitude>13.933</longitude><latitude>50.967</latitude></city>
+			<city><name>Potsdam</name><longitude>13.0479349139443</longitude><latitude>52.3994013122078</latitude></city>
+			<city><name>Radebeul</name><longitude>13.65</longitude><latitude>51.100</latitude></city>
+			<city><name>Riesa</name><longitude>13.300</longitude><latitude>51.300</latitude></city>
+			<city><name>Rothenburg</name><longitude>10.183</longitude><latitude>49.383</latitude></city>
+			<city><name>Schöna</name><longitude>14.217</longitude><latitude>50.883</latitude></city>
+			<city><name>Schwarzenberg</name><longitude>12.783</longitude><latitude>50.550</latitude></city>
+			<city><name>Schwerin</name><longitude>11.383</longitude><latitude>53.633</latitude></city>
+			<city><name>Soest</name><longitude>8.117</longitude><latitude>51.583</latitude></city>
+			<city><name>Titisee</name><longitude>8.150</longitude><latitude>47.900</latitude></city>
+			<city><name>Trier</name><longitude>6.633</longitude><latitude>49.750</latitude></city>
+			<city><name>Weesenstein</name><longitude>13.8625775526673</longitude><latitude>50.9344691692126</latitude></city>
+			<city><name>Weimar</name><longitude>11.3177865254776</longitude><latitude>50.9785409648321</latitude></city>
+			<city><name>Wolfsburg</name><longitude>10.800</longitude><latitude>52.433</latitude></city>
+			<city><name>Xanten</name><longitude>6.450</longitude><latitude>51.667</latitude></city>
+		</cities>
+	</country>
+		<country>
+		<name>Greece</name>
+		<cities>
+			<city><name>Athina</name><longitude>23.733</longitude><latitude>37.983</latitude></city>
+  			<city><name>Areopolis (Diros Caves)</name><longitude>22.383</longitude><latitude>36.667</latitude></city>
+  			<city><name>Delos</name><longitude>25.253</longitude><latitude>37.370</latitude></city>
+			<city><name>Delphi</name><longitude>23.317</longitude><latitude>38.317</latitude></city>
+			<city><name>Epidavros</name><longitude>23.150</longitude><latitude>37.633</latitude></city>
+  			<city><name>Gythio</name><longitude>22.567</longitude><latitude>36.750</latitude></city>
+			<city><name>Korinthos</name><longitude>22.883</longitude><latitude>37.917</latitude></city>
+  			<city><name>Kreta (Hania)</name><longitude>24.033</longitude><latitude>35.517</latitude></city>
+			<city><name>Kreta (Iraklio)</name><longitude>25.133</longitude><latitude>35.333</latitude></city>
+			<city><name>Kreta (Matala)</name><longitude>24.750</longitude><latitude>34.983</latitude></city>
+			<city><name>Kreta (Samaria Gorge)</name><longitude>23.967</longitude><latitude>35.283</latitude></city>
+			<city><name>Lakonian Mani</name><longitude>22.483</longitude><latitude>36.417</latitude></city>
+			<city><name>Meteora (Kalambaka)</name><longitude>21.633</longitude><latitude>39.700</latitude></city>
+  			<city><name>Meteora (Kastraki)</name><longitude>21.617</longitude><latitude>39.717</latitude></city>
+			<city><name>Monemvasia</name><longitude>23.050</longitude><latitude>36.683</latitude></city>
+  			<city><name>Mycenae</name><longitude>22.800</longitude><latitude>37.750</latitude></city>
+			<city><name>Mykonos</name><longitude>25.333</longitude><latitude>37.450</latitude></city>
+  			<city><name>Mystras</name><longitude>22.367</longitude><latitude>37.067</latitude></city>
+			<city><name>Nafplio</name><longitude>22.800</longitude><latitude>37.567</latitude></city>
+  			<city><name>Olympia</name><longitude>21.633</longitude><latitude>37.650</latitude></city>
+			<city><name>Patras</name><longitude>21.47</longitude><latitude>38.14</latitude></city>
+  			<city><name>Santorini (Fira)</name><longitude>25.433</longitude><latitude>36.417</latitude></city>
+			<city><name>Sparta</name><longitude>22.433</longitude><latitude>37.083</latitude></city>
+  			<city><name>Syros</name><longitude>24.933</longitude><latitude>37.450</latitude></city>
+			<city><name>Zagoria (Monodendri)</name><longitude>20.750</longitude><latitude>39.883</latitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Italy</name>
+		<cities>	
+			<city><name>Assisi</name><longitude>12.617</longitude><latitude>43.067</latitude></city>
+			<city><name>Brescia</name><longitude>10.250</longitude><latitude>45.550</latitude></city>
+			<city><name>Firenze</name><longitude>11.250</longitude><latitude>43.767</latitude></city>
+			<city><name>Genova</name><longitude>8.950</longitude><latitude>44.417</latitude></city>
+			<city><name>Padova</name><longitude>11.883</longitude><latitude>45.417</latitude></city>
+			<city><name>Pisa</name><longitude>10.383</longitude><latitude>43.717</latitude></city>
+			<city><name>Rapallo</name><longitude>9.233</longitude><latitude>44.350</latitude></city>
+			<city><name>Roma</name><longitude>12.483</longitude><latitude>41.900</latitude></city>
+			<city><name>Milano</name><longitude>9.200</longitude><latitude>45.467</latitude></city>
+			<city><name>Siena</name><longitude>11.350</longitude><latitude>43.317</latitude></city>
+			<city><name>Venezia</name><longitude>12.327</longitude><latitude>45.439</latitude></city>	
+			<city><name>Verona</name><longitude>11.000</longitude><latitude>45.450</latitude></city>
+		</cities>
+	</country>	
+	<country>
+		<name>Liechtenstein</name>
+		<cities>
+				<city><name>Vaduz</name><longitude>9.517</longitude><latitude>47.133</latitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Luxembourg</name>
+		<cities>
+				<city><name>Luxembourg</name><longitude>6.130</longitude><latitude>49.612</latitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Mexico</name>
+		<cities>
+			<city><name>Cancun</name><latitude>21.167</latitude><longitude>-86.833</longitude></city>
+			<city><name>Chichen Itza</name><latitude>20.40</latitude><longitude>-88.36</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Monaco</name>
+		<cities>
+			<city><name>Monaco</name><longitude>7.417</longitude><latitude>43.733</latitude></city>	
+		</cities>
+	</country>
+	<country>
+		<name>Netherland</name>
+		<cities>
+			<city><name>Amsterdam</name><longitude>4.917</longitude><latitude>52.350</latitude></city> 
+			<city><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></city> 
+			<city><name>Leiden</name><longitude>4.500</longitude><latitude>52.150</latitude></city> 
+			<city><name>Delta (Middelburg)</name><longitude>3.617</longitude><latitude>51.500</latitude></city> 
+			<city><name>Groningen</name><longitude>6.550</longitude><latitude>53.217</latitude></city> 
+			<city><name>Hague</name><longitude>4.300</longitude><latitude>52.083</latitude></city> 
+			<city><name>Hoek van Holland</name><longitude>4.133</longitude><latitude>51.983</latitude></city> 
+			<city><name>Maastricht</name><longitude>5.683</longitude><latitude>50.850</latitude></city> 
+			<city><name>Nijmegen</name><longitude>5.867</longitude><latitude>51.833</latitude></city> 
+			<city><name>Rotterdam</name><longitude>4.500</longitude><latitude>51.917</latitude></city> 
+			<city><name>Valkenburg</name><longitude>5.833</longitude><latitude>50.867</latitude></city> 
+		</cities>
+	</country>
+	<country>
+		<name>Paraguay</name>
+		<cities>
+			<city><name>Ciudad del Este</name><latitude>-25.517</latitude><longitude>-54.617</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Peru</name>
+		<cities>
+			<city><name>Aguas Calientes</name><latitude>-13.15498783510443</latitude><longitude>-72.52334964546674</longitude></city>
+			<city><name>Arequipa</name><latitude>-17.324</latitude><longitude>-71.535</longitude></city>
+			<city><name>Chincheros</name><latitude>-13.396</latitude><longitude>-72.055</longitude></city>
+			<city><name>Cuzco</name><latitude>-13.518</latitude><longitude>-71.978</longitude></city>
+			<city><name>Ica</name><latitude>-14.068</latitude><longitude>-75.726</longitude></city>
+			<city><name>Machu Picchu</name><latitude>-13.1588888168305</latitude><longitude>-72.54083251953125</longitude></city>
+			<city><name>Maras</name><latitude>-13.320</latitude><longitude>-72.153</longitude></city>
+			<city><name>Nazca</name><latitude>-14.833</latitude><longitude>-74.950</longitude></city>
+			<city><name>Ollantaytambo</name><latitude>-13.255</latitude><longitude>-72.263</longitude></city>
+			<city><name>Paracas</name><latitude>-10.700</latitude><longitude>-77.283</longitude></city>			
+			<city><name>Pisac</name><latitude>-13.423</latitude><longitude>-71.847</longitude></city>
+			<city><name>Puno</name><latitude>-15.833</latitude><longitude>-70.033</longitude></city>
+			<city><name>Urubamba</name><latitude>-14.217</latitude><longitude>-72.083</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Poland</name>
+		<cities>
+  			<city><name>Oswiecym</name><longitude>19.233</longitude><latitude>50.033</latitude>
+				<attractions><attraction>Auschwitz</attraction><attraction>Birkenau</attraction></attractions></city>
+			<city><name>Elblag</name><longitude>19.383</longitude><latitude>54.167</latitude></city>
+			<city><name>Gdansk</name><longitude>18.667</longitude><latitude>54.350</latitude></city>
+			<city><name>Krakau</name><longitude>19.917</longitude><latitude>50.083</latitude></city>
+			<city><name>Malbork</name><longitude>19.050</longitude><latitude>54.033</latitude>
+				<attractions><attraction>Malbork Castle</attraction></attractions></city>
+			<city><name>Olsztyn</name><longitude>20.483</longitude><latitude>53.783</latitude></city>
+			<city><name>Poznan</name><longitude>16.967</longitude><latitude>52.417</latitude></city>
+			<city><name>Torun</name><longitude>18.600</longitude><latitude>53.033</latitude></city>
+			<city><name>Warschau</name><longitude>21.00</longitude><latitude>52.250</latitude></city>
+			<city><name>Wieliczka</name><longitude>20.067</longitude><latitude>49.983</latitude></city>
+		</cities>
+	</country>	
+	<country>
+		<name>Scotland</name>
+		<cities>
+			<city><name>Edinburgh</name><longitude>-3.161</longitude><latitude>55.949</latitude></city>
+			<city><name>Fort William</name><longitude>-5.105</longitude><latitude>56.814</latitude></city>
+			<city><name>Glasgow</name><longitude>-4.245</longitude><latitude>55.862</latitude></city>
+			<city><name>Inverness</name><longitude>-4.227</longitude><latitude>57.480</latitude></city>
+			<city><name>Iona</name><longitude>-6.28</longitude><latitude>56.27</latitude></city>
+			<city><name>Isle of Skye (Kyle of Localsh)</name><longitude>-5.5</longitude><latitude>57.23</latitude></city>
+			<city><name>Isle of Skye (Portree)</name><longitude>-6.28</longitude><latitude>57.50</latitude></city>
+			<city><name>Mull</name><longitude>-6.00</longitude><latitude>56.418</latitude></city>
+			<city><name>Oban</name><longitude>-5.462</longitude><latitude>56.418</latitude></city>
+			<city><name>Orkney (Kirkwall)</name><longitude>-2.948</longitude><latitude>58.979</latitude></city>
+			<city><name>Orkney (Stromness)</name><longitude>-3.296</longitude><latitude>58.967</latitude></city>
+			<city><name>Staffa</name><longitude>-6.30</longitude><latitude>56.420</latitude></city>
+		</cities>
+	</country>	
+	<country>
+		<name>Spain</name>
+		<cities>
+			<city><name>Avila</name><latitude>40.650</latitude><longitude>-4.700</longitude></city>
+			<city><name>Barcelona</name><latitude>41.383</latitude><longitude>2.183</longitude></city>
+			<city><name>Bilbao</name><latitude>43.250</latitude><longitude>-2.967</longitude></city>
+			<city><name>Cordoba</name><latitude>37.883</latitude><longitude>-4.767</longitude></city>
+			<city><name>Granada</name><latitude>37.183</latitude><longitude>-3.600</longitude></city>
+			<city><name>Madrid</name><latitude>40.400</latitude><longitude>-3.683</longitude></city>
+			<city><name>Malaga</name><latitude>36.717</latitude><longitude>-4.417</longitude></city>
+			<city><name>Santiago de Compostela</name><latitude>42.883</latitude><longitude>-8.550</longitude></city>
+			<city><name>Sevilla</name><latitude>37.377</latitude><longitude>-5.987</longitude></city>
+			<city><name>Toledo</name><latitude>39.867</latitude><longitude>-4.017</longitude></city>
+			<city><name>Valencia</name><latitude>39.467</latitude><longitude>-0.367</longitude></city>	
+			<city><name>Zaragoza</name><latitude>41.633</latitude><longitude>-0.883</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>Sweden</name>
+		<cities>
+			<city><name>Malmo</name><longitude>13.000</longitude><latitude>55.600</latitude></city>	
+		</cities>
+	</country>
+	<country>
+		<name>Switzerland</name>
+		<cities>
+			<city><name>Bern</name><longitude>7.467</longitude><latitude>46.917</latitude></city>
+			<city><name>Genève</name><longitude>6.167</longitude><latitude>46.200</latitude></city>
+			<city><name>Gruyères</name><longitude>7.083</longitude><latitude>46.583</latitude></city>	
+			<city><name>Interlaken</name><longitude>7.850</longitude><latitude>46.683</latitude></city>
+			<city><name>Lausanne</name><longitude>6.667</longitude><latitude>46.533</latitude></city>
+			<city><name>Lugano</name><longitude>8.967</longitude><latitude>46.000</latitude></city>	
+			<city><name>Luzern</name><longitude>8.18</longitude><latitude>47.03</latitude></city>
+			<city><name>Sankt Moritz</name><longitude>9.51</longitude><latitude>46.30</latitude></city>			
+			<city><name>Zermatt</name><longitude>7.750</longitude><latitude>46.017</latitude></city>	
+			<city><name>Zurich</name><longitude>8.550</longitude><latitude>47.367</latitude></city>				
+		</cities>
+	</country>
+	<country>
+		<name>Ukraine</name>
+		<cities>
+			<city><name>Kiev</name><latitude>50.433</latitude><longitude>30.517</longitude></city>
+			<city><name>Nauchnyy</name><latitude>44.733</latitude><longitude>34.017</longitude></city>
+			<city><name>Sevastopol</name><latitude>44.600</latitude><longitude>33.533</longitude></city>
+			<city><name>Simferopol</name><latitude>44.950</latitude><longitude>34.100</longitude></city>
+		</cities>
+	</country>
+	<country>
+		<name>United States of America</name>
+		<cities>
+			<city><name>Miami</name><latitude>25.774</latitude><longitude>-80.194</longitude></city>
+			<city><name>New York</name><latitude>40.714</latitude><longitude>-74.006</longitude></city>
+			<city><name>Orlando</name><latitude>28.538</latitude><longitude>-81.379</longitude></city>
+		</cities>
+	</country>
+</countries>
+<trips>
+	<trip>
+		<name>Sachsen</name>
+		<diary>../Blog/Aurora/aurora.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo</travelers>
+		<period>2005.09.22 - 2005.10.02</period>
+		<tripcenter><longitude>13.600</longitude><latitude>51.000</latitude></tripcenter>
+		<color>#cd2626</color>
+		<route>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>			
+			<vertex><name>Weesenstein</name><longitude>13.8625775526673</longitude><latitude>50.9344691692126</latitude></vertex>
+			<vertex><name>Pirna</name><longitude>13.933</longitude><latitude>50.967</latitude></vertex>
+			<vertex><name>Heidenau</name><longitude>13.867</longitude><latitude>50.983</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Coswig</name><longitude>13.5803481597468</longitude><latitude>51.1253251451903</latitude></vertex>
+			<vertex><name>Meissen</name><longitude>13.4744144870409</longitude><latitude>51.137827806466</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+ 			<vertex><name>Bastei</name><longitude>14.083</longitude><latitude>50.950</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>			
+			<vertex><name>Augustusburg</name><longitude>13.0870257941116</longitude><latitude>50.8153848210334</latitude></vertex>
+			<vertex><name>Fichtelberg</name><longitude>12.98</longitude><latitude>50.4</latitude></vertex>
+			<vertex><name>Schwarzenberg</name><longitude>12.783</longitude><latitude>50.550</latitude></vertex>
+			<vertex><name>Chemnitz</name><longitude>12.921467985046</longitude><latitude>50.8363671621637</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Radebeul</name><longitude>13.65</longitude><latitude>51.100</latitude></vertex>
+			<vertex><name>Moritzburg</name><longitude>13.683</longitude><latitude>51.167</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Meissen</name><longitude>13.4744144870409</longitude><latitude>51.137827806466</latitude></vertex>
+			<vertex><name>Riesa</name><longitude>13.300</longitude><latitude>51.300</latitude></vertex>
+			<vertex><name>Mühlberg</name><longitude>13.217</longitude><latitude>51.4330</latitude></vertex>
+ 			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Leipzig</name><longitude>12.333</longitude><latitude>51.300</latitude></vertex>
+ 			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Altenberg</name><longitude>13.767</longitude><latitude>50.767</latitude></vertex>
+ 			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Praha</name><longitude>14.467</longitude><latitude>50.083</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Schöna</name><longitude>14.217</longitude><latitude>50.883</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Günne</name><longitude>8.033</longitude><latitude>51.500</latitude></vertex>
+			<vertex><name>Soest</name><longitude>8.117</longitude><latitude>51.583</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Kutna Hora</name><longitude>15.267</longitude><latitude>49.950</latitude></vertex>
+			<vertex><name>Praha</name><longitude>14.467</longitude><latitude>50.083</latitude></vertex>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>			
+		</route>
+	</trip>
+	<trip>
+		<name>Tuscany-Umbria</name>
+		<diary> </diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo</travelers>
+		<period>2006.05.04 - 2006.05.11</period>
+		<tripcenter><longitude>13.600</longitude><latitude>51.000</latitude></tripcenter>
+		<color>#ff9900</color>
+		<route>	
+			<vertex><name>Roma</name><longitude>12.483</longitude><latitude>41.900</latitude></vertex>
+			<vertex><name>Assisi</name><longitude>12.617</longitude><latitude>43.067</latitude></vertex>
+			<vertex><name>Siena</name><longitude>11.350</longitude><latitude>43.317</latitude></vertex>
+			<vertex><name>Firenze</name><longitude>11.250</longitude><latitude>43.767</latitude></vertex>
+			<vertex><name>Roma</name><longitude>12.483</longitude><latitude>41.900</latitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Britain</name>
+		<diary>../Blog/Britain/britain.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Helena, Susanna, Thaís</travelers>
+		<period>2006.03.17 - 2005.04.05</period>
+		<tripcenter><longitude>-3</longitude><latitude>54.7</latitude></tripcenter>
+		<color>#000000</color>
+		<route>
+			<vertex><name>London</name><longitude>-0.105</longitude><latitude>51.517</latitude></vertex>
+			<vertex><name>Oxford</name><longitude>-1.254</longitude><latitude>51.754</latitude></vertex>
+			<vertex><name>Bath</name><longitude>-2.366</longitude><latitude>51.378</latitude></vertex>
+			<vertex><name>Stonehenge (Salisbury)</name><longitude>-1.793</longitude><latitude>51.073</latitude></vertex>
+			<vertex><name>Avebury</name><longitude>-1.849</longitude><latitude>51.424</latitude></vertex>
+			<vertex><name>London</name><longitude>-0.105</longitude><latitude>51.517</latitude></vertex>
+			<vertex><name>Liverpool</name><longitude>-2.940</longitude><latitude>53.416</latitude></vertex>
+			<vertex><name>Manchester</name><longitude>-2.249</longitude><latitude>53.483</latitude></vertex>
+			<vertex><name>Edinburgh</name><longitude>-3.161</longitude><latitude>55.949</latitude></vertex>
+			<vertex><name>Inverness</name><longitude>-4.227</longitude><latitude>57.480</latitude></vertex>
+			<vertex><name>Orkney (Stromness)</name><longitude>-3.296</longitude><latitude>58.967</latitude></vertex>
+			<vertex><name>Orkney (Kirkwall)</name><longitude>-2.948</longitude><latitude>58.979</latitude></vertex>
+			<vertex><name>Orkney (Stromness)</name><longitude>-3.296</longitude><latitude>58.967</latitude></vertex>
+			<vertex><name>Inverness</name><longitude>-4.227</longitude><latitude>57.480</latitude></vertex>
+			<vertex><name>Isle of Skye (Kyle of Localsh)</name><longitude>-5.5</longitude><latitude>57.23</latitude></vertex>
+			<vertex><name>Isle of Skye (Portree)</name><longitude>-6.28</longitude><latitude>57.50</latitude></vertex>
+			<vertex><name>Isle of Skye (Kyle of Localsh)</name><longitude>-5.5</longitude><latitude>57.23</latitude></vertex>
+			<vertex><name>Fort William</name><longitude>-5.105</longitude><latitude>56.814</latitude></vertex>
+			<vertex><name>Oban</name><longitude>-5.462</longitude><latitude>56.418</latitude></vertex>
+			<vertex><name>Mull</name><longitude>-6.00</longitude><latitude>56.418</latitude></vertex>
+			<vertex><name>Staffa</name><longitude>-6.30</longitude><latitude>56.420</latitude></vertex>
+			<vertex><name>Iona</name><longitude>-6.28</longitude><latitude>56.27</latitude></vertex>
+			<vertex><name>Mull</name><longitude>-6.00</longitude><latitude>56.418</latitude></vertex>
+			<vertex><name>Oban</name><longitude>-5.462</longitude><latitude>56.418</latitude></vertex>
+			<vertex><name>Glasgow</name><longitude>-4.245</longitude><latitude>55.862</latitude></vertex>
+			<vertex><name>Edinburgh</name><longitude>-3.161</longitude><latitude>55.949</latitude></vertex>
+		</route>
+	</trip>	
+	<trip>
+		<name>Hellas - Greece</name>
+		<diary>../Blog/Grecia/grecia.html</diary>
+		<album> </album>
+		<travelers>Bruno, Guillermo, Ida, Kike, Marta, Rocio</travelers>
+		<period>2006.02.16 - 2006.03.05</period>
+		<tripcenter><longitude>22.600</longitude><latitude>37.000</latitude></tripcenter>
+		<color>#ffffff</color>
+		<route>			
+			<vertex><name>Athina</name><longitude>23.733</longitude><latitude>37.983</latitude></vertex>
+			<vertex><name>Delphi</name><longitude>23.317</longitude><latitude>38.317</latitude></vertex>
+			<vertex><name>Meteora (Kalambaka)</name><longitude>21.633</longitude><latitude>39.700</latitude></vertex>
+  			<vertex><name>Meteora (Kastraki)</name><longitude>21.617</longitude><latitude>39.717</latitude></vertex>
+			<vertex><name>Zagoria (Monodendri)</name><longitude>20.750</longitude><latitude>39.883</latitude></vertex>
+			<vertex><name>Meteora (Kalambaka)</name><longitude>21.633</longitude><latitude>39.700</latitude></vertex>
+			<vertex><name>Korinthos</name><longitude>22.883</longitude><latitude>37.917</latitude></vertex>
+			<vertex><name>Patras</name><longitude>21.47</longitude><latitude>38.14</latitude></vertex>
+  			<vertex><name>Olympia</name><longitude>21.633</longitude><latitude>37.650</latitude></vertex>
+  			<vertex><name>Mystras</name><longitude>22.367</longitude><latitude>37.067</latitude></vertex>
+			<vertex><name>Sparta</name><longitude>22.433</longitude><latitude>37.083</latitude></vertex>
+  			<vertex><name>Gythio</name><longitude>22.567</longitude><latitude>36.750</latitude></vertex>
+			<vertex><name>Areopolis (Diros Caves)</name><longitude>22.383</longitude><latitude>36.667</latitude></vertex>
+			<vertex><name>Lakonian Mani</name><longitude>22.483</longitude><latitude>36.417</latitude></vertex>
+			<vertex><name>Monemvasia</name><longitude>23.050</longitude><latitude>36.683</latitude></vertex>
+			<vertex><name>Nafplio</name><longitude>22.800</longitude><latitude>37.567</latitude></vertex>
+  			<vertex><name>Mycenae</name><longitude>22.800</longitude><latitude>37.750</latitude></vertex>
+			<vertex><name>Epidavros</name><longitude>23.150</longitude><latitude>37.633</latitude></vertex>
+			<vertex><name>Nafplio</name><longitude>22.800</longitude><latitude>37.567</latitude></vertex>
+			<vertex><name>Athina</name><longitude>23.733</longitude><latitude>37.983</latitude></vertex>
+			<vertex><name>Kreta (Hania)</name><longitude>24.033</longitude><latitude>35.517</latitude></vertex>
+			<vertex><name>Kreta (Samaria Gorge)</name><longitude>23.967</longitude><latitude>35.283</latitude></vertex>
+			<vertex><name>Kreta (Hania)</name><longitude>24.033</longitude><latitude>35.517</latitude></vertex>
+			<vertex><name>Kreta (Iraklio)</name><longitude>25.133</longitude><latitude>35.333</latitude></vertex>
+			<vertex><name>Kreta (Matala)</name><longitude>24.750</longitude><latitude>34.983</latitude></vertex>
+			<vertex><name>Kreta (Hania)</name><longitude>24.033</longitude><latitude>35.517</latitude></vertex>
+			<vertex><name>Athina</name><longitude>23.733</longitude><latitude>37.983</latitude></vertex>
+  			<vertex><name>Santorini (Fira)</name><longitude>25.433</longitude><latitude>36.417</latitude></vertex>
+  			<vertex><name>Syros</name><longitude>24.933</longitude><latitude>37.450</latitude></vertex>
+			<vertex><name>Mykonos</name><longitude>25.333</longitude><latitude>37.450</latitude></vertex>
+  			<vertex><name>Delos</name><longitude>25.253</longitude><latitude>37.370</latitude></vertex>
+			<vertex><name>Mykonos</name><longitude>25.333</longitude><latitude>37.450</latitude></vertex>
+			<vertex><name>Athina</name><longitude>23.733</longitude><latitude>37.983</latitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Swiss-Italian Alpes</name>
+		<diary></diary>
+		<album></album>
+		<travelers>Ahmad, Bruno Woltzenlogel Paleo, Dung, Sebastian, Tayyab, Vivek, Wiwi, Yusri</travelers>
+		<period>2005.12.25 - 2005.12.31</period>
+		<tripcenter><longitude>8.6</longitude><latitude>46.0</latitude></tripcenter>
+		<color>#551a8b</color>
+		<route>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+			<vertex><name>Heidelberg</name><longitude>8.70821627665216</longitude><latitude>49.4135260599288</latitude></vertex>	
+			<vertex><name>Gutach</name><longitude>8.217</longitude><latitude>48.250</latitude></vertex>	
+			<vertex><name>Furtwangen</name><longitude>8.200</longitude><latitude>48.050</latitude></vertex>	
+			<vertex><name>Titisee</name><longitude>8.150</longitude><latitude>47.900</latitude></vertex>	
+			<vertex><name>Zurich</name><longitude>8.550</longitude><latitude>47.367</latitude></vertex>	
+			<vertex><name>Luzern</name><longitude>8.18</longitude><latitude>47.03</latitude></vertex>	
+			<vertex><name>Bern</name><longitude>7.467</longitude><latitude>46.917</latitude></vertex>	
+			<vertex><name>Interlaken</name><longitude>7.850</longitude><latitude>46.683</latitude></vertex>	
+			<vertex><name>Zermatt</name><longitude>7.750</longitude><latitude>46.017</latitude></vertex>	
+			<vertex><name>Milano</name><longitude>9.200</longitude><latitude>45.467</latitude></vertex>	
+			<vertex><name>Brescia</name><longitude>10.250</longitude><latitude>45.550</latitude></vertex>	
+			<vertex><name>Venezia</name><longitude>12.327</longitude><latitude>45.439</latitude></vertex>	
+			<vertex><name>Lugano</name><longitude>8.967</longitude><latitude>46.000</latitude></vertex>	
+			<vertex><name>Sankt Moritz</name><longitude>9.51</longitude><latitude>46.30</latitude></vertex>	
+			<vertex><name>Vaduz</name><longitude>9.517</longitude><latitude>47.133</latitude></vertex>	
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Polska (Poland)</name>
+		<diary>../Blog/Polen/polen.html</diary>
+		<album> http://br.pg.photos.yahoo.com/ph/dopelganger5/slideshow?.dir=/3ba5 </album>
+		<travelers>Bruno Woltzenlogel Paleo, Hellena Sandberg</travelers>
+		<period>2005.09.22 - 2005.10.02</period>
+		<tripcenter><longitude>17.500</longitude><latitude>51.500</latitude></tripcenter>
+		<color>#cd5555</color>
+		<route>
+			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>	
+   			<vertex><name>Oswiecym</name><longitude>19.233</longitude><latitude>50.033</latitude></vertex>
+			<vertex><name>Krakau</name><longitude>19.917</longitude><latitude>50.083</latitude></vertex>
+			<vertex><name>Wieliczka</name><longitude>20.067</longitude><latitude>49.983</latitude></vertex>
+			<vertex><name>Warschau</name><longitude>21.00</longitude><latitude>52.250</latitude></vertex>
+			<vertex><name>Olsztyn</name><longitude>20.483</longitude><latitude>53.783</latitude></vertex>
+			<vertex><name>Gdansk</name><longitude>18.667</longitude><latitude>54.350</latitude></vertex>
+			<vertex><name>Malbork</name><longitude>19.050</longitude><latitude>54.033</latitude></vertex>
+			<vertex><name>Elblag</name><longitude>19.383</longitude><latitude>54.167</latitude></vertex>
+			<vertex><name>Torun</name><longitude>18.600</longitude><latitude>53.033</latitude></vertex>
+			<vertex><name>Poznan</name><longitude>16.967</longitude><latitude>52.417</latitude></vertex>
+			<vertex><name>Berlin</name><longitude>13.380007</longitude><latitude>52.520021</latitude></vertex>
+ 			<vertex><name>Dresden</name><longitude>13.728121863761</longitude><latitude>51.0523445739087</latitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Goethe Göttingen</name>
+		<diary>../Blog/Aurora/aurora.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo</travelers>
+		<period>2005.08.01 - 2005.09.22</period>
+		<tripcenter><longitude>10.500</longitude><latitude>51.500</latitude></tripcenter>
+		<color>#8b658b</color>
+		<route>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+			<vertex><name>Kassel</name><longitude>9.49124196970712</longitude><latitude>51.3117756491533</latitude></vertex>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+			<vertex><name>Erfurt</name><longitude>11.023098867511</longitude><latitude>50.9776803609967</latitude></vertex>
+			<vertex><name>Weimar</name><longitude>11.3177865254776</longitude><latitude>50.9785409648321</latitude></vertex>
+			<vertex><name>Buchenwald</name><longitude>11.3177865254776</longitude><latitude>51.0</latitude></vertex>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+			<vertex><name>Wolfsburg</name><longitude>10.800</longitude><latitude>52.433</latitude></vertex>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+			<vertex><name>Braunschweig</name><longitude>10.5269419733702</longitude><latitude>52.265410076165</latitude></vertex>
+			<vertex><name>Hildesheim</name><longitude>9.95157281410388</longitude><latitude>52.1508473132164</latitude></vertex>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+			<vertex><name>Goslar</name><longitude>10.433</longitude><latitude>51.900</latitude></vertex>
+			<vertex><name>Göttingen</name><longitude>9.93799866690213</longitude><latitude>51.5313115894558</latitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Imperio Inka</name>
+		<diary> ../Blog/BoliviaPeru/inka.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Rudolf Schützer, Tiago Giannetti</travelers>
+		<period>2005.01.12 - 2005.02.18</period>
+		<tripcenter><longitude>-69.700</longitude><latitude>-13.800</latitude></tripcenter>
+		<color>#cd950c</color>
+		<route>
+			<vertex><name>Puerto Quijarro</name><latitude>-17.783</latitude><longitude>-57.767</longitude></vertex>	
+			<vertex><name>Santa Cruz de La Sierra</name><latitude>-17.800</latitude><longitude>-63.167</longitude></vertex>	
+			<vertex><name>La Paz</name><latitude>-16.500</latitude><longitude>-68.150</longitude></vertex>
+			<vertex><name>Puno</name><latitude>-15.833</latitude><longitude>-70.033</longitude></vertex>
+			<vertex><name>Cuzco</name><latitude>-13.518</latitude><longitude>-71.978</longitude></vertex>
+			<vertex><name>Ollantaytambo</name><latitude>-13.255</latitude><longitude>-72.263</longitude></vertex>
+			<vertex><name>Urubamba</name><latitude>-14.217</latitude><longitude>-72.083</longitude></vertex>
+			<vertex><name>Maras</name><latitude>-13.320</latitude><longitude>-72.153</longitude></vertex>
+			<vertex><name>Cuzco</name><latitude>-13.518</latitude><longitude>-71.978</longitude></vertex>
+			<vertex><name>Chincheros</name><latitude>-13.396</latitude><longitude>-72.055</longitude></vertex>
+			<vertex><name>Pisac</name><latitude>-13.423</latitude><longitude>-71.847</longitude></vertex>
+			<vertex><name>Ollantaytambo</name><latitude>-13.255</latitude><longitude>-72.263</longitude></vertex>			
+			<vertex><name>Aguas Calientes</name><latitude>-13.15498783510443</latitude><longitude>-72.52334964546674</longitude></vertex>
+			<vertex><name>Machu Picchu</name><latitude>-13.1588888168305</latitude><longitude>-72.54083251953125</longitude></vertex>
+			<vertex><name>Aguas Calientes</name><latitude>-13.15498783510443</latitude><longitude>-72.52334964546674</longitude></vertex>
+			<vertex><name>Ollantaytambo</name><latitude>-13.255</latitude><longitude>-72.263</longitude></vertex>
+			<vertex><name>Cuzco</name><latitude>-13.518</latitude><longitude>-71.978</longitude></vertex>
+			<vertex><name>Paracas</name><latitude>-10.700</latitude><longitude>-77.283</longitude></vertex>			
+			<vertex><name>Ica</name><latitude>-14.068</latitude><longitude>-75.726</longitude></vertex>
+			<vertex><name>Nazca</name><latitude>-14.833</latitude><longitude>-74.950</longitude></vertex>
+			<vertex><name>Arequipa</name><latitude>-17.324</latitude><longitude>-71.535</longitude></vertex>
+			<vertex><name>Copacabana</name><latitude>-18.167</latitude><longitude>-68.150</longitude></vertex>
+			<vertex><name>La Paz</name><latitude>-16.500</latitude><longitude>-68.150</longitude></vertex>
+			<vertex><name>Oruro</name><latitude>-17.767</latitude><longitude>-67.483</longitude></vertex>
+			<vertex><name>Uyuni</name><latitude>-21.117</latitude><longitude>-66.483</longitude></vertex>			
+			<vertex><name>Potosi</name><latitude>-19.583</latitude><longitude>-65.750</longitude></vertex>
+			<vertex><name>Sucre</name><latitude>-21.617</latitude><longitude>-66.133</longitude></vertex>	
+			<vertex><name>Cochabamba</name><latitude>-17.383</latitude><longitude>-66.150</longitude></vertex>
+			<vertex><name>Santa Cruz de La Sierra</name><latitude>-17.800</latitude><longitude>-63.167</longitude></vertex>	
+			<vertex><name>Puerto Quijarro</name><latitude>-17.783</latitude><longitude>-57.767</longitude></vertex>				
+		</route>
+	</trip>
+	<trip>
+		<name>Fin del Mundo</name>
+		<diary> ../Blog/SulAmerika/amerika.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Isis Woltzenlogel Paleo</travelers>
+		<period>2004.01.14 - 2004.02.25</period>
+		<tripcenter><longitude>-70.00</longitude><latitude>-40.0</latitude></tripcenter>
+		<color>#ffb90f</color>
+		<route>
+			<vertex><name>Buenos Aires</name><latitude>-34.613</latitude><longitude>-58.470</longitude></vertex>
+			<vertex><name>Puerto Madryn</name><latitude>-42.767</latitude><longitude>-65.050</longitude></vertex>
+			<vertex><name>Gaiman</name><latitude>-43.283</latitude><longitude>-65.483</longitude></vertex>
+			<vertex><name>Trelew</name><latitude>-43.250</latitude><longitude>-65.300</longitude></vertex>
+			<vertex><name>Puerto Madryn</name><latitude>-42.767</latitude><longitude>-65.050</longitude></vertex>
+			<vertex><name>Rio Gallegos</name><latitude>-51.633</latitude><longitude>-69.217</longitude></vertex>
+			<vertex><name>Punta Arenas</name><latitude>-53.150</latitude><longitude>-70.917</longitude></vertex>
+			<vertex><name>Puerto Natales</name><latitude>-51.733</latitude><longitude>-72.517</longitude></vertex>
+			<vertex><name>Ushuaia</name><latitude>-54.800</latitude><longitude>-68.300</longitude></vertex>
+			<vertex><name>El Calafate</name><latitude>-50.333</latitude><longitude>-72.300</longitude></vertex>
+			<vertex><name>El Chalten</name><latitude>-49.32437</latitude><longitude>-72.89256</longitude></vertex>
+			<vertex><name>Bariloche</name><latitude>-41.150</latitude><longitude>-71.300</longitude></vertex>
+			<vertex><name>Puerto Montt</name><latitude>-41.472</latitude><longitude>-72.937</longitude></vertex>
+			<vertex><name>Ancud</name><latitude>-41.870</latitude><longitude>-73.820</longitude></vertex>
+			<vertex><name>Puerto Montt</name><latitude>-41.472</latitude><longitude>-72.937</longitude></vertex>
+			<vertex><name>Pucón</name><latitude>-39.267</latitude><longitude>-71.967</longitude></vertex>
+			<vertex><name>Temuco</name><latitude>-38.733</latitude><longitude>-72.600</longitude></vertex>	
+			<vertex><name>Cholchol</name><latitude>-38.600</latitude><longitude>-72.850</longitude></vertex>
+			<vertex><name>Valparaiso</name><latitude>-33.048</latitude><longitude>-71.601</longitude></vertex>	
+			<vertex><name>Viña del Mar</name><latitude>-33.008</latitude><longitude>-71.520</longitude></vertex>			
+			<vertex><name>Reñaca</name><latitude>-32.966</latitude><longitude>-71.545</longitude></vertex>
+			<vertex><name>Santiago</name><latitude>-33.450</latitude><longitude>-70.667</longitude></vertex>	
+			<vertex><name>Puente del Inca</name><latitude>-32.817</latitude><longitude>-69.917</longitude></vertex>
+			<vertex><name>Santiago</name><latitude>-33.450</latitude><longitude>-70.667</longitude></vertex>	
+			<vertex><name>Antofagasta</name><latitude>-23.650</latitude><longitude>-70.400</longitude></vertex>
+			<vertex><name>Calama</name><latitude>-22.467</latitude><longitude>-68.933</longitude></vertex>
+			<vertex><name>San Pedro de Atacama</name><latitude>-22.917</latitude><longitude>-68.217</longitude></vertex>	
+			<vertex><name>Salta</name><latitude>-24.783</latitude><longitude>-65.417</longitude></vertex>
+			<vertex><name>Puerto Iguazu</name><latitude>-25.567</latitude><longitude>-54.567</longitude></vertex>
+			<vertex><name>Cataratas del Iguazu</name><latitude>-25.667</latitude><longitude>-54.450</longitude></vertex>
+		</route>
+	</trip>	
+	<trip>
+		<name>Winterkurs</name>
+		<diary> ../Blog/Winterkurs/winterkurs.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo</travelers>
+		<period>2002.12.31 - 2003.02.23</period>
+		<tripcenter><longitude>8.7965374528096</longitude><latitude>52.5</latitude></tripcenter>
+		<color>#00008b</color>
+		<route>
+			<vertex><name>Hamburg</name><longitude>10.000</longitude><latitude>53.550</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Oldenburg</name><longitude>8.21094264658209</longitude><latitude>53.1554178759636</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>						
+			<vertex><name>Hannover</name><longitude>9.7381609921659</longitude><latitude>52.3722478951624</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>			
+			<vertex><name>Groningen</name><longitude>6.550</longitude><latitude>53.217</latitude></vertex> 
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Lübeck</name><longitude>10.6829631308072</longitude><latitude>53.8663893421431</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Oldenburg</name><longitude>8.21094264658209</longitude><latitude>53.1554178759636</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Bonn</name><longitude>7.10170028857816</longitude><latitude>50.7323126452532</latitude></vertex>
+			<vertex><name>Xanten</name><longitude>6.450</longitude><latitude>51.667</latitude></vertex>
+			<vertex><name>Münster</name><longitude>7.633</longitude><latitude>51.967</latitude></vertex> 
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Berlin</name><longitude>13.380007</longitude><latitude>52.520021</latitude></vertex>
+			<vertex><name>Potsdam</name><longitude>13.0479349139443</longitude><latitude>52.3994013122078</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Schwerin</name><longitude>11.383</longitude><latitude>53.633</latitude></vertex>
+			<vertex><name>Bremen</name><longitude>8.7965374528096</longitude><latitude>53.1050110798889</latitude></vertex>
+			<vertex><name>Hamburg</name><longitude>10.000</longitude><latitude>53.550</latitude></vertex>
+		</route>
+	</trip>	
+	
+	<trip>
+		<name>España (Spain)</name>
+		<diary> ../Blog/Espanha/espanha.html</diary>
+		<album>http://br.pg.photos.yahoo.com/ph/dopelganger5/slideshow?.dir=/3cb7 </album>
+		<travelers>Bruno Woltzenlogel Paleo, Isis Woltzenlogel Paleo</travelers>
+		<period>2002.07.06 - 2005.07.28</period>
+		<tripcenter><latitude>40.500</latitude><longitude>-1.500</longitude></tripcenter>
+		<color>#8a2be2</color>
+		<route>
+			<vertex><name>Madrid</name><latitude>40.400</latitude><longitude>-3.683</longitude></vertex>
+			<vertex><name>Avila</name><latitude>40.650</latitude><longitude>-4.700</longitude></vertex>
+			<vertex><name>Madrid</name><latitude>40.400</latitude><longitude>-3.683</longitude></vertex>
+			<vertex><name>Toledo</name><latitude>39.867</latitude><longitude>-4.017</longitude></vertex>
+			<vertex><name>Cordoba</name><latitude>37.883</latitude><longitude>-4.767</longitude></vertex>
+			<vertex><name>Sevilla</name><latitude>37.377</latitude><longitude>-5.987</longitude></vertex>
+			<vertex><name>Malaga</name><latitude>36.717</latitude><longitude>-4.417</longitude></vertex>
+			<vertex><name>Granada</name><latitude>37.183</latitude><longitude>-3.600</longitude></vertex>
+			<vertex><name>Valencia</name><latitude>39.467</latitude><longitude>-0.367</longitude></vertex>
+			<vertex><name>Zaragoza</name><latitude>41.633</latitude><longitude>-0.883</longitude></vertex>
+			<vertex><name>Bilbao</name><latitude>43.250</latitude><longitude>-2.967</longitude></vertex>
+			<vertex><name>Santiago de Compostela</name><latitude>42.883</latitude><longitude>-8.550</longitude></vertex>
+			<vertex><name>Madrid</name><latitude>40.400</latitude><longitude>-3.683</longitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Holanda</name>
+		<diary>../Blog/Holanda/holanda.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo</travelers>
+		<period>2001.12 - 2002.02</period>
+		<tripcenter><latitude>52.0</latitude><longitude>5.5</longitude></tripcenter>
+		<color>#ff4500</color>
+		<route>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Amsterdam</name><longitude>4.917</longitude><latitude>52.350</latitude></vertex> 
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Düsseldorf</name><longitude>6.77608339961567</longitude><latitude>51.2157090384771</latitude></vertex>
+			<vertex><name>Köln</name><longitude>6.95504332049329</longitude><latitude>50.9416886791653</latitude></vertex>	
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Kopenhagen</name><latitude>55.667</latitude><longitude>12.583</longitude></vertex>			
+			<vertex><name>Malmo</name><longitude>13.000</longitude><latitude>55.600</latitude></vertex>
+			<vertex><name>Kopenhagen</name><latitude>55.667</latitude><longitude>12.583</longitude></vertex>			
+			<vertex><name>Berlin</name><longitude>13.380007</longitude><latitude>52.520021</latitude></vertex>
+			<vertex><name>Nürnberg</name><longitude>11.0739607249392</longitude><latitude>49.4543671760708</latitude></vertex>	
+			<vertex><name>Lausanne</name><longitude>6.667</longitude><latitude>46.533</latitude></vertex>
+			<vertex><name>Genève</name><longitude>6.167</longitude><latitude>46.200</latitude></vertex>
+			<vertex><name>Lausanne</name><longitude>6.667</longitude><latitude>46.533</latitude></vertex>
+			<vertex><name>Gruyères</name><longitude>7.083</longitude><latitude>46.583</latitude></vertex>	
+			<vertex><name>Lausanne</name><longitude>6.667</longitude><latitude>46.533</latitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Antwerp</name><latitude>51.217</latitude><longitude>4.417</longitude></vertex>
+			<vertex><name>Brugge</name><latitude>51.217</latitude><longitude>3.233</longitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Brussel</name><latitude>50.833</latitude><longitude>4.333</longitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Maastricht</name><longitude>5.683</longitude><latitude>50.850</latitude></vertex> 
+			<vertex><name>Valkenburg</name><longitude>5.833</longitude><latitude>50.867</latitude></vertex> 
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Trier</name><longitude>6.633</longitude><latitude>49.750</latitude></vertex>
+			<vertex><name>Luxembourg</name><longitude>6.130</longitude><latitude>49.612</latitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Rotterdam</name><longitude>4.500</longitude><latitude>51.917</latitude></vertex> 
+			<vertex><name>Hoek van Holland</name><longitude>4.133</longitude><latitude>51.983</latitude></vertex> 
+			<vertex><name>London</name><longitude>-0.105</longitude><latitude>51.517</latitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Karlsruhe</name><longitude>8.40923413724497</longitude><latitude>49.0104390309659</latitude></vertex>
+			<vertex><name>Darmstadt</name><longitude>8.64970887622184</longitude><latitude>49.8726616212208</latitude></vertex>
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Amsterdam</name><longitude>4.917</longitude><latitude>52.350</latitude></vertex> 
+			<vertex><name>Hague</name><longitude>4.300</longitude><latitude>52.083</latitude></vertex> 
+			<vertex><name>Delta (Middelburg)</name><longitude>3.617</longitude><latitude>51.500</latitude></vertex> 
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Leiden</name><longitude>4.500</longitude><latitude>52.150</latitude></vertex> 
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+			<vertex><name>Nijmegen</name><longitude>5.867</longitude><latitude>51.833</latitude></vertex> 
+			<vertex><name>Boxmeer</name><longitude>5.950</longitude><latitude>51.650</latitude></vertex> 
+		</route>
+	</trip>
+	<trip>
+		<name>Ukrania</name>
+		<diary>../Blog/Ukrania/ukrania.html</diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Ana, Breno, Paulo, Shridhar, Canalle, Lilia</travelers>
+		<period>1999.09.21 - 1999.10.05</period>
+		<tripcenter><latitude>44.7</latitude><longitude>33.8</longitude></tripcenter>
+		<color>#00ff00</color>
+		<route>
+			<vertex><name>Kiev</name><latitude>50.433</latitude><longitude>30.517</longitude></vertex>
+			<vertex><name>Nauchnyy</name><latitude>44.733</latitude><longitude>34.017</longitude></vertex>
+			<vertex><name>Sevastopol</name><latitude>44.600</latitude><longitude>33.533</longitude></vertex>
+			<vertex><name>Simferopol</name><latitude>44.950</latitude><longitude>34.100</longitude></vertex>
+			<vertex><name>Nauchnyy</name><latitude>44.733</latitude><longitude>34.017</longitude></vertex>
+			<vertex><name>Kiev</name><latitude>50.433</latitude><longitude>30.517</longitude></vertex>
+		</route>
+	</trip>
+	<trip>
+		<name>Central-South Europe</name>
+		<diary> </diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Isis Woltzenlogel Paleo, Claudio Mastrocolla Paleo, Claudia Zambello Woltzenlogel Paleo, Arnaldo Arzolla Woltzenlogel, Jandyra Zambello Woltzenlogel Paleo, Arnaldo Zambello Woltzenlogel, Adriana</travelers>
+		<period>1999.07 - 1999.07</period>
+		<tripcenter><latitude>45.5</latitude><longitude>2.5</longitude></tripcenter>
+		<color>#ffff00</color>
+		<route>
+			<vertex><name>Barcelona</name><latitude>41.383</latitude><longitude>2.183</longitude></vertex>
+			<vertex><name>Toulouse</name><longitude>1.433</longitude><latitude>43.600</latitude></vertex>
+			<vertex><name>Rocamadour</name><longitude>1.633</longitude><latitude>44.800</latitude></vertex>
+			<vertex><name>Lascaux</name><longitude>1.367</longitude><latitude>45.333</latitude></vertex>
+			<vertex><name>Poitiers</name><longitude>0.333</longitude><latitude>46.583</latitude></vertex>
+			<vertex><name>Chenonceaux</name><longitude>1.067</longitude><latitude>47.333</latitude></vertex>
+			<vertex><name>Blois</name><longitude>1.333</longitude><latitude>47.583</latitude></vertex>
+			<vertex><name>Chambord</name><longitude>1.517</longitude><latitude>47.617</latitude></vertex>
+			<vertex><name>Paris</name><longitude>2.333</longitude><latitude>48.867</latitude></vertex>
+			<vertex><name>Strasbourg</name><longitude>7.750</longitude><latitude>48.583</latitude></vertex>
+			<vertex><name>Weyersheim</name><longitude>7.800</longitude><latitude>48.717</latitude></vertex>
+			<vertex><name>Heidelberg</name><longitude>8.70821627665216</longitude><latitude>49.4135260599288</latitude></vertex>
+			<vertex><name>Rothenburg</name><longitude>10.183</longitude><latitude>49.383</latitude></vertex>
+			<vertex><name>München</name><longitude>11.5775061762146</longitude><latitude>48.1364377794873</latitude></vertex>
+			<vertex><name>Salzburg</name><longitude>13.033</longitude><latitude>47.800</latitude></vertex>
+			<vertex><name>Venezia</name><longitude>12.327</longitude><latitude>45.439</latitude></vertex>
+			<vertex><name>Padova</name><longitude>11.883</longitude><latitude>45.417</latitude></vertex>
+			<vertex><name>Verona</name><longitude>11.000</longitude><latitude>45.450</latitude></vertex>
+			<vertex><name>Firenze</name><longitude>11.250</longitude><latitude>43.767</latitude></vertex>	
+			<vertex><name>Roma</name><longitude>12.483</longitude><latitude>41.900</latitude></vertex>
+			<vertex><name>Pisa</name><longitude>10.383</longitude><latitude>43.717</latitude></vertex>
+			<vertex><name>Rapallo</name><longitude>9.233</longitude><latitude>44.350</latitude></vertex>
+			<vertex><name>Genova</name><longitude>8.950</longitude><latitude>44.417</latitude></vertex>
+			<vertex><name>Monaco</name><longitude>7.417</longitude><latitude>43.733</latitude></vertex>
+			<vertex><name>Nice</name><longitude>7.250</longitude><latitude>43.700</latitude></vertex>
+			<vertex><name>Cannes</name><longitude>7.017</longitude><latitude>43.550</latitude></vertex>
+			<vertex><name>Aix-en-Provence</name><longitude>5.433</longitude><latitude>43.533</latitude></vertex>
+			<vertex><name>Les Beaux</name><longitude>5.217</longitude><latitude>44.117</latitude></vertex>
+			<vertex><name>Avignon</name><longitude>4.817</longitude><latitude>43.950</latitude></vertex>
+			<vertex><name>St. Remy de Provence</name><longitude>4.833</longitude><latitude>43.783</latitude></vertex>
+			<vertex><name>Nimes</name><longitude>4.350</longitude><latitude>43.833</latitude></vertex>
+			<vertex><name>Carcassone</name><longitude>2.350</longitude><latitude>43.217</latitude></vertex>
+			<vertex><name>Barcelona</name><latitude>41.383</latitude><longitude>2.183</longitude></vertex>		
+		</route>
+	</trip>	
+	<trip>
+		<name>NewYork-Florida-Cancun</name>
+		<diary> </diary>
+		<album> </album>
+		<travelers>Bruno Woltzenlogel Paleo, Isis Woltzenlogel Paleo, Claudio Mastrocolla Paleo, Claudia Zambello Woltzenlogel Paleo, Arnaldo Arzolla Woltzenlogel, Jandyra Zambello Woltzenlogel Paleo, Arnaldo Zambello Woltzenlogel, Adriana</travelers>
+		<period>1996.07. - 1996.07.</period>
+		<tripcenter><latitude>30.00</latitude><longitude>-80.000</longitude></tripcenter>
+		<color>#8b4513</color>
+		<route>
+			<vertex><name>Miami</name><latitude>25.774</latitude><longitude>-80.194</longitude></vertex>
+			<vertex><name>Orlando</name><latitude>28.538</latitude><longitude>-81.379</longitude></vertex>
+			<vertex><name>New York</name><latitude>40.714</latitude><longitude>-74.006</longitude></vertex>
+			<vertex><name>Cancun</name><latitude>21.167</latitude><longitude>-86.833</longitude></vertex>
+			<vertex><name>Chichen Itza</name><latitude>20.40</latitude><longitude>-88.36</longitude></vertex>
+		</route>
+	</trip>	
+</trips>
+</data>

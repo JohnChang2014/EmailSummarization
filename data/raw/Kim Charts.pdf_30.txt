@@ -4,7 +4,7 @@ To: rosenthal.dleon@gmail.co
 Cc: 
 Subject: Re: KimCharts
 hey in the text for lindenberg you say
-"Lindenberg (2010) et al. found that bilateral stimulation improved motor test (Wolf, Fugl-?Meyer) scores 
+"Lindenberg (2010) et al. found that bilateral stimulation improved motor test (Wolf, Fugl-Meyer) scores 
 by an average of 432.6%"
 the 432.6% is the percent that tDCS was better than sham, not the % that it was better than baseline. So 
 the tDCS only improved motor tests scores by 20% (as shown on the y axis of the figure 2). If the sham 

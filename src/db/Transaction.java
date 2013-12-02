@@ -4,8 +4,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.HashMap;
 
-import db.*;
-
 public class Transaction extends MySQL {
 	
 	public void insert(String[] args, String table) throws SQLException, ParseException {
@@ -39,7 +37,4 @@ public class Transaction extends MySQL {
 		this.insert("emails", params);
 	}
 
-	public void searchRecord(String colums, String table) {
-		
-	}
 }

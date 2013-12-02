@@ -8,12 +8,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-
-import date.DateTime;
 
 public class MySQL extends Database implements QueryAction {
 	Connection dbCon = null;
@@ -87,10 +83,10 @@ public class MySQL extends Database implements QueryAction {
 	@Override
 	public void close() {
 		try {
-			stmt.close();
-			prestmt.close();
-			rs.close();
-			dbCon.close();
+			if (stmt != null) stmt.close();
+			if (prestmt != null) prestmt.close();
+			if (rs != null) rs.close();
+			if (dbCon != null) dbCon.close();
 			System.out.println("db close!");
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -99,18 +95,17 @@ public class MySQL extends Database implements QueryAction {
 
 	@Override
 	public Object insert(String table, HashMap<String, String> params) throws SQLException, ParseException {
-			// implement a way to batch update multiple records into database
-			// commit trasaction manually
-			dbCon.setAutoCommit(false);
-			HashMap<String, String> attrs = getColumnSet(table);
-			String strSQL = generateSQLStatement("insert", table, attrs);
-			prestmt       = dbCon.prepareStatement(strSQL);
-			// set values into preparedStatement
-			assignParameters(prestmt, attrs, params);
+		// implement a way to batch update multiple records into database
+		// commit trasaction manually
+		dbCon.setAutoCommit(false);
+		HashMap<String, String> attrs = getColumnSet(table);
+		String strSQL = generateSQLInsertStatement(table, attrs);
+		prestmt = dbCon.prepareStatement(strSQL);
+		// set values into preparedStatement
+		assignParameters(prestmt, attrs, params);
 
-			prestmt.executeBatch();
-			dbCon.commit();
-
+		prestmt.executeBatch();
+		dbCon.commit();
 
 		return null;
 	}
@@ -128,20 +123,28 @@ public class MySQL extends Database implements QueryAction {
 	}
 
 	@Override
-	public Object query(ArrayList<Object> params) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultSet query(String table, HashMap<String, String> params) throws SQLException {
+		String strSQL = "Select ";
+		if (params.containsKey("cols")) strSQL += params.get("cols") + " ";
+		else strSQL += "* ";
+		strSQL += "From " + table + " ";
+		if (params.containsKey("cond")) strSQL += "Where " + params.get("cond") + " ";
+		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
+		if (params.containsKey("group")) strSQL += "Group by " + params.get("group") + " ";
+		stmt = dbCon.createStatement();
+		rs   = stmt.executeQuery(strSQL);
+		
+		return rs;
 	}
 
-	private String generateSQLStatement(String type, String table, HashMap<String, String> attrs) {
+	private String generateSQLInsertStatement(String table, HashMap<String, String> attrs) {
 		String strSQL = "";
-		if (type == "insert") {
-			strSQL = "Insert Into " + table + " (";
-			for (String attr : attrs.keySet()) strSQL += attr + ", ";
-			strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ") Values (";
-			for (String attr : attrs.keySet()) strSQL += "?, ";
-			strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ")";
-		}
+		strSQL = "Insert Into " + table + " (";
+		for (String attr : attrs.keySet()) strSQL += attr + ", ";
+		strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ") Values (";
+		for (String attr : attrs.keySet()) strSQL += "?, ";
+		strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ")";
+
 		return strSQL;
 	}
 

@@ -5,10 +5,10 @@ Cc: alexdgoldberg@gmail.co
 Subject: Re: Con Ed bill
 Hey Amol,
 Tried to switch the Con Ed bill from Peek to Knotable, but could only find accounts under Norman K/Irving
-Realty-?-?are these the accounts we want to switch over? 
+Realty--are these the accounts we want to switch over? 
 Also it seems we need documentation with Knotable's name. The documents we have now (lease, rider,
 certificate of inc.) have Peek's name.
 Does this sound right?
--?David
+-David
 [Quoted text hidden]
 

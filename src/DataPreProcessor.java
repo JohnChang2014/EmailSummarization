@@ -198,16 +198,24 @@ public class DataPreProcessor {
 			String ccreceivers = email.get("ccreceivers");
 			String subject = email.get("subject");
 			String content = email.get("content");
+			
+			// add prefix string to each data field except content field
+			sender      = "From: " + sender;
+			time        = "Date: " + time;
+			receivers   = "To: " + receivers;
+			ccreceivers = "Cc: " + ccreceivers;
+			subject     = "Subject: " + subject;
+			
 			String raw_content = sender + "\n" + time + "\n" + receivers + "\n" + ccreceivers + "\n" + subject + "\n" + content;
 			email.put("raw_content", raw_content);
 			
 			// write to plain text file
-			fw.write("From: " + sender);
-			fw.write("Date: " + time);
-			fw.write("To: " + receivers);
-			fw.write("Cc: " + ccreceivers);
-			fw.write("Subject: " + subject);
-			fw.write(email.get("content"));
+			fw.write(sender);
+			fw.write(time);
+			fw.write(receivers);
+			fw.write(ccreceivers);
+			fw.write(subject);
+			fw.write(content);
 			email_index++;
 			fw.close();
 			

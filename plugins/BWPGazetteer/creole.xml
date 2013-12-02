@@ -1,0 +1,49 @@
+<!-- resource.xml LevenshteinGazeteer -->
+<!--  Ceilican, 4/7/2006 -->
+<!-- $Id: resource.xml,v 1.1 2001/05/31 16:06:02 hamish Exp $ -->
+
+<CREOLE-DIRECTORY>
+
+<CREOLE>
+  <RESOURCE>
+    <NAME>BWPGazetteer</NAME>
+    <JAR>dist/BWPGazetteer.jar</JAR>
+    <CLASS>bwp.gate.gazetteer.BWPGazetteer</CLASS>
+    <COMMENT>A BWPGazetteer.</COMMENT>
+      <PARAMETER NAME="document" RUNTIME="true"
+        COMMENT="The document to be processed">gate.Document</PARAMETER>
+      <PARAMETER NAME="annotationSetName" RUNTIME="true"
+        COMMENT="The annotation set to be used for the generated annotations"
+        OPTIONAL="true">java.lang.String</PARAMETER>
+      <PARAMETER NAME="gazetteerFeatureSeparator"
+        COMMENT="The character used to separate features for entries in gazetteer lists. Accepts strings like &quot;\t&quot; and will unescape it to the relevant character. If not specified, this gazetteer does not support extra features."
+        OPTIONAL="true">
+        java.lang.String
+      </PARAMETER>
+      <PARAMETER NAME="listsURL"
+        DEFAULT="lists.def"
+        COMMENT="The URL to the file with list of lists" SUFFIXES="def">
+        java.net.URL</PARAMETER>
+      <PARAMETER DEFAULT="UTF-8"
+        COMMENT="The encoding used for reading the definitions" NAME="encoding">
+        java.lang.String</PARAMETER>
+      <PARAMETER DEFAULT="true"
+        COMMENT="Should this gazetteer diferentiate on case"
+        RUNTIME="true"
+        NAME="caseSensitive">java.lang.Boolean</PARAMETER>
+      <PARAMETER DEFAULT="true"
+        COMMENT="Should this gazetteer only match whole words"
+        RUNTIME="true"
+        NAME="wholeWordsOnly">java.lang.Boolean</PARAMETER>
+      <PARAMETER DEFAULT="0.15"
+        COMMENT="Maximum normalized (0.0 - 1.0) distance for a match"
+        RUNTIME="true"
+		NAME="normalizedDistanceThreshold">java.lang.Double</PARAMETER>
+      <PARAMETER DEFAULT="true"
+        COMMENT="Should this gazetter avoid overlapping annotations"
+        RUNTIME="true"
+		NAME="avoidOverlapingAnnotations">java.lang.Boolean</PARAMETER>
+  </RESOURCE>
+</CREOLE>
+
+</CREOLE-DIRECTORY>

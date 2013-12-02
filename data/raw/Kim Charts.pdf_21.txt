@@ -5,7 +5,7 @@ Cc:
 Subject: Re: KimCharts
 Doesn't explicitly say in the paper whether the effect on BI is statistically significant and the error bars are hard
 to read. What do you think? (see attachment).
--?David
+-David
 [Quoted text hidden]
 BI_KIM.png
 372K

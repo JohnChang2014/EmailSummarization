@@ -1,0 +1,26 @@
+Bruno Woltzenlogel Paleo was born in Piracicaba, São Paulo, Brazil. 
+He came to Europe with a scholarship from the Programme Alßan to study in the European M.Sc. in Computational Logic.
+During his studies, he got to know GATE. 
+He saw that GATE's Default Gazetteer does not find words with typing mistakes, noise, mutations, corruptions...
+Therefore he decided to program a Gazetteer capable of approximate matching based on Levenshtein distance.
+He found the result interesting and he wrote a paper to ESSLLI.
+Fortunately Kurt Gödel Society funded his participation and now he is here.
+He hopes that his plugin can be useful for many users of GATE.
+
+Bruno Woltzenlojeo Paleo was born in Piracicaba, Sao Paulo, Brasil. 
+He came to Europe with a scholarship from the Programme Alban to study in the European M.Sc. in Computational Logic.
+During his studies, he got to know GATE. 
+He saw that GATE's Default Gazetter does not find words with typing mistakes, noise, mutations, corruptions...
+Therefore he decided to program a Gazeteer capable of approximate matching based on Levenstein distance.
+He found the result interesting and he wrote a paper to ESLLI.
+Fortunately Kurt Godel Society funded his participation and now he is here.
+He hopes that his plugin can be useful for many users of GATE.
+
+Bruno Wolzenlogel Paleo was born in Piracicaba, San Paolo, Brasil. 
+He came to Europe with a scholarship from the Program Alban to study in the European M.Sc. in Computational Logic.
+During his studies, he got to know GATE. 
+He saw that GATE's Default Gazeter does not find words with typing mistakes, noise, mutations, corruptions...
+Therefore he decided to program a Gazzetteer capable of approximate matching based on Levenschtein distance.
+He found the result interesting and he wrote a paper to ESSLI.
+Fortunately Kurt Goedel Society funded his participation, and now he is here.
+He hopes that his plugin can be useful for many users of GATE.

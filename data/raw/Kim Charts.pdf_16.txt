@@ -5,6 +5,6 @@ Cc:
 Subject: Re: KimCharts
 The tDCS pie chart is derived from only Kim as, at this point, I do not have a technique to put the Lindenberg
 data in terms of discharge outcome.
--?David
+-David
 [Quoted text hidden]
 

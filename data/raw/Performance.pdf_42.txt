@@ -8,18 +8,18 @@ Yes it is faster!!!
 Still....many problems.
 Goal achieved: make the app faster
 Goal number 1: use knotable without gmail
--? send from mailgun if no gmail account -?-? done!
--? when send from mailgun show topic in knotable
--? when send from mailgun show the right from address (@iyou.mailgun.org)
--? if reply to this show reply on same thread
--? have replies show up fast. Less than 1 minute when I am logged in. Maybe even every 5 seconds when I am logged in
--? send emails if I press buttons like vote or lock or keynote or compose on thread
+- send from mailgun if no gmail account -- done!
+- when send from mailgun show topic in knotable
+- when send from mailgun show the right from address (@iyou.mailgun.org)
+- if reply to this show reply on same thread
+- have replies show up fast. Less than 1 minute when I am logged in. Maybe even every 5 seconds when I am logged in
+- send emails if I press buttons like vote or lock or keynote or compose on thread
 Goal number 2: make it work with gmail
--? need to open the mail bodies from gmail faster
--? need to make sure subjects stay together when people reply
--? need to make sure topics update quickly
--? make sure sessions don't die. Session loss is a problem
-DAVID -? can you update the dev trello to show these priorities?
-Amol Sarva, Ph.D. // @amol // 530-?727-?8277 // a.sarva.co
+- need to open the mail bodies from gmail faster
+- need to make sure subjects stay together when people reply
+- need to make sure topics update quickly
+- make sure sessions don't die. Session loss is a problem
+DAVID - can you update the dev trello to show these priorities?
+Amol Sarva, Ph.D. // @amol // 530-727-8277 // a.sarva.co
 [Quoted text hidden]
 

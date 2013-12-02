@@ -6,7 +6,7 @@ Subject: Re: KimCharts
 text for lindenberg looks good and comes up with a value very close to the kim paper. So we'll use the kim and
 linderberge paper for the estimate.
 things to do by 1pm:
--? make a pie chart of average values from kim and lindenberg and give me hh% and $savings values
--? get the text for kim into the google doc
+- make a pie chart of average values from kim and lindenberg and give me hh% and $savings values
+- get the text for kim into the google doc
 [Quoted text hidden]
 

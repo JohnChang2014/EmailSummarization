@@ -4,19 +4,19 @@ To: amol@haloneuro.co
 Cc: leevonk@gmail.com, rosenthal.dleon@gmail.com, daniel.s.chao@gmail.co
 Subject: Re: Stroke Patient Savings w/Halo
 Yeah.
-I haven't reviewed the doc in detail yet but I'm honestly not surprised that the savings might be only 3-?4K in
+I haven't reviewed the doc in detail yet but I'm honestly not surprised that the savings might be only 3-4K in
 terms of saving rehab time and getting you to the same endpoint quicker.  That's not chump change, of course,
-and there's a business in there given the high incidence of stroke -? but I think somewhere along the line we'll
+and there's a business in there given the high incidence of stroke - but I think somewhere along the line we'll
 have to make a case based on actual increased function.  Patients do a finite amount of rehab and hopefully if it
 is accompanied by DC they emerge with higher function for that given amount of rehab.
-The major Euro payers all have a pay line expressed in terms of $ per quality-?adjusted life year, and while US
+The major Euro payers all have a pay line expressed in terms of $ per quality-adjusted life year, and while US
 reimbursement methods are not quite so explicit the concepts are the same;? a treatment is a win (and folks will
-pay for it) if the additional QALYs are cheap enough (where cheap enough is on the order of $40-?50K per QALY).
+pay for it) if the additional QALYs are cheap enough (where cheap enough is on the order of $40-50K per QALY).
 Seems that the next level of analysis should link effect size to QALY or a similar utility measure since the
 benefits will compound nicely over a few years of decreased disability, yes?
--? B
+- B
 [Quoted text hidden]
--?-? 
+-- 
 Brett Wingeier, Ph.D.
 Principal Biomedical Engineer
 Neurotech / Biosignals / Medical Device Development
