@@ -1,19 +1,38 @@
 package gate;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import file.FReader;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
-import gate.creole.SerialAnalyserController;
+import gate.groovy.ScriptableController;
 import gate.persist.PersistenceException;
 
 public class GateAnalyserController {
-	private SerialAnalyserController controller;
+	private ScriptableController controller;
+	private Corpus corpus;
 	
 	public GateAnalyserController() throws ResourceInstantiationException {
-		controller = (SerialAnalyserController) Factory.createResource("gate.creole.SerialAnalyserController");
+		controller = (ScriptableController) Factory.createResource("gate.groovy.ScriptableController");
+	}
+	
+	public void setCorpus(Corpus corpus) {
+		this.corpus = corpus;
+	}
+	
+	public void setCtrlScript(String script) throws IOException {
+		FReader fr            = new FReader(script);
+		String script_content = new String();
+		String line           = new String();
+		do {
+			line            = fr.readLine();
+			script_content += line + "\n";
+		} while(line != null );
+		
+		controller.setControlScript(script_content);
 	}
 	
 	public void addProcessResource(ArrayList<LanguageAnalyser> pr_set) {
@@ -21,10 +40,8 @@ public class GateAnalyserController {
 	}
 	
 	public void execute(Document doc) throws ExecutionException, ResourceInstantiationException {
-		Corpus corpus = Factory.newCorpus("corpus");
 		corpus.add(doc);
-		controller.setCorpus(corpus);
-		controller.execute();
+		this.execute(corpus);
 	}
 	
 	public void execute(Corpus corpus) throws ExecutionException {
@@ -38,6 +55,6 @@ public class GateAnalyserController {
 	}
 	
 	public void loadGateApplication(File file) throws PersistenceException, ResourceInstantiationException, IOException {
-		controller = (SerialAnalyserController) gate.util.persistence.PersistenceManager.loadObjectFromFile(file);
+		controller = (ScriptableController) gate.util.persistence.PersistenceManager.loadObjectFromFile(file);
 	}
 }

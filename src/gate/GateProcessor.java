@@ -1,5 +1,6 @@
 package gate;
 
+import file.FReader;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
 import gate.gui.MainFrame;
@@ -28,22 +29,27 @@ public class GateProcessor {
 	private static final String plugins_home = "./plugins";
 	private static final String gapp_folder = "./gapp";
 	private static Transaction dbGate = new Transaction();
+	private static GatePluginManager gplugin = new GatePluginManager(plugins_home);
 	
 	private GateAnalyserController controller;
 	private GateDocHandler docHandler;
-	
-	
+	private String current_path;
     
-	public GateProcessor(boolean view) throws InterruptedException, InvocationTargetException, GateException {
+	public GateProcessor(boolean view) throws InterruptedException, InvocationTargetException, GateException, MalformedURLException {
     	init(view);
     }
 	
-	public GateProcessor() throws GateException, InterruptedException, InvocationTargetException {
+	public GateProcessor() throws GateException, InterruptedException, InvocationTargetException, MalformedURLException {
 		init(false);
 	}
 
-	private void init(final boolean view) throws InterruptedException, InvocationTargetException, GateException {
+	private void init(final boolean view) throws InterruptedException, InvocationTargetException, GateException, MalformedURLException {
+		this.current_path = System.getProperty("user.dir");
+		
 		Gate.init();
+		
+		// load plugins: ANNIE, BWPGazetteer, KeyphraseAnalyser and TermRaider
+		loadAllPlugins();
 		
 		// show the main window
 		SwingUtilities.invokeAndWait(new Runnable() {
@@ -54,6 +60,20 @@ public class GateProcessor {
 		
 		controller = new GateAnalyserController();
 		docHandler = new GateDocHandler();
+	}
+	
+	private void loadAllPlugins() throws MalformedURLException, GateException {
+		gplugin.loadGatePlugins("ANNIE");
+		gplugin.loadGatePlugins("BWPGazetteer");
+		gplugin.loadGatePlugins("KeyphraseAnalyser");
+		gplugin.loadGatePlugins("Groovy");
+		gplugin.loadGatePlugins("TermRaider");
+	}
+	
+	public String getCurrentPath() { return this.current_path; }
+	
+	public void setControlScript(String script) throws ResourceInstantiationException, IOException {
+		controller.setCtrlScript(script);
 	}
 	
 	public void getAnnotationSet(Document doc) throws MalformedURLException {
@@ -76,20 +96,10 @@ public class GateProcessor {
 		System.out.println(doc.getAnnotations("Original markups").toString());
 	}
 
-	public void loadGatePlugins(String plugin_name) throws MalformedURLException, GateException {
-		// get the root plugins dir
-		// File pluginsDir = Gate.getPluginsHome();
-		String plugins_folder = plugins_home;
-		File pluginsDir = new File(plugins_folder);
-
-		// Let’s load the Tools plugin
-		File aPluginDir = new File(pluginsDir, plugin_name);
-
-		// load the plugin.
-		Gate.getCreoleRegister()
-				.registerDirectories(aPluginDir.toURI().toURL());
+	public void setCorpus(Corpus corpus) {
+		controller.setCorpus(corpus);
 	}
-
+	
 	public void execute(ArrayList<LanguageAnalyser> pr_set, Document doc) throws ExecutionException, ResourceInstantiationException {
 		controller.addProcessResource(pr_set);
 		controller.execute(doc);
@@ -114,9 +124,10 @@ public class GateProcessor {
 	}
 	
 	public static void main(String[] args) throws Exception {
-
+		
 		GateProcessor gp = new GateProcessor(true);
-
+		String current_path = gp.getCurrentPath();
+		
 		// create GATE document
 		String docName = "This is home";
 		//String content = "http://money.cnn.com/2013/11/27/pf/black-friday-tricks/index.html?iid=lead2";
@@ -135,11 +146,12 @@ public class GateProcessor {
 		} 
 		Document doc = gp.createDocument(docName, content);
 		
-		// load plugins: ANNIE, BWPGazetteer, KeyphraseAnalyser and TermRaider
-		gp.loadGatePlugins("ANNIE");
-		gp.loadGatePlugins("BWPGazetteer");
-		gp.loadGatePlugins("KeyphraseAnalyser");
-		//gp.loadGatePlugins("TermRaider");
+		Corpus corpus = Factory.newCorpus("corpus");
+		gp.setCorpus(corpus);
+		
+		// set control script for scriptable controller
+		String contrlScript = current_path + "/resources/groovy/ControlScript.groovy"; 
+		gp.setControlScript(contrlScript);
 		
 		// create language analysers tokenizer
 		ArrayList<LanguageAnalyser> pr_set = new ArrayList<LanguageAnalyser>();
@@ -168,7 +180,54 @@ public class GateProcessor {
 				.createResource("gate.creole.ANNIETransducer");
 		LanguageAnalyser vpChunker = (LanguageAnalyser) Factory
 				.createResource("gate.creole.VPChunker");
-		//LanguageAnalyser tfidfCopier = (LanguageAnalyser) Factory.createResource("gate.creole.VPChunker");
+		LanguageAnalyser orthoMatcher = (LanguageAnalyser) Factory
+				.createResource("gate.creole.orthomatcher.OrthoMatcher");
+		ArrayList<String> anns = new ArrayList<String>();
+		anns.add("Organization");
+		anns.add("Person");
+		anns.add("Location");
+		anns.add("Date");
+		orthoMatcher.setParameterValue("annotationTypes", anns);
+		
+		LanguageAnalyser selectTokens = (LanguageAnalyser) Factory.createResource("gate.creole.ANNIETransducer");
+		URL transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/select-tokens-en.jape");
+		selectTokens.setParameterValue("grammarURL", transduceGrammarURL);
+		
+		LanguageAnalyser multiwordJape = (LanguageAnalyser) Factory.createResource("gate.creole.ANNIETransducer");
+		transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/multiword-main-en.jape");
+		multiwordJape.setParameterValue("grammarURL", transduceGrammarURL);
+		
+		FeatureMap feats = Factory.newFeatureMap();
+		URL transduceScriptURL = new URL("file://" + current_path + "/resources/groovy/DeduplicateMultiWord.groovy");
+		feats.put("scriptURL", transduceScriptURL);
+		LanguageAnalyser deduplicateMW = (LanguageAnalyser) Factory.createResource("gate.groovy.ScriptPR", feats);
+		
+		FeatureMap feats1 = Factory.newFeatureMap();
+		transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/augmentation.jape");
+		feats1.put("grammarURL", transduceGrammarURL);
+		LanguageAnalyser augmentation = (LanguageAnalyser) Factory.createResource("gate.creole.Transducer", feats1);
+		
+		LanguageAnalyser tfidfCopier = (LanguageAnalyser) Factory.createResource("gate.termraider.apply.TermScoreCopier");
+		
+		// set signature of each PR for scriptable controller to refer 
+		docReset.setName("docReset");
+		languageIdentifier.setName("languageIdentifier");
+		tokenizer.setName("tokenizer");
+		gazetteer.setName("gazetteer");
+		bwpGazetteer.setName("bwpGazetteer");
+		senSpliter.setName("senSpliter");
+		posTagger.setName("posTagger");
+		morphAnalyzer.setName("morphAnalyzer");
+		stopWordMarker.setName("stopWordMarker");
+		simpleNounChunker.setName("simpleNounChunker");
+		neExtracter.setName("neExtracter");
+		vpChunker.setName("vpChunker");
+		orthoMatcher.setName("orthoMatcher");
+		selectTokens.setName("selectTokens");
+		multiwordJape.setName("multiwordJape");
+		deduplicateMW.setName("deduplicateMW");
+		augmentation.setName("augmentation");
+		tfidfCopier.setName("tfidfCopier");
 		
 		pr_set.add(docReset);
 		pr_set.add(languageIdentifier);
@@ -182,7 +241,12 @@ public class GateProcessor {
 		pr_set.add(simpleNounChunker);
 		pr_set.add(neExtracter);
 		pr_set.add(vpChunker);
-		//pr_set.add(tsc);
+		pr_set.add(orthoMatcher);
+		pr_set.add(selectTokens);
+		pr_set.add(multiwordJape);
+		pr_set.add(deduplicateMW);
+		pr_set.add(augmentation);
+		pr_set.add(tfidfCopier);
 		
 		// execute GATE application
 		gp.execute(pr_set, doc);

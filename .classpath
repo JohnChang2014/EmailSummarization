@@ -6,5 +6,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/GATE"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/General"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PDF"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Groovy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TermRaider"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

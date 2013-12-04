@@ -1,4 +1,12 @@
+import gate.Factory;
+import gate.FeatureMap;
+import gate.Gate;
+import gate.groovy.ScriptableController;
+import gate.util.GateException;
+
+import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -25,7 +33,7 @@ public class Summary {
 		ConfigurationManager.configureAndWatch(listeners, configPath, 200L);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException, GateException {
 		// read and check if there is new email coming to inbox
 
 		// parse email data and store into database
@@ -40,9 +48,20 @@ public class Summary {
 		// compute tfidf for this incoming email
 
 		/*
-		 * summarize the email group 
-		 * read each email sorted by date in the group
+		 * summarize the email group read each email sorted by date in the group
 		 * apply inferece rules here in GATE
 		 */
+
+		// File pluginsDir = Gate.getPluginsHome();
+		String plugins_home = "./plugins";
+		File pluginsDir = new File(plugins_home);
+
+		// Let’s load the Tools plugin
+		File aPluginDir = new File(pluginsDir, "Groovy");
+
+		// load the plugin.
+		Gate.getCreoleRegister()
+				.registerDirectories(aPluginDir.toURI().toURL());
+		
 	}
 }
