@@ -10,6 +10,9 @@ import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
 import gate.groovy.ScriptableController;
 import gate.persist.PersistenceException;
+import gate.termraider.apply.TermScoreCopier;
+import gate.termraider.bank.HyponymyTermbank;
+import gate.termraider.bank.TfIdfTermbank;
 
 public class GateAnalyserController {
 	private ScriptableController controller;
@@ -17,6 +20,11 @@ public class GateAnalyserController {
 	
 	public GateAnalyserController() throws ResourceInstantiationException {
 		controller = (ScriptableController) Factory.createResource("gate.groovy.ScriptableController");
+		corpus     = Factory.newCorpus("test");
+	}
+	
+	public void setCorpus(ArrayList<Document> docs) {
+		corpus.addAll(docs);
 	}
 	
 	public void setCorpus(Corpus corpus) {
@@ -39,19 +47,33 @@ public class GateAnalyserController {
 		for (LanguageAnalyser pr : pr_set) controller.add(pr);
 	}
 	
-	public void execute(Document doc) throws ExecutionException, ResourceInstantiationException {
-		corpus.add(doc);
+	public void execute() throws ExecutionException {
+		controller.execute();
+	}
+	
+	public void execute(ArrayList<Document> docs) throws ExecutionException, ResourceInstantiationException {
+		this.setCorpus(docs);
 		this.execute(corpus);
 	}
 	
-	public void execute(Corpus corpus) throws ExecutionException {
+	public Corpus execute(Corpus corpus) throws ExecutionException, ResourceInstantiationException {
 		controller.setCorpus(corpus);
 		controller.execute();
+		return controller.getCorpus();
+	}
+	
+	public Corpus getCorpus() {
+		return controller.getCorpus();
 	}
 	
 	public void saveGateApplication(String file_name) throws PersistenceException, IOException {
 		File file = new File(file_name);
 		gate.util.persistence.PersistenceManager.saveObjectToFile(controller, file); 
+	}
+	
+	public void saveGateCorpus(String file_name) throws PersistenceException, IOException {
+		File file = new File(file_name);
+		gate.util.persistence.PersistenceManager.saveObjectToFile(controller.getCorpus(), file); 
 	}
 	
 	public void loadGateApplication(File file) throws PersistenceException, ResourceInstantiationException, IOException {

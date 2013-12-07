@@ -1,0 +1,1045 @@
+<gate.util.persistence.GateApplication>
+  <urlList class="gate.util.persistence.CollectionPersistence">
+    <localList>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Ontology_Tools/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Ontology_BDM_Computation/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Tools/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Ontology/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Keyphrase_Extraction_Algorithm/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/TermRaider/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/Tagger_NP_Chunking/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/MuNPEx/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/KeyphraseAnalyser/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/StringAnnotation/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../../../../../../Applications/GATE_Developer_7.1/plugins/BWPGazetteer/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../plugins/ANNIE/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../plugins/BWPGazetteer/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../plugins/KeyphraseAnalyser/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../plugins/Groovy/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$relpath$../plugins/TermRaider/</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+    </localList>
+    <collectionType>java.util.ArrayList</collectionType>
+  </urlList>
+  <application class="gate.util.persistence.CorpusPersistence">
+    <docList>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>33 5th floor_1</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-09 14:42:00
+To: shelby@getnomi.com, shelby@getnomi.com, david@knotable.co
+Cc: 
+Subject: 33 5th floor
+David
+We are going to make a push to make habitable for 10 people by Monday
+Shelby will tour with a lady&apos;s eye on Thursd with you. Please coordinate.
+Lets get our taskrabbits fired up (or your friends). Just buy two power drills and some beers for Friday. We can
+pay them...
+Desks whiteboard shelves
+We have to get those chairs ordered asap.
+Amol Sarva Ph.D. // @amol // a.sarva.co // 530-727-8277
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_2</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-09 15:20:00
+To: a@sarva.c
+Cc: shelby@getnomi.com, shelby@getnomi.co
+Subject: Re: 33 5th floor
+Thanks Amol--I can hire two people for $154 with their own tools.
+Buy 10 chairs or 21?
+-David
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_3</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-09 15:21:00
+To: a@sarva.c
+Cc: shelby@getnomi.com, shelby@getnomi.co
+Subject: Re: 33 5th floor
+Shelby--can you meet Thursday afternoon, perhaps 1pm?
+-David
+On Tue, Jul 9, 2013 at 2:42 PM, Amol Sarva &lt;a@sarva.co&gt; wrote:
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_4</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-09 15:26:00
+To: rosenthal.dleon@gmail.co
+Cc: a@sarva.c
+Subject: Re: 33 5th floor
+Hi David,
+1pm is great.  See you there.  If you want some furniture recommendations, I have a few.  I also know a
+company that does furniture rentals if you&apos;re interested.
+Let me know,
+Shelby
+[Quoted text hidden]
+-- 
+Shelby Schulz
+getnomi.com
+409-692-0005
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_5</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-09 16:19:00
+To: rosenthal.dleon@gmail.co
+Cc: 
+Subject: Re: 33 5th floor
+Hire away
+Just ordered 8 chairs
+[Quoted text hidden]
+-- 
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_6</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-09 19:30:00
+To: shelby@getnomi.co
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+Shelby
+Discussed the details with norman today and planned all the furniture etc. thinking Tuesday highly likely and
+monday possible. Depends on if they finish varnishing.   
+Amol Sarva Ph.D. // @amol // a.sarva.co // 530-727-8277
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_7</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-11 12:25:00
+To: a@sarva.c
+Cc: shelby@getnomi.co
+Subject: Re: 33 5th floor
+Shelby--see you in 35.
+-David
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_8</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-11 12:30:00
+To: a@sarva.c
+Cc: shelby@getnomi.co
+Subject: Re: 33 5th floor
+Come to the 4th floor, Proclivity office.
+Best,
+David
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_9</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-11 12:30:00
+To: rosenthal.dleon@gmail.co
+Cc: a@sarva.c
+Subject: Re: 33 5th floor
+Sounds good David.  See you soon.
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_10</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-11 12:58:00
+To: rosenthal.dleon@gmail.co
+Cc: a@sarva.c
+Subject: Re: 33 5th floor
+Hi David, running a few behind. Have to do a last minute flight booking
+Sent from my iPhone, please excuse any typos.
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_11</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-11 13:01:00
+To: shelby@getnomi.co
+Cc: 
+Subject: Re: 33 5th floor
+No problem
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_12</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-14 20:55:00
+To: shelby@getnomi.co
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+Shelby
+We are buying some furniture etc and we will share it with you but you are renting space, not a furnished office
+like at MicroOffice. Make sure you guys are prepared to get your own stuff if you don&apos;t like what we provide. 
+Our general plan of attack is have a bunch of &quot;ok&quot; tables and chairs. Then we will spend August getting it up to
+super stylish beautifulness. 
+Amol Sarva, Ph.D. // @amol // 530-727-8277 // a.sarva.co
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_13</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-14 21:23:00
+To: a@sarva.c
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+Thanks Amol.  I&apos;m going to come by tomorrow for another look at the space to determine if we can send our
+engineering team over.  Let me know how else I can help.
+Cheers,
+Shelby
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_14</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-14 21:30:00
+To: shelby@getnomi.co
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+They are sealing the floor (they stained it Saturday) so during the day is no good. 5pm...
+[Quoted text hidden]
+-- 
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_15</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-14 21:34:00
+To: a@sarva.c
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+Ah.  No problem.   What I really want to see is the space once the desks are in so that I can see the spatial
+relations.  Maybe it&apos;s better if I come on Tuesday instead?
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_16</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Amol Sarva &lt;a@sarva.co&gt;
+Date: 2013-07-14 21:45:00
+To: shelby@getnomi.co
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+The desks are built so after hours Monday could work but Tuesday is better. Just have a few guys show up and
+if they want to retreat to Micro Office they can
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_17</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: Shelby Schulz &lt;shelby@getnomi.com&gt;
+Date: 2013-07-14 21:46:00
+To: a@sarva.c
+Cc: rosenthal.dleon@gmail.co
+Subject: Re: 33 5th floor
+Perfect.  Tuesday it is.  
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+      <gate.util.persistence.LRPersistence>
+        <resourceType>gate.corpora.DocumentImpl</resourceType>
+        <resourceName>Re: 33 5th floor_18</resourceName>
+        <initParams class="gate.util.persistence.MapPersistence">
+          <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+          <localMap>
+            <entry>
+              <string>markupAware</string>
+              <boolean>true</boolean>
+            </entry>
+            <entry>
+              <string>stringContent</string>
+              <string>From: David Leon Rosenthal &lt;rosenthal.dleon@gmail.com&gt;
+Date: 2013-07-14 22:49:00
+To: shelby@getnomi.co
+Cc: a@sarva.c
+Subject: Re: 33 5th floor
+Sorry for the mixup. See you tuesday.
+-David
+[Quoted text hidden]
+</string>
+            </entry>
+            <entry>
+              <string>encoding</string>
+              <string>UTF-8</string>
+            </entry>
+            <entry>
+              <string>sourceUrlStartOffset</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>preserveOriginalContent</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>collectRepositioningInfo</string>
+              <boolean>false</boolean>
+            </entry>
+            <entry>
+              <string>sourceUrl</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>mimeType</string>
+              <null/>
+            </entry>
+            <entry>
+              <string>sourceUrlEndOffset</string>
+              <null/>
+            </entry>
+          </localMap>
+        </initParams>
+      </gate.util.persistence.LRPersistence>
+    </docList>
+    <resourceType>gate.corpora.CorpusImpl</resourceType>
+    <resourceName>test</resourceName>
+    <initParams class="gate.util.persistence.MapPersistence">
+      <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+      <localMap>
+        <entry>
+          <string>documentsList</string>
+          <null/>
+        </entry>
+      </localMap>
+    </initParams>
+  </application>
+</gate.util.persistence.GateApplication>

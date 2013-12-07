@@ -34,8 +34,6 @@ public class MySQL extends Database implements QueryAction {
 		return string != null && !string.isEmpty() && !string.trim().isEmpty();
 	}
 	
-	
-
 	private static java.sql.Timestamp getCurrentTimeStamp() {
 		java.util.Date today = new java.util.Date();
 		return new java.sql.Timestamp(today.getTime());
@@ -94,15 +92,17 @@ public class MySQL extends Database implements QueryAction {
 	}
 
 	@Override
-	public Object insert(String table, HashMap<String, String> params) throws SQLException, ParseException {
-		// implement a way to batch update multiple records into database
+	// implement a way to batch update multiple records into database
+	public Object insert(String table, ArrayList<HashMap<String, String>> paramset) throws SQLException, ParseException {
 		// commit trasaction manually
 		dbCon.setAutoCommit(false);
+		
 		HashMap<String, String> attrs = getColumnSet(table);
 		String strSQL = generateSQLInsertStatement(table, attrs);
 		prestmt = dbCon.prepareStatement(strSQL);
+		
 		// set values into preparedStatement
-		assignParameters(prestmt, attrs, params);
+		for (HashMap<String, String> params : paramset) assignParameters(prestmt, attrs, params);
 
 		prestmt.executeBatch();
 		dbCon.commit();
