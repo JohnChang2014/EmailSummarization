@@ -143,7 +143,7 @@ public class Summary {
 		ArrayList<String[]> wordset = getTermbankFromCorpus(String.valueOf(e_id), corpus);
 		
 		db.insert(wordset, "words");
-		ie.cleanup();
+		//ie.cleanup();
 		return wordset;
 	}
 	
@@ -211,12 +211,12 @@ public class Summary {
 		// fetch email data from database
 		db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
 		
-		int bound = 5;
+		int bound = 40;
 		String subject = new String();
 		
 		HashMap<String, String> params = new HashMap<String, String>();
 		for (int e_id = 1; e_id <= bound; e_id++) {
-			if (e_id == 1) continue;
+			if (e_id != 30) continue;
 			ArrayList<Document> docs = new ArrayList<Document>();
 			params.put("cols", "content, e_id, subject");
 			params.put("cond", "e_id = " + e_id);
@@ -251,7 +251,7 @@ public class Summary {
 			}
 			params.clear();
 		}
-		
+		System.exit(0);
 		/*
 		 * summarize the email group read each email sorted by date in the group
 		 * apply inferece rules here in GATE

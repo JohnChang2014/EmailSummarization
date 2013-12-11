@@ -124,7 +124,7 @@ public class IEProcessor {
 		controller.setCorpus(corpus);
 	}
 	
-	public void setCorpus(ArrayList<Document> docs) {
+	public void setCorpus(ArrayList<Document> docs) throws ResourceInstantiationException {
 		controller.setCorpus(docs);
 	}
 	

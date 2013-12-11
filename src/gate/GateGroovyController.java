@@ -68,8 +68,8 @@ public class GateGroovyController {
 	}
 	
 	public void cleanup() {
-		//controller.cleanup();
-		//controller.flushBeanInfoCache();
+		controller.cleanup();
+		controller.flushBeanInfoCache();
 	}
 	
 	/*

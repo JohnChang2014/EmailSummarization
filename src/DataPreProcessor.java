@@ -68,7 +68,7 @@ public class DataPreProcessor {
 		// read each PDF file one by one
 		for (String file : dataset) {
 			n++;
-			if (n != 1) continue;
+			//if (n != 1) continue;
 
 			// parse raw data from PDF dataset
 			filename = dataset_path + file;
