@@ -7,10 +7,37 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Transaction extends MySQL {
+	
+	// remove all words of a group
+	public void removeWordsFromGroup(int g_id) throws SQLException {
+		this.delete("group_words", "g_id = " + g_id);
+	}
+	
+	// get id number for a new group 
+	public int getNewIDGroup() throws SQLException {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cols", "count(*)");
+		params.put("group", "g_id");
+		params.put("order", "g_id");
+		ResultSet rs = this.query("email_groups", params);
+		rs.first();
+		return Integer.valueOf(rs.getInt(1)) + 1;
+	}
+	
+	// get number of words in a specific email group
+	public int getWordCountForGroup(int g_id) throws SQLException {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cols", "count(*)");
+		params.put("cond", "g_id = " + g_id);
+		ResultSet rs = this.query("group_words", params);
+		return Integer.valueOf(rs.getInt(0));
+	}
+	
 	// get all words in a specific email group
 	public ResultSet getEmailGroupWords(int g_id) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cond", "g_id = " + g_id);
+		params.put("order", "tfidf DESC");
 		return this.query("group_words", params);
 	}
 
@@ -26,7 +53,7 @@ public class Transaction extends MySQL {
 	public ResultSet getEmailsFromGroup(int g_id) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "b.* ");
-		params.put("cond", "a.g_id=b.g_id And a.gid = " + g_id);
+		params.put("cond", "a.g_id=b.g_id And a.g_id = " + g_id);
 		return this.query("email_groups as a, emails as b", params);
 	}
 
@@ -36,7 +63,7 @@ public class Transaction extends MySQL {
 		if (table == "words") paramset.add(this.getParamsForWords(args));
 		if (table == "group_words")
 			paramset.add(this.getParamsForGroupWords(args));
-		if (table == "email") paramset.add(this.getParamsForEmail(args));
+		if (table == "emails") paramset.add(this.getParamsForEmail(args));
 		if (table == "email_groups")
 			paramset.add(this.getParamsForGroup(args));
 		if (table == "summaries")
@@ -49,13 +76,14 @@ public class Transaction extends MySQL {
 		ArrayList<HashMap<String, String>> paramset = new ArrayList<HashMap<String, String>>();
 		for (String[] args : argset) {
 			HashMap<String, String> params = new HashMap<String, String>();
-			if (table == "words") this.getParamsForWords(args);
-			if (table == "group_words") this.getParamsForGroupWords(args);
-			if (table == "email") this.getParamsForEmail(args);
-			if (table == "email_groups") this.getParamsForGroup(args);
-			if (table == "summaries") this.getParamsForSummaries(args);
+			if (table == "words") params = this.getParamsForWords(args);
+			if (table == "group_words") params = this.getParamsForGroupWords(args);
+			if (table == "email") params = this.getParamsForEmail(args);
+			if (table == "email_groups") params = this.getParamsForGroup(args);
+			if (table == "summaries") params = this.getParamsForSummaries(args);
 			paramset.add(params);
 		}
+		
 		this.insert(table, paramset);
 	}
 
@@ -84,6 +112,7 @@ public class Transaction extends MySQL {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("g_id", args[0]);
 		params.put("e_id", args[1]);
+		params.put("head", args[2]);
 		return params;
 	}
 
@@ -93,6 +122,9 @@ public class Transaction extends MySQL {
 		params.put("word", args[1]);
 		params.put("type", args[2]);
 		params.put("tf", args[3]);
+		params.put("df", args[4]);
+		params.put("idf", args[5]);
+		params.put("tfidf", args[6]);
 		return params;
 	}
 

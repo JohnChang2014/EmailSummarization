@@ -1,8 +1,0 @@
-From: Amol Sarva <a@sarva.co>
-Date: 2013-07-09 07:22:00
-To: forallandiyou@gmail.co
-Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, david@knotable.co
-Subject: Re: Performance!!!
-Hmm -- still an error in that main browser re: terminated web socket.
-[Quoted text hidden]
-

@@ -1,9 +1,0 @@
-From: Long Liangyou <forallandiyou@gmail.com>
-Date: 2013-07-10 21:46:00
-To: a@sarva.c
-Cc: ifunafu@gmail.com, lingmin.zhou@smart4c.com, david@knotable.com, yan.make@gmail.co
-Subject: Re: Performance!!!
-We sort topics by message uid which is the same order as date.
-The code of topic list seems to be refactor, but sorting function seems not work. We need to fix it.
-[Quoted text hidden]
-

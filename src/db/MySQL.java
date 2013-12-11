@@ -103,7 +103,6 @@ public class MySQL extends Database implements QueryAction {
 		
 		// set values into preparedStatement
 		for (HashMap<String, String> params : paramset) assignParameters(prestmt, attrs, params);
-
 		prestmt.executeBatch();
 		dbCon.commit();
 
@@ -111,9 +110,12 @@ public class MySQL extends Database implements QueryAction {
 	}
 
 	@Override
-	public Object delete(ArrayList<Object> params) {
-		// TODO Auto-generated method stub
-		return null;
+	public int delete(String table, String cond) throws SQLException {
+		String strSQL = "Delete From " + table + " Where " + cond;
+		stmt          = dbCon.createStatement();
+		System.out.println(strSQL);
+		int rows      = stmt.executeUpdate(strSQL);
+		return rows;
 	}
 
 	@Override
@@ -129,9 +131,11 @@ public class MySQL extends Database implements QueryAction {
 		else strSQL += "* ";
 		strSQL += "From " + table + " ";
 		if (params.containsKey("cond")) strSQL += "Where " + params.get("cond") + " ";
-		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
 		if (params.containsKey("group")) strSQL += "Group by " + params.get("group") + " ";
+		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
+		if (params.containsKey("limit")) strSQL += "Limit " + params.get("limit") + " ";
 		stmt = dbCon.createStatement();
+		System.out.println(strSQL);
 		rs   = stmt.executeQuery(strSQL);
 		
 		return rs;
@@ -191,6 +195,10 @@ public class MySQL extends Database implements QueryAction {
 					if (isNotNullNotEmptyNotWhiteSpace(value)) prestmt.setFloat(index, Float.valueOf(value));
 					else prestmt.setFloat(index, 0);
 					break;
+				case 3: // DOUBLE
+					if (isNotNullNotEmptyNotWhiteSpace(value)) prestmt.setDouble(index, Double.valueOf(value));
+					else prestmt.setDouble(index, 0);
+					break;
 				case 4: // VARCHAR
 				case 5: // TEXT
 					prestmt.setString(index, value);
@@ -204,7 +212,7 @@ public class MySQL extends Database implements QueryAction {
 				}
 			}
 			prestmt.addBatch();
-			System.out.println(prestmt);
+			//System.out.println(prestmt);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -1,9 +1,0 @@
-From: Amol Sarva <a@sarva.co>
-Date: 2013-07-09 07:06:00
-To: forallandiyou@gmail.co
-Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, david@knotable.co
-Subject: Re: Performance!!!
-Hmm. Actually in all browsers I just see the blank screen. 
-When I first loaded in firefox I saw login box but it disappeared
-[Quoted text hidden]
-

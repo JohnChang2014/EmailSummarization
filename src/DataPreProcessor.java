@@ -11,12 +11,6 @@ import file.FReader;
 import file.FWriter;
 
 public class DataPreProcessor {
-	private static final String ip = "localhost";
-	private static final String port = "3306";
-	private static final String db = "nlp";
-	private static final String username = "root";
-	private static final String password = "";
-
 	private static final String storage_path = "./data/raw/";
 	private static final String dataset_path = "/Volumes/Data/03-ShareData/Dropbox/00-Courses Data/Fall 2013/Natural Language Processing/Final Project/Dataset/Original Mails/";
 	// dataset ignores Permathreads 2.mbox and permathreads.mbox temperarily
@@ -31,6 +25,12 @@ public class DataPreProcessor {
 		"ThankYouForOrder.pdf", "wedding band.pdf", "Will be in around 12-30.pdf", 
 		"Work Stations.pdf" };
 	private static final DateTime dt = new DateTime();
+	private static Transaction mydb;
+	
+	public DataPreProcessor() {
+		this.mydb = new Transaction();
+		this.mydb.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
+	}
 	
 	private String getSQLDateTimeformat(String value) throws ParseException {
 		long ds = dt.getDateObjectFromString(value, "EEEE, MMMM dd, yyyy hh:mm a").getTime();
@@ -68,7 +68,7 @@ public class DataPreProcessor {
 		// read each PDF file one by one
 		for (String file : dataset) {
 			n++;
-			//if (n != 3) continue;
+			if (n != 1) continue;
 
 			// parse raw data from PDF dataset
 			filename = dataset_path + file;
@@ -83,6 +83,7 @@ public class DataPreProcessor {
 			writeDataIntoStorage(file, emailset);
 			emailset.clear();
 		}
+		mydb.close();
 	}
 
 	// parseDataFromPDF takes responsibilities for separating contents from PDF
@@ -225,12 +226,10 @@ public class DataPreProcessor {
 	}
 
 	private void insertData(HashMap<String, String> email) throws SQLException, ParseException {
-		Transaction mydb = new Transaction();
-		if (mydb.connect(ip, port, db, username, password)) {
-			String[] data = { email.get("sender"), email.get("receivers"), email.get("ccreceivers"), email.get("subject"), email.get("content"), email.get("raw_content"), email.get("sendingtime"), null, null };
-			mydb.insert(data, "email");
-		}
-		mydb.close();
+		String[] data = { email.get("sender"), email.get("receivers"), email
+				.get("ccreceivers"), email.get("subject"), email.get("content"), email
+				.get("raw_content"), email.get("sendingtime"), null, null };
+		mydb.insert(data, "emails");
 	}
 
 	public static void main(String[] args) throws IOException, SQLException, ParseException {

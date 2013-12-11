@@ -1,9 +1,0 @@
-From: Amol Sarva <a@sarva.co>
-Date: 2013-07-11 09:10:00
-To: forallandiyou@gmail.co
-Cc: lingmin.zhou@smart4c.com, ifunafu@gmail.com, david@knotable.com, yan.make@gmail.co
-Subject: Re: Performance!!!
-OK now testing an account with ONLY mailgun. I see in the logs that it finds 43 messages in mailgun but then shows none in knotable window
-any ideas?
-[Quoted text hidden]
-
