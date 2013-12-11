@@ -30,7 +30,7 @@ public class Transaction extends MySQL {
 		params.put("cols", "count(*)");
 		params.put("cond", "g_id = " + g_id);
 		ResultSet rs = this.query("group_words", params);
-		if (rs.next()) return Integer.valueOf(rs.getInt(0));
+		if (rs.next()) return Integer.valueOf(rs.getInt(1));
 		return 0;
 	}
 	
