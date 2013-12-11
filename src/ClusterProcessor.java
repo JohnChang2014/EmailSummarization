@@ -82,7 +82,8 @@ public class ClusterProcessor {
 		
 		params.put("cols", "sum(a.tfidf * b.tfidf)");
 		ResultSet rs = dbQuery.query(table, params);
-		return Double.valueOf(rs.getDouble(0));
+		if (rs.next()) return Double.valueOf(rs.getDouble(1));
+		return 1.0;
 	}
 	
 	public void close() {
