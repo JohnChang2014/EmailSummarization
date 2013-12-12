@@ -8,6 +8,8 @@ import java.util.HashMap;
 
 public class Transaction extends MySQL {
 	
+	
+	
 	// remove all words of a group
 	public void removeWordsFromGroup(int g_id) throws SQLException {
 		this.delete("group_words", "g_id = " + g_id);
@@ -15,13 +17,17 @@ public class Transaction extends MySQL {
 	
 	// get id number for a new group 
 	public int getNewIDGroup() throws SQLException {
+		return getGroupCounts() + 1;
+	}
+	
+	public int getGroupCounts() throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "count(*)");
 		params.put("group", "g_id");
 		params.put("order", "g_id");
 		ResultSet rs = this.query("email_groups", params);
-		rs.first();
-		return Integer.valueOf(rs.getInt(1)) + 1;
+		if (rs.next()) return Integer.valueOf(rs.getInt(1));
+		else return 0;
 	}
 	
 	// get number of words in a specific email group

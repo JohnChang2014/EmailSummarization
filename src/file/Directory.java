@@ -12,11 +12,12 @@ public class Directory {
 	public boolean isEmpty(String dirname) {
 		File d = new File(dirname);
 		if (d.exists()) {
+			if (d.list().length == 0) return true;
+			else return false;
 		} else {
 			System.out.println("No such directory or files");
 			return false;
 		}
-		return false;
 	}
 
 	public void createDir(String dirname) {

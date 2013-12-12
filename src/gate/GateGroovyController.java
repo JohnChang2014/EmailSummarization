@@ -52,9 +52,9 @@ public class GateGroovyController {
 		controller.execute();
 	}
 	
-	public void execute(ArrayList<Document> docs) throws ExecutionException, ResourceInstantiationException {
+	public Corpus execute(ArrayList<Document> docs) throws ExecutionException, ResourceInstantiationException {
 		this.setCorpus(docs);
-		this.execute(corpus);
+		return this.execute(corpus);
 	}
 	
 	public Corpus execute(Corpus corpus) throws ExecutionException, ResourceInstantiationException {

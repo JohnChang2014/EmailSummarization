@@ -15,38 +15,29 @@ import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
 
 public class GateDataStore {
-
-	// the directory must EXIST and be EMPTY
-	// private static final String dsDir = "/var/tmp/gate001";
-	private static final String DS_DIR = "./data/clusters";
-	
-	private String current_path;
 	private String ds_dir;
 	private SerialDataStore ds;
 	
-	public GateDataStore() {
-		this.current_path = System.getProperty("user.dir");
-	}
+	public GateDataStore() {}
 	
     public GateDataStore(String dir) throws PersistenceException, UnsupportedOperationException, URISyntaxException {
-    	this.current_path = System.getProperty("user.dir");
     	this.ds_dir = dir;
     	createDataStore(this.ds_dir);
     }
     
-    private String getFilePath(String dir) {
-    	return "file://"+ System.getProperty("user.dir") + dir;
+    private String getFullFilePath(String dir) {
+    	return "file://" + dir;
     }
     
     public boolean openDataStore(String dir) {
     	try {
-    		dir = getFilePath(dir);
+    		dir = getFullFilePath(dir);
     		ds = new SerialDataStore(dir);
     		ds.open();
     		return true;
     	} catch (PersistenceException e) {
     		e.printStackTrace();
-    		System.out.println("fail to open datastore!");
+    		System.out.println("failed to open datastore!");
     		return false;
     	}
     }
@@ -55,18 +46,22 @@ public class GateDataStore {
 		try {
 			// create&open a new Serial Data Store
 			// pass the datastore class and path as parameteres
-			dir = getFilePath(dir);
-			ds = (SerialDataStore) Factory.createDataStore("gate.persist.SerialDataStore", dir);
+			dir = getFullFilePath(dir);
+			ds  = (SerialDataStore) Factory.createDataStore("gate.persist.SerialDataStore", dir);
 			ds.open();
 			return true;
 			
 		} catch (PersistenceException e) {
-			System.out.println("fail to create datastore");
+			System.out.println("failed to create datastore");
 			return false;
 		}
 	}
 	
-	public List getCorpusIDList() throws PersistenceException {
+	public int getClusterSize() throws PersistenceException {
+		return this.getCorpusIDList().size();
+	}
+	
+	public List<Object> getCorpusIDList() throws PersistenceException {
 		return ds.getLrIds("gate.corpora.SerialCorpusImpl");
 	}
 	
@@ -101,6 +96,7 @@ public class GateDataStore {
 	}
 	
 	public Corpus getCorpus(int index) throws PersistenceException, ResourceInstantiationException {
+		Out.println(getCorpusIDList().size());
 		Object corpusID = getCorpusIDList().get(index);
 		return getCorpus(corpusID);
 	}
@@ -178,8 +174,8 @@ public class GateDataStore {
 		
 		try {
 			
-			GateDataStore dsApp = new GateDataStore("file://"+ System.getProperty("user.dir")+"/data/clusters");
-			GateDocHandler docHandler = new GateDocHandler();
+			GateDataStore dsApp = new GateDataStore("/data/clusters");
+			GateDocsHandler docHandler = new GateDocsHandler();
 			
 			Corpus corpus1 = Factory.newCorpus("test1");
 			Document doc1 = docHandler.createDoc("doc1", "http://www.cnn.com/2013/12/10/world/gapminder-us-ignorance-survey/index.html?hpt=hp_t1");
@@ -199,8 +195,9 @@ public class GateDataStore {
 			Document doc5 = docHandler.createDoc("doc5", "http://www.cnn.com/2013/12/10/world/africa/nelson-mandela-memorial/index.html?hpt=po_c1");
 			Corpus corpus = dsApp.getCorpus(corpusID1);
 			corpus.add(doc5);
-			//dsApp.saveCorpus("1", corpus);
+			dsApp.saveCorpus(corpus);
 			
+		
 			
 			GateDataStore dsApp = new GateDataStore();
 			GateDocHandler docHandler = new GateDocHandler();
@@ -221,9 +218,9 @@ public class GateDataStore {
 					Out.println(doc.getLRPersistenceId());
 				}
 			}
-			*/
+		
 			
-/*
+
 			// create&open a new Serial Data Store
 			// pass the datastore class and path as parameteres
 			SerialDataStore sds = (SerialDataStore) Factory
@@ -309,7 +306,7 @@ public class GateDataStore {
 
 			// delete datastore
 			sds.delete();
-
+			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

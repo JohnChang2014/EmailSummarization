@@ -1,5 +1,7 @@
 package db;
 
+import gate.util.Out;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -212,7 +214,7 @@ public class MySQL extends Database implements QueryAction {
 				}
 			}
 			prestmt.addBatch();
-			//System.out.println(prestmt);
+			//Out.println(prestmt);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

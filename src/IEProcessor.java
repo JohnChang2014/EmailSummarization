@@ -52,7 +52,6 @@ public class IEProcessor {
 		this.current_path = System.getProperty("user.dir");
 
 		try {
-			Gate.init();
 			
 			// load plugins: ANNIE, BWPGazetteer, KeyphraseAnalyser and TermRaider
 			loadAllPlugins();

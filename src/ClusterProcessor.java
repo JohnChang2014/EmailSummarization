@@ -46,6 +46,14 @@ public class ClusterProcessor {
 				assignGroup(final_group, new_email.get(0), 0, wordset);
 			} else {
 				final_group = dbQuery.getNewIDGroup();
+				// revised each e_id field in the wordset as g_id before inserting data
+			    // to the table 'group_words'
+				int n = 0;
+				for (String[] fields : wordset) {
+					fields[0] = String.valueOf(final_group);
+					wordset.set(n, fields);
+					n++;
+				}
 				assignGroup(final_group, new_email.get(0), 1, wordset);
 			}
 		}
