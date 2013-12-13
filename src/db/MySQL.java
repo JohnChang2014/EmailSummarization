@@ -13,7 +13,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MySQL extends Database implements QueryAction {
+public class MySQL extends Database implements QueryOperation {
+	private final static boolean DEBUG = true;
 	Connection dbCon = null;
 	Statement stmt = null;
 	PreparedStatement prestmt = null;
@@ -87,7 +88,7 @@ public class MySQL extends Database implements QueryAction {
 			if (prestmt != null) prestmt.close();
 			if (rs != null) rs.close();
 			if (dbCon != null) dbCon.close();
-			System.out.println("db close!");
+			if (DEBUG) System.out.println("db close!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -115,8 +116,8 @@ public class MySQL extends Database implements QueryAction {
 	public int delete(String table, String cond) throws SQLException {
 		String strSQL = "Delete From " + table + " Where " + cond;
 		stmt          = dbCon.createStatement();
-		System.out.println(strSQL);
 		int rows      = stmt.executeUpdate(strSQL);
+		if (DEBUG) System.out.println(strSQL);
 		return rows;
 	}
 
@@ -137,7 +138,7 @@ public class MySQL extends Database implements QueryAction {
 		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
 		if (params.containsKey("limit")) strSQL += "Limit " + params.get("limit") + " ";
 		stmt = dbCon.createStatement();
-		System.out.println(strSQL);
+		if (DEBUG) System.out.println(strSQL);
 		rs   = stmt.executeQuery(strSQL);
 		
 		return rs;
@@ -214,7 +215,7 @@ public class MySQL extends Database implements QueryAction {
 				}
 			}
 			prestmt.addBatch();
-			//Out.println(prestmt);
+			if (DEBUG) Out.println(prestmt);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

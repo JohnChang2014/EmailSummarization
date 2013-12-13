@@ -8,8 +8,6 @@ import java.util.HashMap;
 
 public class Transaction extends MySQL {
 	
-	
-	
 	// remove all words of a group
 	public void removeWordsFromGroup(int g_id) throws SQLException {
 		this.delete("group_words", "g_id = " + g_id);
@@ -22,9 +20,8 @@ public class Transaction extends MySQL {
 	
 	public int getGroupCounts() throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("cols", "count(*)");
-		params.put("group", "g_id");
-		params.put("order", "g_id");
+		params.put("cols", "count(distinct g_id)");
+		params.put("order", "g_id ASC");
 		ResultSet rs = this.query("email_groups", params);
 		if (rs.next()) return Integer.valueOf(rs.getInt(1));
 		else return 0;
@@ -53,6 +50,7 @@ public class Transaction extends MySQL {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "g_id, count(e_id) as n_emails");
 		params.put("group", "g_id");
+		params.put("order", "g_id ASC");
 		return this.query("email_groups", params);
 	}
 

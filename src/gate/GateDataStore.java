@@ -15,6 +15,7 @@ import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
 
 public class GateDataStore {
+	private final static boolean DEBUG = false;
 	private String ds_dir;
 	private SerialDataStore ds;
 	
@@ -33,6 +34,8 @@ public class GateDataStore {
     	try {
     		dir = getFullFilePath(dir);
     		ds = new SerialDataStore(dir);
+    		//ds  = (SerialDataStore) Factory.openDataStore("gate.persist.SerialDataStore", dir);
+    		Out.println(ds.getStorageUrl());
     		ds.open();
     		return true;
     	} catch (PersistenceException e) {
@@ -61,7 +64,7 @@ public class GateDataStore {
 		return this.getCorpusIDList().size();
 	}
 	
-	public List<Object> getCorpusIDList() throws PersistenceException {
+	public List getCorpusIDList() throws PersistenceException {
 		return ds.getLrIds("gate.corpora.SerialCorpusImpl");
 	}
 	
@@ -71,6 +74,7 @@ public class GateDataStore {
 	
 	public void closeDataStore() throws PersistenceException {
 		ds.close();
+		ds = null;
 	}
 	
 	public Object saveCorpus(Corpus corpus) throws PersistenceException, SecurityException {
@@ -83,8 +87,7 @@ public class GateDataStore {
 		// a new persisent corpus is returned
 		Corpus persistCorp = (Corpus) ds.adopt(corpus, null);
 		ds.sync(persistCorp);
-		Out.prln("corpus saved in datastore...");
-		
+		if (DEBUG) Out.prln("corpus saved in datastore...");
 		return setCorpusName(corpus_name, persistCorp);
 	}
 	
@@ -96,12 +99,10 @@ public class GateDataStore {
 	}
 	
 	public Corpus getCorpus(int index) throws PersistenceException, ResourceInstantiationException {
-		Out.println(getCorpusIDList().size());
-		Object corpusID = getCorpusIDList().get(index);
-		return getCorpus(corpusID);
+		return getCorpus(getCorpusIDList().get(index));
 	}
 	
-	public Corpus getCorpus(Object corpusID) throws ResourceInstantiationException {
+	public Corpus getCorpus(Object corpusID) {
 		// load corpus from datastore using its persistent ID
 		FeatureMap corpFeatures = Factory.newFeatureMap();
 		corpFeatures.put(DataStore.LR_ID_FEATURE_NAME, corpusID);
@@ -109,15 +110,21 @@ public class GateDataStore {
 
 		// tell the factory to load the Serial Corpus with the specified ID
 		// from the specified datastore
-		Corpus persistCorp = (Corpus) Factory.createResource("gate.corpora.SerialCorpusImpl", corpFeatures);
-		Out.prln("corpus loaded from datastore...");
-		return persistCorp;
+		try {
+			Corpus persistCorp = (Corpus) Factory.createResource("gate.corpora.SerialCorpusImpl", corpFeatures);
+
+			if (DEBUG) Out.println("corpus loaded from datastore...");
+			return persistCorp;
+		} catch (ResourceInstantiationException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public void deleteCorpus(Object corpusID) throws PersistenceException {
 		// remove corpus from datastore
 		ds.delete("gate.corpora.SerialCorpusImpl", corpusID);
-		Out.prln("corpus deleted from datastore...");
+		if (DEBUG) Out.prln("corpus deleted from datastore...");
 	}
 	
 	public Object saveDocument(Document doc) throws PersistenceException, SecurityException {
@@ -129,7 +136,7 @@ public class GateDataStore {
 		// SecurityInfo is ingored for SerialDataStore - just pass null
 		Document persistDoc = (Document) ds.adopt(doc, null);
 		ds.sync(persistDoc);
-		Out.prln("document saved in datastore...");
+		if (DEBUG) Out.prln("document saved in datastore...");
 		return setDocName(doc_name, persistDoc);
 		
 	}
@@ -153,7 +160,7 @@ public class GateDataStore {
 	public void deleteDocument(Object docID) throws PersistenceException {
 		// remove document from datastore
 		ds.delete("gate.corpora.DocumentImpl", docID);
-		Out.prln("document deleted from datastore...");
+		if (DEBUG) Out.prln("document deleted from datastore...");
 	}
 	
 	/*
@@ -196,30 +203,44 @@ public class GateDataStore {
 			Corpus corpus = dsApp.getCorpus(corpusID1);
 			corpus.add(doc5);
 			dsApp.saveCorpus(corpus);
-			
+			*/
 		
-			
+			/*
 			GateDataStore dsApp = new GateDataStore();
-			GateDocHandler docHandler = new GateDocHandler();
-			dsApp.openDataStore("file://"+ System.getProperty("user.dir")+"/data/clusters");
+			GateDocsHandler docHandler = new GateDocsHandler();
+			//dsApp.createDataStore(System.getProperty("user.dir") + "/data/clusters");
+			dsApp.openDataStore(System.getProperty("user.dir") + "/data/clusters");
 			
+			Out.println(dsApp.getCorpus(2));
+			
+			Corpus corpus1 = Factory.newCorpus("test2");
+			Document doc1 = docHandler.createDoc("doc1", "http://www.cnn.com/2013/12/10/world/gapminder-us-ignorance-survey/index.html?hpt=hp_t1");
+			Document doc2 = docHandler.createDoc("doc2", "http://www.cnn.com/2013/12/09/world/costa-concordia-trial/index.html?hpt=wo_c2");
+			Document doc3 = docHandler.createDoc("doc3", "http://www.cnn.com/2013/12/10/world/africa/nelson-mandela-memorial/index.html?hpt=us_c2");
+			Document doc4 = docHandler.createDoc("doc4", "http://ireport.cnn.com/docs/DOC-1067344?hpt=us_c2");
 			Document doc5 = docHandler.createDoc("doc5", "http://www.cnn.com/2013/12/10/world/africa/nelson-mandela-memorial/index.html?hpt=po_c1");
+			corpus1.add(doc1);
+			corpus1.add(doc2);
+			corpus1.add(doc3);
+			corpus1.add(doc4);
+			corpus1.add(doc5);
 			
-			//dsApp.saveCorpus("1", corpus);
+			dsApp.saveCorpus("2", corpus1);
 			
 			int i = 0;
-			for (Object ob : dsApp.getCorpusList()) {
+			for (Object ob : dsApp.getCorpusIDList()) {
 				Out.println(ob);
 				Corpus corpus = dsApp.getCorpus(ob);
-				corpus.add(doc5);
-				dsApp.saveCorpus("1", corpus);
-				Corpus corpus1 = dsApp.getCorpus(ob);
-				for (Document doc : corpus1) {
+				//corpus.add(doc5);
+				//dsApp.saveCorpus("1", corpus);
+				//Corpus corpus1 = dsApp.getCorpus(ob);
+				for (Document doc : corpus) {
 					Out.println(doc.getLRPersistenceId());
 				}
 			}
+			*/
 		
-			
+			/*
 
 			// create&open a new Serial Data Store
 			// pass the datastore class and path as parameteres
@@ -311,7 +332,5 @@ public class GateDataStore {
 			ex.printStackTrace();
 		}
 	}
-
-	*/
-
+*/
 }

@@ -6,7 +6,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public interface QueryAction {
+public interface QueryOperation {
 	public Object insert(String table, ArrayList<HashMap<String, String>> params) throws SQLException, ParseException, InterruptedException;
 	public int delete(String table, String cond) throws SQLException;
 	public Object update(ArrayList<Object> params);

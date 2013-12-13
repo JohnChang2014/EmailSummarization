@@ -71,20 +71,4 @@ public class GateGroovyController {
 		controller.cleanup();
 		controller.flushBeanInfoCache();
 	}
-	
-	/*
-	public void saveGateApplication(String file_name) throws PersistenceException, IOException {
-		File file = new File(file_name);
-		gate.util.persistence.PersistenceManager.saveObjectToFile(controller, file); 
-	}
-	
-	public void saveGateCorpus(String file_name) throws PersistenceException, IOException {
-		File file = new File(file_name);
-		gate.util.persistence.PersistenceManager.saveObjectToFile(controller.getCorpus(), file); 
-	}
-	
-	public void loadGateApplication(File file) throws PersistenceException, ResourceInstantiationException, IOException {
-		controller = (ScriptableController) gate.util.persistence.PersistenceManager.loadObjectFromFile(file);
-	}
-	*/
 }
