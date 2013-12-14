@@ -102,6 +102,7 @@ public class MySQL extends Database implements QueryOperation {
 		
 		HashMap<String, String> attrs = getColumnSet(table);
 		String strSQL = generateSQLInsertStatement(table, attrs);
+		System.out.println(strSQL);
 		prestmt = dbCon.prepareStatement(strSQL);
 		
 		// set values into preparedStatement
@@ -151,7 +152,6 @@ public class MySQL extends Database implements QueryOperation {
 		strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ") Values (";
 		for (String attr : attrs.keySet()) strSQL += "?, ";
 		strSQL = strSQL.substring(0, (strSQL.length() - 2)) + ")";
-
 		return strSQL;
 	}
 

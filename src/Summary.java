@@ -1,4 +1,7 @@
+import static gate.Utils.stringFor;
 import file.Directory;
+import gate.Annotation;
+import gate.AnnotationSet;
 import gate.Corpus;
 import gate.Document;
 import gate.Gate;
@@ -22,14 +25,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.google.code.jconfig.ConfigurationManager;
-import com.google.code.jconfig.listener.IConfigurationChangeListener;
-
-import config.ServerConfigurationContainer;
 import db.*;
 
 public class Summary {
-	private final static boolean DEBUG = true;
+	private final static boolean DEBUG = false;
 	private Transaction db;
 	private GateDataStore ds;
 	private GateDocsHandler dh;
@@ -63,24 +62,12 @@ public class Summary {
 		return false;
 	} 
 	
-	public static void loadConfiguration() {
-		String location = System.getProperty("user.dir");
-		String configPath = location + "/inc/config.xml";
-		System.out.println(configPath);
-		Map<String, IConfigurationChangeListener> listeners = new HashMap<String, IConfigurationChangeListener>();
-		listeners.put("server_list", new ServerConfigurationContainer());
-		ConfigurationManager.configureAndWatch(listeners, configPath, 200L);
-	}
-	
 	private boolean openDataStore(String dirname) {
 		Directory dir = new Directory();
 		dirname = System.getProperty("user.dir") + dirname;
 		if (dir.isEmpty(dirname)) {
-			Out.println(">>>>>>>>>>>>>>>> empty");
 			return ds.createDataStore(dirname);
-		}
-		else {
-			Out.println(">>>>>>>>>>>>>>>> not empty");
+		} else {
 			return ds.openDataStore(dirname);
 		}
 	}
@@ -106,12 +93,26 @@ public class Summary {
 		return wordset;
 	}
 	
+	private ArrayList<String[]> getSentencesFromCorpus(String e_id, Corpus corpus) {
+		ArrayList<String[]> sentences = new ArrayList<String[]>();
+		Document doc = corpus.get(0);
+		AnnotationSet annSet = doc.getAnnotations();
+		for (Annotation annt : annSet.get("Sentence")) {
+			String[] data = { e_id, stringFor(doc, annt) };
+			
+			sentences.add(data);
+		}
+		return sentences;
+	}
+	
 	public ArrayList<String[]> runInfoExtraction(int e_id, ArrayList<Document> docs) throws SQLException, ParseException, MalformedURLException, InterruptedException, InvocationTargetException, GateException {
 		// start the task of information extraction
-		ie                          = new IEProcessor(Config.gate_view);
-		Corpus corpus               = ie.run(Config.ieScriptController, docs);
-		ArrayList<String[]> wordset = getTermbankFromCorpus(String.valueOf(e_id), corpus);
+		ie                            = new IEProcessor(Config.gate_view);
+		Corpus corpus                 = ie.run(Config.ieScriptController, docs);
+		ArrayList<String[]> wordset   = getTermbankFromCorpus(String.valueOf(e_id), corpus);
+		ArrayList<String[]> sentences = getSentencesFromCorpus(String.valueOf(e_id), corpus);
 		db.insert(wordset, "words");
+		db.insert(sentences, "sentences");
 		ie.cleanup();
 		return wordset;
 	}
@@ -213,7 +214,7 @@ public class Summary {
 		// fetch email data from database
 		db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
 
-		int e_id = 20;
+		int e_id = 14;
 		String subject = new String();
 
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -259,7 +260,7 @@ public class Summary {
 		sumApp.close();
 		db = null;
 		sumApp = null;
-		Thread.sleep(100000);
+		Thread.sleep(105000);
 		System.exit(0);
 	}
 }

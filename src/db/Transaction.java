@@ -85,6 +85,7 @@ public class Transaction extends MySQL {
 			if (table == "group_words") params = this.getParamsForGroupWords(args);
 			if (table == "email") params = this.getParamsForEmail(args);
 			if (table == "email_groups") params = this.getParamsForGroup(args);
+			if (table == "sentences") params = this.getParamsForSentences(args);
 			if (table == "summaries") params = this.getParamsForSummaries(args);
 			paramset.add(params);
 		}
@@ -92,6 +93,13 @@ public class Transaction extends MySQL {
 		this.insert(table, paramset);
 	}
 
+	private HashMap<String, String> getParamsForSentences(String[] args) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("e_id", args[0]);
+		params.put("sentence", args[1]);
+		return params;
+	}
+	
 	private HashMap<String, String> getParamsForGroupWords(String[] args) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("g_id", args[0]);

@@ -1,5 +1,7 @@
 package gate;
 
+import static gate.Utils.stringFor;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -161,6 +163,13 @@ public class GateDataStore {
 		// remove document from datastore
 		ds.delete("gate.corpora.DocumentImpl", docID);
 		if (DEBUG) Out.prln("document deleted from datastore...");
+	}
+	
+	public ArrayList<String> getStringFromAnnotation(Object docID, String type) throws ResourceInstantiationException {
+		ArrayList<String> strings = new ArrayList<String>();
+		Document doc = getDocument(docID);
+		for (Annotation annt: doc.getAnnotations().get(type)) strings.add(stringFor(doc, annt));
+		return strings;
 	}
 	
 	/*

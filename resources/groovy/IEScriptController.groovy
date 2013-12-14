@@ -25,7 +25,7 @@ def termbank0 = Factory.createResource("gate.termraider.bank.TfIdfTermbank", [
   idfCalculation: 'LogarithmicPlus1',
   name: 'tfIdfTermbank',
   corpora:[corpus],
-  inputAnnotationTypes:'SingleWord;MultiWord;VG;Person;NounChunk;Date;Money',
+  inputAnnotationTypes:'SingleWord;MultiWord;VG;Person;NounChunk;Date;Money;Location',
   debugMode:true,
 ].toFeatureMap())
 

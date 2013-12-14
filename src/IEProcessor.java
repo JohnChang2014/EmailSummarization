@@ -98,27 +98,6 @@ public class IEProcessor {
 		controller.setCtrlScript(script);
 	}
 
-	/*
-	public void getAnnotationSet(Document doc) throws MalformedURLException {
-		System.out.println(doc.getNamedAnnotationSets().size());
-		for (String key : doc.getNamedAnnotationSets().keySet()) {
-			System.out.println("ann set: " + key);
-			System.out.println("length: " + doc.getNamedAnnotationSets()
-					.get(key).size());
-			for (Annotation ann : doc.getNamedAnnotationSets().get(key)) {
-				if (ann.getType().equals("a")) {
-					System.out.println("-->" + ann.toString());
-					System.out.println("----->" + ann.getType());
-					System.out
-							.println("-------->" + new URL(doc.getSourceUrl(), ann
-									.getFeatures().get("href").toString())
-									.toString());
-				}
-			}
-		}
-		System.out.println(doc.getAnnotations("Original markups").toString());
-	}
-*/
 	public void setCorpus(Corpus corpus) {
 		controller.setCorpus(corpus);
 	}
