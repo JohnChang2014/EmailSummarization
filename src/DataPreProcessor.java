@@ -11,8 +11,9 @@ import file.FReader;
 import file.FWriter;
 
 public class DataPreProcessor {
-	private static final String storage_path = "./data/raw/";
-	private static final String dataset_path = "/Volumes/Data/03-ShareData/Dropbox/00-Courses Data/Fall 2013/Natural Language Processing/Final Project/Dataset/Original Mails/";
+	private static final String storage_path1 = "./data/raw/";
+	private static final String storage_path2 = "./data/content/";
+	private static final String dataset_path  = "./data/pdf/";
 	// dataset ignores Permathreads 2.mbox and permathreads.mbox temperarily
 	// works     => 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
 	// not works => 4(no need to remove whitespace)
@@ -191,34 +192,41 @@ public class DataPreProcessor {
 	private void writeDataIntoStorage(String prefix, ArrayList<HashMap<String, String>> emailset) throws IOException, SQLException, ParseException {
 		int email_index = 0;
 		for (HashMap<String, String> email : emailset) {
-			FWriter fw = new FWriter(storage_path + prefix + "_" + email_index + ".txt");
+			FWriter fw1 = new FWriter(storage_path1 + prefix + "_" + email_index + ".txt");
+			FWriter fw2 = new FWriter(storage_path2 + prefix + "_" + email_index + ".txt");
 
 			String sender = email.get("sender");
 			String time = email.get("sendingtime");
 			String receivers = email.get("receivers");
 			String ccreceivers = email.get("ccreceivers");
-			String subject = email.get("subject");
+			String raw_subject = email.get("subject");
 			String content = email.get("content");
+			String subject_prefix = new String();
 			
 			// add prefix string to each data field except content field
-			sender      = "From: " + sender;
-			time        = "Date: " + time;
-			receivers   = "To: " + receivers;
-			ccreceivers = "Cc: " + ccreceivers;
-			subject     = "Subject: " + subject;
+			sender         = "From: " + sender;
+			time           = "Date: " + time;
+			receivers      = "To: " + receivers;
+			ccreceivers    = "Cc: " + ccreceivers;
+			subject_prefix = "Subject: " + raw_subject;
 			
-			String raw_content = sender + "\n" + time + "\n" + receivers + "\n" + ccreceivers + "\n" + subject + "\n" + content;
+			String raw_content = sender + "\n" + time + "\n" + receivers + "\n" + ccreceivers + "\n" + subject_prefix + "\n" + content;
 			email.put("raw_content", raw_content);
 			
 			// write to plain text file
-			fw.write(sender);
-			fw.write(time);
-			fw.write(receivers);
-			fw.write(ccreceivers);
-			fw.write(subject);
-			fw.write(content);
+			fw1.write(sender);
+			fw1.write(time);
+			fw1.write(receivers);
+			fw1.write(ccreceivers);
+			fw1.write(subject_prefix);
+			fw1.write(content);
+			fw1.close();
+			
+			fw2.write(raw_subject + ".");
+			fw2.write(content);
+			fw2.close();
+			
 			email_index++;
-			fw.close();
 			
 			// write to MySQL database
 			insertData(email);

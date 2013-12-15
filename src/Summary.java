@@ -9,6 +9,7 @@ import gate.GateDataStore;
 import gate.GateDocsHandler;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
+import gate.gui.MainFrame;
 import gate.persist.PersistenceException;
 import gate.security.SecurityException;
 import gate.termraider.bank.TfIdfTermbank;
@@ -28,13 +29,14 @@ import java.util.Map;
 import db.*;
 
 public class Summary {
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 	private Transaction db;
 	private GateDataStore ds;
 	private GateDocsHandler dh;
 	private IEProcessor ie;
 	private ClusterProcessor cluster;
 	private DataMaintainProcessor dm;
+	private String subject = new String();
 	
 	public Summary() {
 		if (!this.init()) {
@@ -82,7 +84,7 @@ public class Summary {
 		
 		for (gate.termraider.util.Term term : termFrequency.keySet()) {
 		    
-			Out.println(term.getTermString() + " = " + termBank.getRawScore(term) + " <> " + termScores.get(term) + " => " + termBank.getRawScore(term) / termFrequency.get(term));
+			//Out.println(term.getTermString() + " = " + termBank.getRawScore(term) + " <> " + termScores.get(term) + " => " + termBank.getRawScore(term) / termFrequency.get(term));
 			String tf     = String.valueOf(termFrequency.get(term));
 			String df     = String.valueOf(termDocFrequencies.get(term));
 			String idf    = String.valueOf(termBank.getRawScore(term) / termFrequency.get(term));
@@ -98,8 +100,7 @@ public class Summary {
 		Document doc = corpus.get(0);
 		AnnotationSet annSet = doc.getAnnotations();
 		for (Annotation annt : annSet.get("Sentence")) {
-			String[] data = { e_id, stringFor(doc, annt) };
-			
+			String[] data = { e_id, String.valueOf(annt.getId()), stringFor(doc, annt) };
 			sentences.add(data);
 		}
 		return sentences;
@@ -107,7 +108,7 @@ public class Summary {
 	
 	public ArrayList<String[]> runInfoExtraction(int e_id, ArrayList<Document> docs) throws SQLException, ParseException, MalformedURLException, InterruptedException, InvocationTargetException, GateException {
 		// start the task of information extraction
-		ie                            = new IEProcessor(Config.gate_view);
+		ie                            = new IEProcessor(DEBUG);
 		Corpus corpus                 = ie.run(Config.ieScriptController, docs);
 		ArrayList<String[]> wordset   = getTermbankFromCorpus(String.valueOf(e_id), corpus);
 		ArrayList<String[]> sentences = getSentencesFromCorpus(String.valueOf(e_id), corpus);
@@ -117,7 +118,7 @@ public class Summary {
 		return wordset;
 	}
 	
-	public int runCluster(String e_id, String subject, ArrayList<String[]> wordset) throws SQLException, ParseException {
+	public int runCluster(String e_id, ArrayList<String[]> wordset) throws SQLException, ParseException {
 		ArrayList<String> new_email = new ArrayList<String>();
 		cluster                     = new ClusterProcessor();
 		new_email.add(e_id);
@@ -150,7 +151,7 @@ public class Summary {
 			// computing tfidf score for each term in the document set 
 			Corpus new_corpus = dh.createCorpus(String.valueOf(final_group));
 			new_corpus.addAll(docs);
-			dm                = new DataMaintainProcessor(Config.gate_view);
+			dm                = new DataMaintainProcessor(DEBUG);
 			new_corpus        = dm.run(Config.dataMaintainScriptContoller, new_corpus);
 			
 			// now new corpus will contain new tfidf score for all terms and annotations
@@ -171,26 +172,66 @@ public class Summary {
 		}
 	}
 	
-	public ArrayList<Document> createDocumentSet(int g_id) throws Exception {
-		ArrayList<Document> docs = new ArrayList<Document>();
-
-		ResultSet rs = db.getEmailsFromGroup(g_id);
-		while (rs.next()) {
-			String docName = rs.getString("subject") + "_" + rs.getString("e_id");
-			String content = rs.getString("subject") + "\n" + rs.getString("content");
-			Document doc   = ie.createDocument(docName, content);
-			docs.add(doc);
+	private Document getEmailData(int e_id) throws Exception {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cols", "content, e_id, subject");
+		params.put("cond", "e_id = " + e_id);
+		ResultSet rs = db.query("emails", params);
+		if (rs.next()) {
+			subject        = rs.getString("subject");
+			String docName = subject + "_" + rs.getString("e_id");
+			String content = subject + ".\n" + rs.getString("content");
+			return dh.createDoc(docName, content);
 		}
-		return docs;
+		return null;
 	}
 	
-	public Document newDoc(String docName, String content) throws Exception {
-		return dh.createDoc(docName, content);
+	public void run(int e_id) {
+		try {
+			int final_group = 0;
+			ArrayList<Document> docs = new ArrayList<Document>();
+			Document doc;
+			doc = getEmailData(e_id);
+
+			docs.add(doc);
+
+			if (DEBUG) Out.println("email ID: " + e_id);
+
+			/*
+			 * information extraction and annotation using GATE then compute tf and
+			 * store into database
+			 */
+			if (DEBUG) Out.println("====== IE processing ======");
+			// information extraction from new email
+			ArrayList<String[]> wordset = runInfoExtraction(e_id, docs);
+			if (DEBUG) Out.println("=========================== \n\n");
+
+			if (DEBUG) Out.println("====== Cluster processing ======");
+			// cluster the incoming email to email group
+			final_group = runCluster(String.valueOf(e_id), wordset);
+			if (DEBUG) Out.println("=========================== \n\n");
+
+			if (DEBUG) Out.println("====== Data Update processing ====== ");
+			// update tfidf for the final group
+			updateGroupInfo(final_group);
+			if (DEBUG) Out.println("=========================== \n\n");
+			
+			if (DEBUG) Out.println("Final Group --> " + final_group);
+			
+			/*
+			 * summarize the email group read each email sorted by date in the
+			 * group apply inferece rules here in GATE
+			 */
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void close() throws PersistenceException {
 		db.close();
 		ds.closeDataStore();
+		ie.cleanup();
+		cluster.close();
 		dh = null;
 		ie = null;
 		cluster = null;
@@ -199,68 +240,30 @@ public class Summary {
 	
 	public static void main(String[] args) throws Exception {
 
-		int final_group = 0;
 		Transaction db = new Transaction();
-		Summary sumApp = new Summary();
-
-		// read and check if there is new email coming to inbox
-
-		// parse email data and store into database
-
-		/*
-		 * information extraction and annotation using GATE then compute tf and
-		 * store into database
-		 */
-		// fetch email data from database
 		db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
 
-		int e_id = 14;
-		String subject = new String();
+		int range1 = 15;
+		int range2 = 18;
 
 		HashMap<String, String> params = new HashMap<String, String>();
-
-		ArrayList<Document> docs = new ArrayList<Document>();
 		params.put("cols", "content, e_id, subject");
-		params.put("cond", "e_id = " + e_id);
+		params.put("order", "e_id ASC, sending_time ASC");
+		params.put("cond", "e_id <= " + range2 + " and e_id >" + range1);
 		ResultSet rs = db.query("emails", params);
 
-		if (rs.first()) {
-			subject = rs.getString("subject");
-			String docName = subject + "_" + rs.getString("e_id");
-			String content = subject + "\n" + rs.getString("content");
-			Document doc = sumApp.newDoc(docName, content);
-			docs.add(doc);
-			
-			if (DEBUG) Out.println("email ID: " + e_id);
-			
-			if (DEBUG) Out.println("====== IE processing ======");
-			// information extraction from new email
-			ArrayList<String[]> wordset = sumApp.runInfoExtraction(e_id, docs);
-			if (DEBUG) Out.println("=========================== \n\n");
-
-			if (DEBUG) Out.println("====== Cluster processing ======");
-			// cluster the incoming email to email group
-			final_group = sumApp.runCluster(String.valueOf(e_id), subject, wordset);
-			if (DEBUG) Out.println("=========================== \n\n");
-
-			if (DEBUG) Out.println("====== Data Update processing ====== ");
-			// update tfidf for the final group
-			sumApp.updateGroupInfo(final_group);
-			if (DEBUG) Out.println("=========================== \n\n");
-			if (DEBUG) Out.println("Final Group --> " + final_group);
-			params.clear();
-			
-			/*
-			 * summarize the email group read each email sorted by date in the
-			 * group apply inferece rules here in GATE
-			 */
+		while (rs.next()) {
+			Summary sumApp = new Summary();
+			int e_id = rs.getInt("e_id");
+			sumApp.run(e_id);
+			sumApp.close();
+			sumApp = null;
+			//Thread.sleep(5000);
 		}
 
 		db.close();
-		sumApp.close();
 		db = null;
-		sumApp = null;
-		Thread.sleep(105000);
+		
 		System.exit(0);
 	}
 }

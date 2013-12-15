@@ -122,17 +122,6 @@ public class IEProcessor {
 		return controller.getCorpus();
 	}
 
-/*
-	public void save(String file_name) throws PersistenceException, IOException {
-		String file_path = gapp_folder + "/" + file_name;
-		controller.saveGateApplication(file_path);
-	}
-	
-	public void saveCorpus(String file_name) throws PersistenceException, IOException {
-		String file_path = gapp_folder + "/" + file_name;
-		controller.saveGateCorpus(file_path);
-	}
-*/
 	public Document createDocument(String docName, String content) throws Exception {
 		return docHandler.createDoc(docName, content);
 	}
@@ -150,7 +139,9 @@ public class IEProcessor {
 				.createResource("ie.deri.sw.smile.nlp.gate.language.LanguageIdentifier");
 		LanguageAnalyser tokenizer = (LanguageAnalyser) Factory
 				.createResource("gate.creole.tokeniser.DefaultTokeniser");
-		//LanguageAnalyser gazetteer = (LanguageAnalyser) Factory.createResource("gate.creole.gazetteer.DefaultGazetteer");
+		LanguageAnalyser gazetteer = (LanguageAnalyser) Factory.createResource("gate.creole.gazetteer.DefaultGazetteer");
+		gazetteer.setParameterValue("caseSensitive", false);
+		
 		LanguageAnalyser bwpGazetteer = (LanguageAnalyser) Factory
 				.createResource("bwp.gate.gazetteer.BWPGazetteer");
 		LanguageAnalyser senSpliter = (LanguageAnalyser) Factory
@@ -176,21 +167,30 @@ public class IEProcessor {
 		anns.add("Date");
 		orthoMatcher.setParameterValue("annotationTypes", anns);
 
-		LanguageAnalyser selectTokens = (LanguageAnalyser) Factory
-				.createResource("gate.creole.ANNIETransducer");
+		/*LanguageAnalyser selectTokens = (LanguageAnalyser) Factory.createResource("gate.creole.ANNIETransducer");
 		URL transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/select-tokens-en.jape");
 		selectTokens.setParameterValue("grammarURL", transduceGrammarURL);
-
-		LanguageAnalyser multiwordJape = (LanguageAnalyser) Factory
-				.createResource("gate.creole.ANNIETransducer");
+		*/
+		FeatureMap feats_token = Factory.newFeatureMap();
+		URL japeGrammarURL_token = new URL("file://" + current_path + "/resources/jape/select-tokens-en.jape");
+		feats_token.put("grammarURL", japeGrammarURL_token);
+		LanguageAnalyser selectTokens = (LanguageAnalyser) Factory.createResource("gate.creole.Transducer", feats_token);
+		
+		/*
+		LanguageAnalyser multiwordJape = (LanguageAnalyser) Factory.createResource("gate.creole.ANNIETransducer");
 		transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/multiword-main-en.jape");
 		multiwordJape.setParameterValue("grammarURL", transduceGrammarURL);
-
+		*/
+		FeatureMap feats_multiword = Factory.newFeatureMap();
+		URL japeGrammarURL_multiword = new URL("file://" + current_path + "/resources/jape/multiword-main-en.jape");
+		feats_multiword.put("grammarURL", japeGrammarURL_multiword);
+		LanguageAnalyser multiwordJape = (LanguageAnalyser) Factory.createResource("gate.creole.Transducer", feats_multiword);
+		
 		FeatureMap feats = Factory.newFeatureMap();
 		URL transduceScriptURL = new URL("file://" + current_path + "/resources/groovy/DeduplicateMultiWord.groovy");
 		feats.put("scriptURL", transduceScriptURL);
-		LanguageAnalyser deduplicateMW = (LanguageAnalyser) Factory
-				.createResource("gate.groovy.ScriptPR", feats);
+		LanguageAnalyser deduplicateMW = (LanguageAnalyser) Factory.createResource("gate.groovy.ScriptPR", feats);
+		
 		/*
 		FeatureMap feats1 = Factory.newFeatureMap();
 		transduceGrammarURL = new URL("file://" + current_path + "/resources/jape/augmentation.jape");
@@ -198,8 +198,8 @@ public class IEProcessor {
 		LanguageAnalyser augmentation = (LanguageAnalyser) Factory
 				.createResource("gate.creole.Transducer", feats1);
 */
-		LanguageAnalyser tfIdfCopier = (LanguageAnalyser) Factory
-				.createResource("gate.termraider.apply.TermScoreCopier");
+		LanguageAnalyser tfIdfCopier = (LanguageAnalyser) Factory.createResource("gate.termraider.apply.TermScoreCopier");
+		
 		/*
 		LanguageAnalyser augTfIdfCopier = (LanguageAnalyser) Factory
 				.createResource("gate.termraider.apply.TermScoreCopier");
@@ -207,11 +207,12 @@ public class IEProcessor {
 		LanguageAnalyser kyotoCopier = (LanguageAnalyser) Factory
 				.createResource("gate.termraider.apply.TermScoreCopier");
 		*/
+		
 		// set signature of each PR for scriptable controller to refer
 		docReset.setName("docReset");
 		languageIdentifier.setName("languageIdentifier");
 		tokenizer.setName("tokenizer");
-		//gazetteer.setName("gazetteer");
+		gazetteer.setName("gazetteer");
 		bwpGazetteer.setName("bwpGazetteer");
 		senSpliter.setName("senSpliter");
 		posTagger.setName("posTagger");
@@ -233,7 +234,7 @@ public class IEProcessor {
 		pr_set.add(docReset);
 		pr_set.add(languageIdentifier);
 		pr_set.add(tokenizer);
-		//pr_set.add(gazetteer);
+		pr_set.add(gazetteer);
 		pr_set.add(bwpGazetteer);
 		pr_set.add(senSpliter);
 		pr_set.add(posTagger);

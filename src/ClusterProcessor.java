@@ -9,7 +9,7 @@ import java.util.HashMap;
 import db.Transaction;
 
 public class ClusterProcessor {
-	private final static boolean DEBUG = true;
+	private final static boolean DEBUG = false;
 	private Transaction dbQuery;
 
 	public ClusterProcessor() {

@@ -96,7 +96,8 @@ public class Transaction extends MySQL {
 	private HashMap<String, String> getParamsForSentences(String[] args) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("e_id", args[0]);
-		params.put("sentence", args[1]);
+		params.put("ann_id", args[1]);
+		params.put("sentence", args[2]);
 		return params;
 	}
 	
