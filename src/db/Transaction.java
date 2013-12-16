@@ -8,6 +8,29 @@ import java.util.HashMap;
 
 public class Transaction extends MySQL {
 	
+	public double getGroupAverageScore(int g_id) throws SQLException {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cols", "Avg(tfidf)");
+		params.put("cond", "g_id = " + g_id);
+		ResultSet rs = this.query("group_words", params);
+		if (rs.next()) return rs.getDouble(1);
+		return 0.0;
+	}
+	
+	public void updateSummary(int g_id, int n_emails, String summary) throws SQLException {
+		summary     = "summary = \"" + summary + "\"";
+		String cond = "g_id = " + g_id + " And n_emails = " + n_emails;
+		this.update("summaries", summary, cond);
+	}
+	
+	public boolean checkSummaryExist(int g_id, int n_emails) throws SQLException {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cond", "g_id = " + g_id + " And n_emails = " + n_emails);
+		ResultSet rs = this.query("summaries", params);
+		if (rs.next()) return false;
+		return true;
+	}
+	
 	public int getEmailCountFromGroup(int g_id) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "g_id, count(e_id) as n_emails");
@@ -161,8 +184,6 @@ public class Transaction extends MySQL {
 		params.put("content", args[4]);
 		params.put("raw_content", args[5]);
 		params.put("sending_time", args[6]);
-		params.put("reply_to", args[7]);
-		params.put("g_id", args[8]);
 		return params;
 	}
 

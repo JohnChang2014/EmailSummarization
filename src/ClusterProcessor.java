@@ -11,10 +11,13 @@ import db.Transaction;
 public class ClusterProcessor {
 	private final static boolean DEBUG = false;
 	private Transaction dbQuery;
-
-	public ClusterProcessor() {
+	private int mode;
+	
+	public ClusterProcessor(int mode) {
+		this.mode = mode;
 		this.dbQuery = new Transaction();
-		dbQuery.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
+		if (mode == 0) dbQuery.connect(Config.ip, Config.port, Config.db_development, Config.username, Config.password);
+		else if (mode == 1) dbQuery.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
 	}
 
 	public int run(ResultSet grs, ArrayList<String> new_email, ArrayList<String[]> wordset) throws SQLException, ParseException {

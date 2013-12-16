@@ -1,16 +1,70 @@
 Imports: {
-  import static gate.Utils.*;
+import static gate.Utils.*;
 }
 Phase: selectedSentences
-Input: Sentence VG TermCandidate Date NounChunk 
+Input: Sentence VG TermCandidate Date NounChunk Person
 Options: control = brill
 
 Rule: selectedSentences
 (
   (
-  { Sentence contains VG, Sentence contains TermCandidate, VG.tense =~ "(Inf|Pre)", Sentence contains Date } |
-  { Sentence contains VG, Sentence contains TermCandidate, VG.tense =~ "(Inf|Pre)" } 
+  { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate, Sentence contains Person } |
+  { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate, Sentence contains Date } |
+  { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate }
   )
-):senCandidate
+):sen
 -->
-:senCandidate.SentenceCandidate = { rule = "selectedSentences", string = :senCandidate@string }
+:sen {
+  double score   = 0.0;
+  int count      = 0;
+  int subject    = 0;
+  long start_sen = senAnnots.firstNode().getOffset();
+  long end_sen   = senAnnots.lastNode().getOffset();
+  
+  // compute an average score for the sentence by
+  // using tfidf score of VG and TermCandidate 
+  for (Annotation e : inputAS.get("VG")) {
+  	long start = start(e);
+    long end   = end(e);
+    if (start_sen <= start && end_sen >= end) {
+      score += Double.valueOf(e.getFeatures().get("tfIdf").toString());
+      count++;
+    }
+  }
+  
+  for (Annotation e : inputAS.get("TermCandidate")) {
+  	long start = start(e);
+    long end   = end(e);
+    if (start_sen <= start && end_sen >= end) {
+      score += Double.valueOf(e.getFeatures().get("tfIdf").toString());
+      count++;
+    }
+  }
+  
+  if (count > 0) score = score / count;
+  
+  // decide whether the sentence is a subject or not.
+  for (Annotation e : senAnnots){
+    if (e.getType() == "Sentence") {
+      subject = (int) e.getFeatures().get("subject");
+      break;
+    }
+  }
+  
+  // only select non-subject sentence
+  if (subject == 0) {
+     FeatureMap feats = Factory.newFeatureMap();
+     feats.put("rule", "selectedSentences");
+     feats.put("string", stringFor(doc, senAnnots));
+     feats.put("score", score);
+     outputAS.add(senAnnots.firstNode(),senAnnots.lastNode(), "SentenceCandidate", feats);
+  }
+}
+
+// The sentences from this rule are used in a summary only when no sentences from the rule 'selectedSentences'
+Rule: selectedBackupSentences
+(
+  { Sentence contains TermCandidate }
+):sen
+-->
+:sen.BackupSentence = { rule = "selectedBackupSentences", string = :sen@string }

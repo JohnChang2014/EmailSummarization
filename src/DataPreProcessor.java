@@ -58,7 +58,7 @@ public class DataPreProcessor {
 		String result = new String();
 		for (String s : sets)
 			result += s + delimiter;
-		result = result.substring(0, result.length() - (len_delimiter + 1));
+		result = result.substring(0, result.length() - len_delimiter).trim();
 		return result;
 	}
 
@@ -81,12 +81,12 @@ public class DataPreProcessor {
 		for (String file : dir.getDirList(dataset_path + Config.datafile_path)) {
 			if (file.equals(".DS_Store")) continue;
 			n++;
-			//if (n != 1) continue;
+			if (n != 1) continue;
 
 			// parse raw data from PDF dataset
 			filename = dataset_path + Config.datafile_path + file;
 			System.out.println(filename);
-			if (mode == 0 && n == 4 ) {
+			if ((mode == 0 && n == 4)) {
 				content = reader.readPDFFile(filename, false);
 				emailset = parseDataFromPDF(content, 2);
 			} else {
@@ -224,6 +224,8 @@ public class DataPreProcessor {
 			subject_prefix = "Subject: " + raw_subject;
 			
 			String raw_content = sender + "\n" + time + "\n" + receivers + "\n" + ccreceivers + "\n" + subject_prefix + "\n" + content;
+			System.out.println("\n\n\n");
+			System.out.println(raw_content);
 			email.put("raw_content", raw_content);
 			
 			// write to plain text file
@@ -238,9 +240,8 @@ public class DataPreProcessor {
 			fw2.write(raw_subject + ".");
 			fw2.write(content);
 			fw2.close();
-			
+		
 			email_index++;
-			
 			// write to MySQL database
 			insertData(email);
 		}
@@ -249,7 +250,7 @@ public class DataPreProcessor {
 	private void insertData(HashMap<String, String> email) throws SQLException, ParseException {
 		String[] data = { email.get("sender"), email.get("receivers"), email
 				.get("ccreceivers"), email.get("subject"), email.get("content"), email
-				.get("raw_content"), email.get("sendingtime"), null, null };
+				.get("raw_content"), email.get("sendingtime") };
 		mydb.insert(data, "emails");
 	}
 

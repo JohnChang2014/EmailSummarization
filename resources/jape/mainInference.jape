@@ -1,3 +1,4 @@
 MultiPhase: mainInference
 Phases:
+sentenceHelper
 selectedSentences

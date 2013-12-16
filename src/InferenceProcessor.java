@@ -26,9 +26,11 @@ public class InferenceProcessor extends IEProcessor {
 	private final static boolean DEBUG = true;
 	private Transaction db;
 	private RegexMatches reg = new RegexMatches();
+	private int mode;
 	
-	public InferenceProcessor(boolean view) {
-		super.init(view);		 
+	public InferenceProcessor(int mode) {
+		this.mode = mode;
+		super.init(DEBUG);		 
 	}
 	
 	protected ArrayList<LanguageAnalyser> setProcessingResources() throws ResourceInstantiationException, MalformedURLException {
@@ -61,26 +63,47 @@ public class InferenceProcessor extends IEProcessor {
 		return peopleSet;
 	}
 	
-	public String summarize(int final_group, ArrayList<Document> docs) throws SQLException, ParseException {
-		db                     = new Transaction();
-		ArrayList<String> sens = new ArrayList<String>();
-		String summary = "";
-		
-		// assign groovy script file to Scriptable Controller
-		Corpus corpus  = run(Config.ifScriptController, docs);
-		
-		// collect all sentences from corpus
+	// collect all sentences from corpus
+	private String getSentencesFromCorpus(Corpus corpus, double score) {
 		String sentenceString = "";
 		for (Document doc : corpus) {
 			for(Annotation senCandidate : doc.getAnnotations().get("SentenceCandidate")) {
-				sens.add(senCandidate.getFeatures().get("string").toString());
-				sentenceString += ",'" + senCandidate.getFeatures().get("string").toString() + "'";
+				// only pickup the sentence with score higher than average group word score
+				double s_sen = Double.valueOf(senCandidate.getFeatures().get("score").toString());
+				if (s_sen >= score) sentenceString += ",\"" + senCandidate.getFeatures().get("string") + "\"";
+			}
+		}
+		// if there is no sentence, then use annotation 'BackupSentence' instead
+		if (sentenceString.length() == 0) {
+			for (Document doc : corpus) {
+				for(Annotation senCandidate : doc.getAnnotations().get("BackupSentence")) {
+					sentenceString += ",\"" + senCandidate.getFeatures().get("string").toString() + "\"";
+				}
 			}
 		}
 		sentenceString = sentenceString.substring(1, sentenceString.length());
+		return sentenceString;
+	}
+	
+	public String summarize(int final_group, ArrayList<Document> docs) throws SQLException, ParseException, InterruptedException {
+		db             = new Transaction();
+		String summary = "";
+		
+		
 		
 		// 
-		if (db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password)) {
+		String dbname = "";
+		if (mode == 0) dbname = Config.db_development;
+		else if (mode == 1) dbname = Config.db;
+		
+		if (db.connect(Config.ip, Config.port, dbname, Config.username, Config.password)) {
+			// assign groovy script file to Scriptable Controller
+			Corpus corpus  = run(Config.ifScriptController, docs);
+			//Thread.sleep(500000);
+			// collect all sentences from corpus
+			double score = db.getGroupAverageScore(final_group);
+			String sentenceString = getSentencesFromCorpus(corpus, score);
+			
 			Set<String> peopleSet = getPeopleSet(final_group);
 			
 			HashMap<String, ArrayList<String>> summaryGroup = new HashMap<String, ArrayList<String>>();
@@ -92,7 +115,7 @@ public class InferenceProcessor extends IEProcessor {
 			params.put("cond", "b.e_id = c.e_id And a.e_id = b.e_id And a.g_id = 1 And c.sentence in (" + sentenceString + ")");
 			params.put("order", "b.e_id ASC, b.sending_time ASC, c.ann_id ASC");
 			ResultSet rs = db.query(table, params);
-			if (DEBUG) Out.println("Sentence Candidates:");
+			if (DEBUG) Out.println("\n\nSentence Candidates:");
 			while(rs.next()) {
 				String sentence             = rs.getString("sentence");
 				if (DEBUG) Out.println("--> " + rs.getString("sentence"));
@@ -106,7 +129,7 @@ public class InferenceProcessor extends IEProcessor {
 				}
 			}
 			params.clear();
-			if (DEBUG) Out.println("\n");
+			if (DEBUG) Out.println("\n\n");
 			
 			for (String relation : summaryGroup.keySet()) {
 				if (DEBUG) Out.println("==> " + relation);
@@ -117,11 +140,13 @@ public class InferenceProcessor extends IEProcessor {
 				}
 				summary += tmpSummary + "\n";
 			}
-			String n_emails = String.valueOf(db.getEmailCountFromGroup(final_group));
-			String[] data = { String.valueOf(final_group), n_emails, summary };
+			int n_emails = db.getEmailCountFromGroup(final_group);
+			String[] data = { String.valueOf(final_group), String.valueOf(n_emails), summary };
+			if (db.checkSummaryExist(final_group, n_emails)) db.updateSummary(final_group, n_emails, summary);
+			else db.insert(data, "summaries");
+			
 			if (DEBUG) Out.println("Summary for group " + final_group + " (" + n_emails + " emails): ");
 			if (DEBUG) Out.println(summary);
-			//db.insert(data, "summaries");
 		}
 		db.close();
 		return summary;

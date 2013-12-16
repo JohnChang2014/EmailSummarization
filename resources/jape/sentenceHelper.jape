@@ -5,18 +5,19 @@ Phase: sentenceHelper
 Input: Sentence
 Options: control = brill
 
-Rule: split_sentences
+Rule: mark_subject
 (
   { Sentence }
 ):sen
 -->
 {
-  int n=0;
+  // mark subject sentence
+  int min_id = -1;
   for (Annotation sen : inputAS.get("Sentence")) {
-    sen.getFeatures().put("order", n++);
-    System.out.println(stringFor(doc, sen));
+  	if (sen.getId() < min_id || min_id == -1) min_id = sen.getId();
   }
-  //AnnotationSet senAnnots = bindings.get("sen");
-  //System.out.println(stringFor(doc, senAnnots));
-  //senAnnots.getFeatures().put("order", n++);
+  for (Annotation sen : inputAS.get("Sentence")) {
+  	if (sen.getId() == min_id) sen.getFeatures().put("subject", 1);
+    else sen.getFeatures().put("subject", 0);
+  }
 }

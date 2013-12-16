@@ -123,9 +123,12 @@ public class MySQL extends Database implements QueryOperation {
 	}
 
 	@Override
-	public Object update(ArrayList<Object> params) {
-		// TODO Auto-generated method stub
-		return null;
+	public int update(String table, String cols, String cond) throws SQLException {
+		String strSQL = "UPDATE " + table + " Set " + cols + " Where " + cond;
+		stmt          = dbCon.createStatement();
+		if (DEBUG) System.out.println(strSQL);
+		int rows      = stmt.executeUpdate(strSQL);
+		return rows;
 	}
 
 	@Override
@@ -139,8 +142,8 @@ public class MySQL extends Database implements QueryOperation {
 		if (params.containsKey("having")) strSQL += "Having " + params.get("having") + " ";
 		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
 		if (params.containsKey("limit")) strSQL += "Limit " + params.get("limit") + " ";
-		stmt = dbCon.createStatement();
 		if (DEBUG) System.out.println(strSQL);
+		stmt = dbCon.createStatement();
 		rs   = stmt.executeQuery(strSQL);
 		
 		return rs;

@@ -38,23 +38,30 @@ public class Summary {
 	private DataMaintainProcessor dm;
 	private InferenceProcessor inference;
 	private String subject = new String();
+	private int mode;
 	
-	public Summary() {
-		if (!this.init()) {
+	public Summary(int mode) {
+		this.mode = mode;
+		if (!this.init(mode)) {
 			System.out.println("failed to initialize program!");
 			System.exit(0);
 		}
 	}
 	
-	public boolean init()  {		
+	public boolean init(int mode)  {		
 		try {
 			Gate.init();
 			
 			this.db = new Transaction();
 			this.ds = new GateDataStore();
 			this.dh = new GateDocsHandler();
-			if (!this.openDataStore(Config.ds_dir)) return false;
-			if (!db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password)) return false;
+			if (mode == 0) {
+				if (!this.openDataStore(Config.ds_dir_development)) return false;
+				if (!db.connect(Config.ip, Config.port, Config.db_development, Config.username, Config.password)) return false;
+			} else if (mode == 1) {
+				if (!this.openDataStore(Config.ds_dir)) return false;
+				if (!db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password)) return false;
+			}
 			return true;
 		} catch (GateException e) {
 			e.printStackTrace();
@@ -78,7 +85,7 @@ public class Summary {
 	private ArrayList<String[]> getTermbankFromCorpus(String e_id, Corpus corpus) {
 		ArrayList<String[]> wordset = new ArrayList<String[]>();
 		TfIdfTermbank termBank      = (TfIdfTermbank) corpus.getFeatures().get("tfidfTermbank");
-		
+	
 		Map<gate.termraider.util.Term, Integer> termFrequency = termBank.getTermFrequencies();
 		Map<gate.termraider.util.Term, Integer> termDocFrequencies = termBank.getDocFrequencies();
 		Map<gate.termraider.util.Term, Double> termScores = termBank.getTermScores();
@@ -115,13 +122,13 @@ public class Summary {
 		ArrayList<String[]> sentences = getSentencesFromCorpus(String.valueOf(e_id), corpus);
 		db.insert(wordset, "words");
 		db.insert(sentences, "sentences");
-		//ie.cleanup();
+		ie.cleanup();
 		return wordset;
 	}
 	
 	public int runCluster(String e_id, ArrayList<String[]> wordset) throws SQLException, ParseException {
 		ArrayList<String> new_email = new ArrayList<String>();
-		cluster                     = new ClusterProcessor();
+		cluster                     = new ClusterProcessor(mode);
 		new_email.add(e_id);
 		new_email.add(subject);
 		ResultSet grs = db.getEmailGroups();
@@ -173,15 +180,15 @@ public class Summary {
 		}
 	}
 	
-	public String runInference(int final_group) throws PersistenceException, ResourceInstantiationException {
+	public String runInference(int final_group) throws PersistenceException, ResourceInstantiationException, InterruptedException {
 		try {
-			inference = new InferenceProcessor(DEBUG);
+			inference = new InferenceProcessor(mode);
 			ArrayList<Document> docs = new ArrayList<Document>();
 			for (Document doc : ds.getCorpus(final_group - 1)) docs.add(doc);
 			String summary;
 
 			summary = inference.summarize(final_group, docs);
-			//inference.cleanup();
+			inference.cleanup();
 			return summary;
 			
 		} catch (SQLException e) {
@@ -210,7 +217,7 @@ public class Summary {
 		try {
 			
 			int final_group = 0;
-
+/*
 			ArrayList<Document> docs = new ArrayList<Document>();
 			Document doc;
 			doc = getEmailData(e_id);
@@ -236,9 +243,9 @@ public class Summary {
 			if (DEBUG) Out.println("=========================== \n\n");
 			
 			if (DEBUG) Out.println("Final Group --> " + final_group);
-
-			//final_group = 1;
-			//runInference(final_group);
+*/
+			final_group = 1;
+			runInference(final_group);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -248,9 +255,9 @@ public class Summary {
 	public void close() throws PersistenceException {
 		db.close();
 		ds.closeDataStore();
-		//ie.cleanup();
+		ie.cleanup();
 		cluster.close();
-		//inference.cleanup();
+		inference.cleanup();
 		dh = null;
 		ie = null;
 		cluster = null;
@@ -259,12 +266,13 @@ public class Summary {
 	}
 	
 	public static void main(String[] args) throws Exception {
-
+		int mode       = 1;
 		Transaction db = new Transaction();
-		db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
-
+		if (mode == 0) db.connect(Config.ip, Config.port, Config.db_development, Config.username, Config.password);
+		else if (mode == 1) db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
+		
 		int range1 = 0;
-		int range2 = 1;
+		int range2 = 9;
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "content, e_id, subject");
@@ -273,13 +281,12 @@ public class Summary {
 		ResultSet rs = db.query("emails", params);
 
 		while (rs.next()) {
-			Summary sumApp = new Summary();
+			Summary sumApp = new Summary(mode);
 			int e_id = rs.getInt("e_id");
 			sumApp.run(e_id);
-			Thread.sleep(5000000);
 			sumApp.close();
 			sumApp = null;
-			
+			Thread.sleep(500000);
 		}
 
 		db.close();
