@@ -1,0 +1,5 @@
+Re: ObjectiveDDP ?> iPhone App talking directly to meteor.
+Martin, that's a cool way for now. We should mark the methods you're calling in the Meteor project somehow, so
+the engineers in this app are aware that a change there might impact the iOS application. 
+On Thu, Dec 5, 2013 at 6:13 PM, Martin Ceperley <martin@knote.com> wrote:
+

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MySQL extends Database implements QueryOperation {
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 	Connection dbCon = null;
 	Statement stmt = null;
 	PreparedStatement prestmt = null;
@@ -136,6 +136,7 @@ public class MySQL extends Database implements QueryOperation {
 		strSQL += "From " + table + " ";
 		if (params.containsKey("cond")) strSQL += "Where " + params.get("cond") + " ";
 		if (params.containsKey("group")) strSQL += "Group by " + params.get("group") + " ";
+		if (params.containsKey("having")) strSQL += "Having " + params.get("having") + " ";
 		if (params.containsKey("order")) strSQL += "Order by " + params.get("order") + " ";
 		if (params.containsKey("limit")) strSQL += "Limit " + params.get("limit") + " ";
 		stmt = dbCon.createStatement();

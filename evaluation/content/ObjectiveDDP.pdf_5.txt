@@ -1,0 +1,14 @@
+Re: ObjectiveDDP ?> iPhone App talking directly to meteor.
+Yes I agree Yan, in the future a good JSON REST API for this app and other knotable apps is the goal, probably
+with standard auth like Oauth2 for authentication. 
+I will try to pull out the SRP Login stuff from the lib so we can directly compare the hashed password in Mongo. 
+Using websockets would mainly help us with real?time updates of the current screen, to avoid frequently polling
+the DB for changes. A socket may not stay open long on a spotty Cellular connection, maybe it would only be
+activated on wi?fi.  Minimizing the amount of redundant data sent across the wire is crucial.
+Right now in my build the Websockets only last for 30 seconds, and then they restart, and the server sends you
+the data you are subscribed to over and over. Examining the web?app with Chrome it looks like the websockets
+stay open for much longer, several minutes. I don't know if this is caused by the iOS library or the server. 
+Long, do you know if there is any websocket timeout on the server? Or if the client sends a heartbeat or
+something to stay open?
+?Martin
+

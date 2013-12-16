@@ -1,0 +1,4 @@
+Re: New Router.
+One last comment.  Why have separate SSIDs for the 2.4 versus 5 GHz?  Why not just make them all the
+same?
+

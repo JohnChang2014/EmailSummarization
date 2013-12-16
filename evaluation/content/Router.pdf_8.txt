@@ -1,0 +1,4 @@
+Re: New Router.
+I suggest that you connect to the SSID "Knotable5GHz" (pwd: hellohello) as default. 5GHz wifi signals are
+always more reliable.
+

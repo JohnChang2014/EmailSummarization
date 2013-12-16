@@ -1,0 +1,20 @@
+Re: New iOS design.
+Hey I did some work and came to this task: "
+Rather than indents, Amol wants them to work in a similar way to the group / user panel, i.e. when you click on a topic it expands out to reveal subtopics, moving the other topics up (or
+down) to make space. He is thinking of a transition similar to the iOS 7 app groups, i.e. the zoom in, zoom out thing, but in a list, rather than square, form."
+ and realized I will have a bit more time this weekend to make it similar to iOS design but it will look awesome Amol is right. Consider attached files wireframe for what is coming up. 
+Timeframe: all the time you need. over weekend and next few weeks im all empty for this.
+I love the way this is going.
+?? 
+Vladimir Babic
+www.vladimirbabic.net
+4 attachments
+Group Privacy options.png
+31K
+knote with privacty.png
+544K
+People Groups.png
+148K
+user hierarchi.png
+32K
+

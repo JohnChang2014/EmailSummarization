@@ -1,0 +1,16 @@
+Imports: {
+  import static gate.Utils.*;
+}
+Phase: selectedSentences
+Input: Sentence VG TermCandidate Date NounChunk 
+Options: control = brill
+
+Rule: selectedSentences
+(
+  (
+  { Sentence contains VG, Sentence contains TermCandidate, VG.tense =~ "(Inf|Pre)", Sentence contains Date } |
+  { Sentence contains VG, Sentence contains TermCandidate, VG.tense =~ "(Inf|Pre)" } 
+  )
+):senCandidate
+-->
+:senCandidate.SentenceCandidate = { rule = "selectedSentences", string = :senCandidate@string }

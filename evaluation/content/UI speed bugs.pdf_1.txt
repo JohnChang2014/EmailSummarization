@@ -1,0 +1,18 @@
+Re: UI speed bugs.
+On 12/11/2013 4:08 PM, Amol Sarva wrote:
+pp.knotable we are loading a
+Hi Amol,
+About UI speed bugs:
+I did the items below:
+? Prevent loading all knotes, message and keynote of a user after log in. Only load knotes, messages, keynote
+of a topic when user click on topic.
+? Refactor topics template to avoid the template re?rendered much
+? Enhance code to decrease actions when click on a topic.
+However, The performance has not been improved much as I expected.  I review, find solution, apply solutions to
+improve it when I had completed my tasks. The current code are mess up and so much logic on it.
+Besides, I am assigned by tasks has deadline. So, I must do them first. Currently, I am implementing
+card#1208.
+Please let me know if you have any opinion.
+Thanks,
+Mark
+

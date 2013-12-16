@@ -1,0 +1,8 @@
+From: Jeremy Levy <jeremy@meetmoi.com>
+Date: 2013-11-27 11:17:00
+To: angus.p.mcleod@gmail.co
+Cc: 
+Subject: Re: New Router
+One last comment.  Why have separate SSIDs for the 2.4 versus 5 GHz?  Why not just make them all the
+same?
+

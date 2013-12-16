@@ -8,6 +8,17 @@ import java.util.HashMap;
 
 public class Transaction extends MySQL {
 	
+	public int getEmailCountFromGroup(int g_id) throws SQLException {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("cols", "g_id, count(e_id) as n_emails");
+		params.put("group", "g_id");
+		params.put("having", "g_id = " + g_id);
+		params.put("order", "g_id ASC");
+		ResultSet rs = this.query("email_groups", params);
+		if (rs.next()) return rs.getInt("n_emails");
+		return 0;
+	}
+	
 	// remove all words of a group
 	public void removeWordsFromGroup(int g_id) throws SQLException {
 		this.delete("group_words", "g_id = " + g_id);
@@ -58,7 +69,7 @@ public class Transaction extends MySQL {
 	public ResultSet getEmailsFromGroup(int g_id) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "b.* ");
-		params.put("cond", "a.g_id=b.g_id And a.g_id = " + g_id);
+		params.put("cond", "a.e_id=b.e_id And a.g_id = " + g_id);
 		return this.query("email_groups as a, emails as b", params);
 	}
 
@@ -115,10 +126,9 @@ public class Transaction extends MySQL {
 
 	private HashMap<String, String> getParamsForSummaries(String[] args) {
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("s_id", args[0]);
-		params.put("g_id", args[1]);
-		params.put("n_emails", args[2]);
-		params.put("summary", args[3]);
+		params.put("g_id", args[0]);
+		params.put("n_emails", args[1]);
+		params.put("summary", args[2]);
 		return params;
 	}
 

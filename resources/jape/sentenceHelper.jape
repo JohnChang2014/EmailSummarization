@@ -1,0 +1,22 @@
+Imports: {
+  import static gate.Utils.*;
+}
+Phase: sentenceHelper
+Input: Sentence
+Options: control = brill
+
+Rule: split_sentences
+(
+  { Sentence }
+):sen
+-->
+{
+  int n=0;
+  for (Annotation sen : inputAS.get("Sentence")) {
+    sen.getFeatures().put("order", n++);
+    System.out.println(stringFor(doc, sen));
+  }
+  //AnnotationSet senAnnots = bindings.get("sen");
+  //System.out.println(stringFor(doc, senAnnots));
+  //senAnnots.getFeatures().put("order", n++);
+}

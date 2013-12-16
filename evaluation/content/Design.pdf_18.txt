@@ -1,0 +1,5 @@
+Re: New iOS design.
+Ideas:
+1. Symbols of power in pictorial languages: e.g. 'Ruler' in ancient Egyptian hieroglyphs
+2. It'd be good to have an easy way to show different levels of authority: e.g. the Chevrons that Trello uses.
+

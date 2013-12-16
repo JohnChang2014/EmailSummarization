@@ -1,0 +1,29 @@
+From: Nicole Eaton <nicole@knote.com>
+Date: 2013-12-07 09:54:00
+To: angus.p.mcleod@gmail.co
+Cc: 
+Subject: Re: New iOS design
+Great, forward on Vlad’s designs if something comes through this weekend!  Will be working on our google doc today and tomorrow and will check out your contributions there, too.
+On Dec 6, 2013, at 4:15 PM, Angus McLeod <angus.p.mcleod@gmail.com> wrote:
+Great. Thanks. Looking forward to it!
+Angus.
+On Fri, Dec 6, 2013 at 4:03 PM, Vladimir Babic <vldbbc@gmail.com> wrote:
+I will send you updates on this in few hours with topics + profiles. Also i will design iphone settings and iphone profile tomorrow and send it over with pngs and
+instructions. Give me some time for web UI be back soon.
+On Fri, Dec 6, 2013 at 9:17 PM, Angus McLeod <angus.p.mcleod@gmail.com> wrote:
+Ok sure. Also, about the group design you sent ? great work. Here are some changes / updates:
+1. Rather than have the + symbol on the group titles, put it on the end of the people card that the user is moving. If the plus symbol appears on each group title, the
+user may get confused, thinking they're adding the people card to multiple groups.
+2. I've changed my mind about the groups dropdown menu. Get rid of it, and the little arrow next to the symbol. What we're going to do is have a new
+group/permissions settings UI box appear when you click the group symbol i.e. the upside?down trident. I'm thinking a centered box (2/3s of the screen) with a greyed
+out / transparent view of the main UI behind. I'll be more specific about what settings will go on this view soon.
+3. We're going to integrate permissions along with groups, so we need permissions icons that will sit in three places:
+1. On the knote card itself (with the avatar and date / time etc)
+2. At the top of a topic thread (after title)
+3. In the group title
+Base the design off of the equivalent FB permissions icons:
+<Facebook Permissions Icon 3.jpg>
+?? 
+Vladimir Babic
+www.vladimirbabic.net
+

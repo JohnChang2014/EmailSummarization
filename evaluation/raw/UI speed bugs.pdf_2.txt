@@ -1,0 +1,23 @@
+From: Mark NGUYEN <marknguyen.dng@gmail.com>
+Date: 2013-12-11 05:00:00
+To: a@knote.com, angus@knote.com, sarah@knote.co
+Cc: 
+Subject: Re: UI speed bugs
+On 12/11/2013 4:08 PM, Amol Sarva wrote:
+Threads: When a user loads app.knotable we are loading all the threads at once. This is taking
+ages. This is Card #701 on the Dev board. Mark has done nothing. Nga has already suggested a
+solution (see comment from Dec 2 at 11:14pm on Card #701) which I think must be the answer:
+About Nga's comment: 
+@amolsarva I think we can modify some code to improving loading time:
+In topics column, we only need to fetch id, subject,.. of topic, not all data. But in topics?menu.coffee,
+you loaded all data of topics although you only use some fields of it.
+Current code: Topics.find().fetch()
+?> You should modify code to get what you need, for example: Topics.find({}, {fields: {..<please
+specify fields here>..}}).fetch()?
+Similar comment to people column.
+If there are still too much topics, we can do some kind of topics paging in topics column
+I reviewed collections of topics, contacts and notice that we are using almost of their fields. So I don't think it is
+root cause. However, I will try and apply this solution with our collections later.
+Thanks,
+Mark
+

@@ -1,0 +1,3 @@
+Re: New Router.
+Some laptops don't have 5G wifi and won't see that network. In which case use the other Knotable network.
+

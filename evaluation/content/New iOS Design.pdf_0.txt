@@ -1,0 +1,17 @@
+New iOS design.
+These looks good. Can we have someone help cut up the graphic elements from the PNG like for Mailable? Or are you good at this Yan?
+<Groups and Subtopics.jpg>
+2. Clicking on the groupname reveals other groups the user is a member of and shifts the 'People' down:
+<List of Groups.jpg>
+Clicking on the symbol next to the groupname will open a dropdown menu allowing the user to 'Add', 'Remove' or 'Create'. The ability to Add people
+to groups, Remove people from Groups and Create Groups will have to be incorporated into the design.
+<Groups menu.jpg>
+?? 
+Vladimir Babic
+www.vladimirbabic.net
+?? 
+Vladimir Babic
+www.vladimirbabic.net
+<People Groups.png>
+<Knotes  ? Image Knote.png>
+

@@ -1,0 +1,9 @@
+From: Angus McLeod <angus.p.mcleod@gmail.com>
+Date: 2013-12-07 21:56:00
+To: a@sarva.c
+Cc: vldbbc@gmail.com, amol@knotable.co
+Subject: Re: New iOS design
+Ideas:
+1. Symbols of power in pictorial languages: e.g. 'Ruler' in ancient Egyptian hieroglyphs
+2. It'd be good to have an easy way to show different levels of authority: e.g. the Chevrons that Trello uses.
+

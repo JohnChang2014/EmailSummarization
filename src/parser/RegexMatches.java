@@ -1,5 +1,7 @@
 package parser;
 
+import gate.util.Out;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -18,6 +20,9 @@ public class RegexMatches {
   	private static final String Receivers_2   = "<?([\\w\\d\\-\\.\\_]+@[\\w\\d\\-]+(\\.[\\w\\d]+)*(\\.[\\w]{2,}))>?";
     private static final Pattern p_emailStart_2 = Pattern.compile(EmailStart_2);
     private static final Pattern p_receivers_2 = Pattern.compile(Receivers_2);
+    
+    private static final String emailID = "(<([_A-Za-z0-9\\-\\+]+(\\.[_A-Za-z0-9\\-]+)*@[A-Za-z0-9\\-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,}))>)";
+    private static final Pattern p_emailID = Pattern.compile(Receivers_2);
     
 	public HashMap<String, String> isEmailStart(String input, int type) {
 		HashMap<String, String> resultset = new HashMap<String, String>();
@@ -41,4 +46,13 @@ public class RegexMatches {
 		while (m.find()) receivers.add(m.group(1));
 		return receivers;
 	}
+	
+	public ArrayList<String> parseEmails(String input) {
+		Matcher m = null;
+		m = p_emailID.matcher(input); // get a matcher object
+		ArrayList<String> mails = new ArrayList<String>();
+		while (m.find()) mails.add(m.group(1));
+		return mails;
+	}
+	
 }

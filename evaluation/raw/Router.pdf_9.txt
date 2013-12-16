@@ -1,0 +1,7 @@
+From: Amol Sarva <a@sarva.co>
+Date: 2013-11-27 11:05:00
+To: angus.p.mcleod@gmail.com, brian.buchwald@bomoda.com, alain.rothstein@bomoda.co
+Cc: 
+Subject: Re: New Router
+Some laptops don't have 5G wifi and won't see that network. In which case use the other Knotable network.
+

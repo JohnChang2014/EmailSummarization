@@ -1,0 +1,13 @@
+Re: New Router.
+Hello everyone,
+As per Jeremy's suggestions, I've set up the routers as follows:
+ASUS RT?AC68R (behind the bar): SSIDs: Knotable2.4GHz (Channel 11) and Knotable5GHz (Channel 36)
+ASUS RT?N66U (back right corner): SSIDs: Knotable2.4GHz (Channel 5) and Knotable5GHz (Channel 161)
+Apple Airport Extreme (Floor near Conference Room): SSID: Knotable2.4GHz (Channel 1)
+Jeremy is going to change MeetMoi's 2.4GHz and 5GHz channels accordingly, so they don't conflict.
+The upshot is that you won't have to switch between SSIDs and the signals will conflict less being on different
+channels, albeit, ideally we would have a dual 2.4GHz and 5GHz router in place of the Airport Extreme. 
+If you have any issue with the routers/internet tell me.
+Cheers,
+Angus.
+

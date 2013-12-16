@@ -1,0 +1,10 @@
+From: Amol Sarva <a@knote.com>
+Date: 2013-12-11 05:50:00
+To: marknguyen.dng@gmail.co
+Cc: sarah@knote.com, angus@knote.co
+Subject: Re: UI speed bugs
+Hmm.
+@sarah can you let mark focus here if other tasks are distracting him?
+Can you turn ON paging of topics and people? We had this once. Set a flag =paging or =scrolling in the code that
+we can change to turn OFF paging. Label it well in comments. Post a link to that check in on the cards please.
+

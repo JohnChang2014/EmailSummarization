@@ -1,0 +1,4 @@
+Re: New iOS design.
+Yea I see the PSD's but I was asking about getting someone to cut up the PSD's into PNG's for us since I don't have photoshop. We'll need PNG's cut out for the backgrounds, PNG's
+with transparency for custom buttons, icons, etc. in both retina and non?retina sizes, and specifications about the exact fonts and font sizes used in the comps.
+

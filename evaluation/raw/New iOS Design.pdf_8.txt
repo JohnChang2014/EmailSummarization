@@ -1,0 +1,28 @@
+From: Angus McLeod <angus.p.mcleod@gmail.com>
+Date: 2013-12-06 15:17:00
+To: vldbbc@gmail.co
+Cc: a@sarva.co, nicole@knote.com, nicole@knote.co
+Subject: Re: New iOS design
+Ok sure. Also, about the group design you sent ? great work. Here are some changes / updates:
+1. Rather than have the + symbol on the group titles, put it on the end of the people card that the user is moving. If the plus symbol appears on each group title, the user may get
+confused, thinking they're adding the people card to multiple groups.
+2. I've changed my mind about the groups dropdown menu. Get rid of it, and the little arrow next to the symbol. What we're going to do is have a new group/permissions settings UI box
+appear when you click the group symbol i.e. the upside?down trident. I'm thinking a centered box (2/3s of the screen) with a greyed out / transparent view of the main UI behind. I'll be
+more specific about what settings will go on this view soon.
+3. We're going to integrate permissions along with groups, so we need permissions icons that will sit in three places:
+1. On the knote card itself (with the avatar and date / time etc)
+2. At the top of a topic thread (after title)
+3. In the group title
+Base the design off of the equivalent FB permissions icons:
+Permissions icon:
+? mouseover: same as FB ? text box with permissions info
+? click: dropdown / callout permissions menu
+I'll give you some details on the permissions menu and the group/permissions settings UI soon.
+4. User role identification in the avatar. We're going to have a hierarchical user system: e.g. Administrator, Instructor, User. The roles of the don't matter for now, I just want you to come
+up with a way to show a user role in the avatar (e.g. a label) 
+5. Subtopics: Rather than indents, Amol wants them to work in a similar way to the group / user panel, i.e. when you click on a topic it expands out to reveal subtopics, moving the other
+topics up (or down) to make space. He is thinking of a transition similar to the iOS 7 app groups, i.e. the zoom in, zoom out thing, but in a list, rather than square, form.
+That's it for now. Keep me posted on how you are going with your work / timeframe.
+Thanks,
+Angus.
+

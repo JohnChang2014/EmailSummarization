@@ -1,0 +1,9 @@
+Re: New Router.
+Wouldn't a better solution to have them use the same SSID and let our computers automatically choose the
+access point based on it's strength as the protocol is designed?
+This way I don't need to decide to use SuperDuper or SuperDuperDuperSuper depending on where I am sitting?
+?? 
+_______________________________________________
+Jeremy Levy | Chief Technology Officer
+MeetMoi
+

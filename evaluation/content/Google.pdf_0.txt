@@ -1,0 +1,48 @@
+Re: Google innovations:.
+Done
+On Mon, Dec 9, 2013 at 5:37 PM, Amol Sarva <a@sarva.co> wrote:
+Yes! Let's change this right away to s3
+Sarah/angus ? important card for Dev board ASAP 
+// Amol Sarva, Ph.D. // a@sarva.co // 530?727?8277 // a.sarva.co //  @amol
+On Dec 9, 2013, at 11:24 PM, Martin Ceperley <martin@knote.com> wrote:
+Working on image uploading from iPhone app, I'm realizing we're storing file uploads (of several
+MB) straight in MongoDB. While this works, it could make the DB very large, and make backing
+up a big pain. I'd recommend moving this over to Amazon S3 or Google Cloud Storage.
+On Dec 9, 2013, at 11:48 AM, Lars Kluge <l@knote.com> wrote:
+Also, currently Meteor only supports MongoDB??nothing else. 
+On Mon, Dec 9, 2013 at 11:46 AM, Martin Ceperley <martin@knote.com> wrote:
+I've used some of them, we have project noah built on app engine with python. I
+did some analytics analysis with Big Query. In most cases the open?source
+alternatives we are using are just as good except on a very large scale where
+management becomes an issue.
+Cloud Storage is a good S3 alternative for file storage and hosting. Where are we
+storing our uploaded images & files now?
+Main downside is the proprietary lock?in and high cost at scale.
+If we replaced Mongo with Cloud Datastore for example in the future, it would
+mean we don't have manage hosting a database (there are also hosted
+MongoDB services which Lars has looked into). Downside is relatively slow
+response time (maybe 100 to a few hundred MS) so you have to be efficient with
+queries.
+On Dec 9, 2013, at 11:43 AM, Lars Kluge <l@knote.com> wrote:
+Not today. A little down the road when a MongoDB cluster and a
+bunch of application nodes are not able to handle our traffic
+anymore, then we need big data technologies. But the transition
+should be seamless, we need to figure out which pieces we need
+to extract from the main application and solve differently. For a
+typical startup this usually takes years. But just my two cents. 
+On Mon, Dec 9, 2013 at 11:24 AM, Amol Sarva <a@sarva.co>
+wrote:
+Guys, I am seeing a google guy talk about the below. Do they do
+anything we should use instead of our setup?
+Google innovations:
+GFS
+Mapreduce ? Hadoop
+Big Table ? nosql invented
+Dremel ? big data crunching engine
+Spanner and f1 ? the return of SQL
+You can use them ???> cloud storage, cloud datastore, cloud
+compute engine
+Eg Snapchat ? scaled through Google and why it is 12 people
+// Amol Sarva, Ph.D. // a@sarva.co // 530?727?8277 //
+a.sarva.co //  @amol
+

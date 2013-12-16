@@ -1,0 +1,12 @@
+From: Amol Sarva <a@knote.com>
+Date: 2013-12-11 04:08:00
+To: marknguyen.dng@gmail.com, angus@knote.com, sarah@knote.co
+Cc: 
+Subject: UI speed bugs
+Mark, are you working on this?
+//
+Threads: When a user loads app.knotable we are loading all the threads at once. This is taking ages. This
+is Card #701 on the Dev board. Mark has done nothing. Nga has already suggested a solution (see comment
+from Dec 2 at 11:14pm on Card #701) which I think must be the answer:
+// Amol Sarva, Ph.D. // a@knote.com // 530?727?8277 // Knotable.com //  @amol and a.sarva.co
+

@@ -36,6 +36,7 @@ public class Summary {
 	private IEProcessor ie;
 	private ClusterProcessor cluster;
 	private DataMaintainProcessor dm;
+	private InferenceProcessor inference;
 	private String subject = new String();
 	
 	public Summary() {
@@ -114,7 +115,7 @@ public class Summary {
 		ArrayList<String[]> sentences = getSentencesFromCorpus(String.valueOf(e_id), corpus);
 		db.insert(wordset, "words");
 		db.insert(sentences, "sentences");
-		ie.cleanup();
+		//ie.cleanup();
 		return wordset;
 	}
 	
@@ -172,6 +173,25 @@ public class Summary {
 		}
 	}
 	
+	public String runInference(int final_group) throws PersistenceException, ResourceInstantiationException {
+		try {
+			inference = new InferenceProcessor(DEBUG);
+			ArrayList<Document> docs = new ArrayList<Document>();
+			for (Document doc : ds.getCorpus(final_group - 1)) docs.add(doc);
+			String summary;
+
+			summary = inference.summarize(final_group, docs);
+			//inference.cleanup();
+			return summary;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	private Document getEmailData(int e_id) throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "content, e_id, subject");
@@ -188,7 +208,9 @@ public class Summary {
 	
 	public void run(int e_id) {
 		try {
+			
 			int final_group = 0;
+
 			ArrayList<Document> docs = new ArrayList<Document>();
 			Document doc;
 			doc = getEmailData(e_id);
@@ -197,10 +219,7 @@ public class Summary {
 
 			if (DEBUG) Out.println("email ID: " + e_id);
 
-			/*
-			 * information extraction and annotation using GATE then compute tf and
-			 * store into database
-			 */
+
 			if (DEBUG) Out.println("====== IE processing ======");
 			// information extraction from new email
 			ArrayList<String[]> wordset = runInfoExtraction(e_id, docs);
@@ -217,11 +236,10 @@ public class Summary {
 			if (DEBUG) Out.println("=========================== \n\n");
 			
 			if (DEBUG) Out.println("Final Group --> " + final_group);
+
+			//final_group = 1;
+			//runInference(final_group);
 			
-			/*
-			 * summarize the email group read each email sorted by date in the
-			 * group apply inferece rules here in GATE
-			 */
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -230,12 +248,14 @@ public class Summary {
 	public void close() throws PersistenceException {
 		db.close();
 		ds.closeDataStore();
-		ie.cleanup();
+		//ie.cleanup();
 		cluster.close();
+		//inference.cleanup();
 		dh = null;
 		ie = null;
 		cluster = null;
 		dm = null;
+		inference = null;
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -243,8 +263,8 @@ public class Summary {
 		Transaction db = new Transaction();
 		db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
 
-		int range1 = 15;
-		int range2 = 18;
+		int range1 = 0;
+		int range2 = 1;
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "content, e_id, subject");
@@ -256,9 +276,10 @@ public class Summary {
 			Summary sumApp = new Summary();
 			int e_id = rs.getInt("e_id");
 			sumApp.run(e_id);
+			Thread.sleep(5000000);
 			sumApp.close();
 			sumApp = null;
-			//Thread.sleep(5000);
+			
 		}
 
 		db.close();

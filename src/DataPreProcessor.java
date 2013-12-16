@@ -7,16 +7,19 @@ import java.util.HashMap;
 import date.DateTime;
 import db.Transaction;
 import parser.RegexMatches;
+import file.Directory;
 import file.FReader;
 import file.FWriter;
 
 public class DataPreProcessor {
-	private static final String storage_path1 = "./data/raw/";
-	private static final String storage_path2 = "./data/content/";
-	private static final String dataset_path  = "./data/pdf/";
+	private String dataset_path;
+	private String storage_path1 = Config.storage_path1;
+	private String storage_path2 = Config.storage_path2;
+	
 	// dataset ignores Permathreads 2.mbox and permathreads.mbox temperarily
 	// works     => 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
 	// not works => 4(no need to remove whitespace)
+	/*
 	private static final String[] dataset = { 
 		"33 5th Floor.pdf", "Apt for Video Shoot.pdf", "Con Ed.pdf", 
 		"Counter Top.pdf", "ElevatorStairs Key.pdf", "Gigzolo rehearsal.pdf", 
@@ -24,13 +27,17 @@ public class DataPreProcessor {
 		"Meet Wendy.pdf", "Office Setup.pdf", "Performance.pdf", 
 		"Re- Design.pdf", "Recruiting Premeds.pdf", "Stroke Patient Savings.pdf", 
 		"ThankYouForOrder.pdf", "wedding band.pdf", "Will be in around 12-30.pdf", 
-		"Work Stations.pdf" };
+		"Work Stations.pdf" }; 
+	 */
 	private static final DateTime dt = new DateTime();
 	private static Transaction mydb;
 	
 	public DataPreProcessor() {
 		this.mydb = new Transaction();
-		this.mydb.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
+		if (!this.mydb.connect(Config.ip, Config.port, Config.db, Config.username, Config.password)) {
+			System.out.println("failed to connect database!");
+			System.exit(0);
+		}
 	}
 	
 	private String getSQLDateTimeformat(String value) throws ParseException {
@@ -59,21 +66,27 @@ public class DataPreProcessor {
 	// a) parse data from raw email thread in PDF file
 	// b) write data from pdf into plain text file
 	// c) write data from pdf into MySQL database
-	public void transformDataSet() throws IOException, SQLException, ParseException {
+	public void transformDataSet(int mode) throws IOException, SQLException, ParseException {
 		String filename = new String();
 		FReader reader = new FReader();
+		Directory dir = new Directory();
 		ArrayList<String> content = new ArrayList<String>();
 		ArrayList<HashMap<String, String>> emailset = new ArrayList<HashMap<String, String>>();
 		int n = 0;
-
+		
+		if (mode == 0) dataset_path = Config.dataset_root_path;
+		if (mode == 1) dataset_path = Config.testset_root_path;
+		
 		// read each PDF file one by one
-		for (String file : dataset) {
+		for (String file : dir.getDirList(dataset_path + Config.datafile_path)) {
+			if (file.equals(".DS_Store")) continue;
 			n++;
 			//if (n != 1) continue;
 
 			// parse raw data from PDF dataset
-			filename = dataset_path + file;
-			if (n == 4 ) {
+			filename = dataset_path + Config.datafile_path + file;
+			System.out.println(filename);
+			if (mode == 0 && n == 4 ) {
 				content = reader.readPDFFile(filename, false);
 				emailset = parseDataFromPDF(content, 2);
 			} else {
@@ -192,8 +205,8 @@ public class DataPreProcessor {
 	private void writeDataIntoStorage(String prefix, ArrayList<HashMap<String, String>> emailset) throws IOException, SQLException, ParseException {
 		int email_index = 0;
 		for (HashMap<String, String> email : emailset) {
-			FWriter fw1 = new FWriter(storage_path1 + prefix + "_" + email_index + ".txt");
-			FWriter fw2 = new FWriter(storage_path2 + prefix + "_" + email_index + ".txt");
+			FWriter fw1 = new FWriter(dataset_path + storage_path1 + prefix + "_" + email_index + ".txt");
+			FWriter fw2 = new FWriter(dataset_path + storage_path2 + prefix + "_" + email_index + ".txt");
 
 			String sender = email.get("sender");
 			String time = email.get("sendingtime");
@@ -242,7 +255,8 @@ public class DataPreProcessor {
 
 	public static void main(String[] args) throws IOException, SQLException, ParseException {
 		DataPreProcessor dp = new DataPreProcessor();
-		dp.transformDataSet();
+		//dp.transformDataSet(0);
+		dp.transformDataSet(1);
 	}
 
 }

@@ -1,0 +1,38 @@
+From: yan.make <yan.make@gmail.com>
+Date: 2013-12-05 22:15:00
+To: martin@knote.com, a@sarva.co, l@larskluge.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.co
+Cc: 
+Subject: Re: ObjectiveDDP ?> iPhone App talking directly to meteor
+Hi Martin:
+Meteor's real time engine does lots of cache in RAM, this could be an issue for phone, need to
+test it.
+I am worried about another behaviour, meteor polls data from db and cache it, update cache
+every 10s or after write operations. This may cause big data transfer between the phone and
+server. I am not clear about detailed mechanism.
+So pls play with it and figure it out.
+At least we can pull out SRP implemention from it for now.
+A simply sync solution I guess is adding an API in the server to help, because server's current
+behaviour is "polls mongodb, diff data with in the RAM, generate changes and notify affected
+clients", we need a way to add the phone as a normal client in the server.
+As the production in the future, I perfer the normal API way, this mechanism maybe heavy
+for the phone and cause banlance problems with cellular network.
+Thanks.
+yan.make
+???? Martin Ceperley
+????? 2013?12?06  07:13:53
+???? yan.make? Amol Sarva? Lars Kluge? Long Liangyou? Angus McLeod
+???
+??? ObjectiveDDP ?> iPhone App talking directly to meteor
+I've discovered a way for the iOS app to directly talk to the meteor server the same way the
+browser clients do, through DDP websockets. There's a pretty decent Obj?C library someone is
+The app just subscribes to the same queries that the server publishes, and can call methods
+published in the server. I've already easily implemented Login with it, so the app will use the
+same password encryption scheme (SRP). This could supplement the app's MongoDB code or
+possibly replace it in the future, and reduce the need for a full?blown API.
+For now the code is in the ddp branch of knotable?ios. The libraries are imported with
+CocoaPod. With CocoaPods the .xcworkspace file has to be opened rather than the
+.xcodeproj. 
+By the way it looks like there is no authentication enforced for DDP, I'm sure you guys are
+aware of this.
+?Martin
+

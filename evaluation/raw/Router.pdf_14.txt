@@ -1,0 +1,12 @@
+From: Angus McLeod <angus.p.mcleod@gmail.com>
+Date: 2013-11-27 13:08:00
+To: brian.buchwald@bomoda.co
+Cc: jeremy@meetmoi.com, a@sarva.co, alain.rothstein@bomoda.com, alexdgoldberg@gmail.co
+Subject: Re: New Router
+Jeremy made another helpful suggestion: make all SSIDs 'Knotable' so we won't have to choose at all. There will
+be a single SSID for all devices in all locations, across all the routers.
+I will test this after everyone leaves today.
+Sorry to keep changing, but we want to make it work as smoothly as possible.
+Angus
+On Wed, Nov 27, 2013 at 10:47 AM, Brian Buchwald <brian.buchwald@bomoda.com> wrote:
+

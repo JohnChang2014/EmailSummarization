@@ -1,0 +1,12 @@
+ObjectiveDDP ?> iPhone App talking directly to meteor.
+I've discovered a way for the iOS app to directly talk to the meteor server the same way the browser clients do,
+through DDP websockets. There's a pretty decent Obj?C library someone is working on called ObjectiveDDP
+subscribes to the same queries that the server publishes, and can call methods published in the server. I've
+already easily implemented Login with it, so the app will use the same password encryption scheme (SRP). This
+could supplement the app's MongoDB code or possibly replace it in the future, and reduce the need for a full?
+blown API.
+For now the code is in the ddp branch of knotable?ios. The libraries are imported with CocoaPod. With
+CocoaPods the .xcworkspace file has to be opened rather than the .xcodeproj. 
+By the way it looks like there is no authentication enforced for DDP, I'm sure you guys are aware of this.
+?Martin
+
