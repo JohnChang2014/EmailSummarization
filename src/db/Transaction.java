@@ -136,8 +136,10 @@ public class Transaction extends MySQL {
 	// check if an email pair is a relation in the email group
 	public boolean checkEmailPair(int g_id, String sender, String receiver) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
+		String condition = "(sender like '%" + sender + "%' And receiver like '%" + receiver + "%') Or (sender like '%" + receiver + "%' And receiver like '%" + sender + "%') Or ";
+		condition += "(sender like '%" + sender + "%' And ccreceiver like '%" + receiver + "%') Or (sender like '%" + receiver + "%' And ccreceiver like '%" + sender + "%')";
 		params.put("cols", "sender, receiver, ccreceiver");
-		params.put("cond", "(sender like '%" + sender + "%' And receiver like '%" + receiver + "%') Or (sender like '%" + receiver + "%' And receiver like '%" + sender + "%')" );
+		params.put("cond", condition );
 		ResultSet rs = this.query("emails", params); 
 		if (rs.next()) return true;
 		return false;
