@@ -120,7 +120,7 @@ public class Transaction extends MySQL {
 		ResultSet rs = this.query("email_groups as a, emails as b", params);
 		int e_id = 0;
 		if (rs.first()) {
-			e_id = rs.getInt(1);
+			e_id = rs.getInt("b.e_id");
 			this.update("email_groups", "head = 1", "e_id = " + e_id);
 		}
 	}
@@ -147,6 +147,8 @@ public class Transaction extends MySQL {
 	public void insert(String[] args, String table) throws SQLException, ParseException {
 		ArrayList<HashMap<String, String>> paramset = new ArrayList<HashMap<String, String>>();
 		if (table == "words") paramset.add(this.getParamsForWords(args));
+		if (table == "group_words")
+			paramset.add(this.getParamsForGroupWords(args));
 		if (table == "emails") paramset.add(this.getParamsForEmail(args));
 		if (table == "email_groups")
 			paramset.add(this.getParamsForGroup(args));

@@ -1,1 +1,9 @@
-data/*
+evaluation/clusters/*
+evaluation/content/*
+evaluation/raw/*
+evaluation/summary/*
+development/clusters/*
+development/content/*
+development/raw/*
+development/summary/*
+

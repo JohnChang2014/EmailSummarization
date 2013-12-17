@@ -46,9 +46,9 @@ public class ClusterProcessor {
 					assignGroup(g_id, e_id, wordset);
 					return g_id;
 				} else {
-					ResultSet rs                  = dbQuery.getEmailAddressData(e_id);
+					ResultSet rs = dbQuery.getEmailAddressData(e_id);
 					if (rs.next()) {
-						String sender = rs.getString("sender");
+						String sender = reg.parseEmails(rs.getString("sender")).get(0);
 						ArrayList<String> receivers = reg.parseEmails(rs.getString("receiver") + "," + rs.getString("ccreceiver"));
 
 						for (String receiver : receivers) {
@@ -78,8 +78,14 @@ public class ClusterProcessor {
 	}
 	
 	private void assignGroup(int g_id, int e_id, ArrayList<String[]> wordset) throws SQLException, ParseException {
+		ArrayList<String[]> groupWordset = new ArrayList<String[]>();
 		String[] newGroup = { String.valueOf(g_id), String.valueOf(e_id), "0" };
+		for(String[] words : wordset) {
+			words[0] = String.valueOf(g_id);
+			groupWordset.add(words);
+		}
 		dbQuery.insert(newGroup, "email_groups");
+		dbQuery.insert(groupWordset, "group_words");
 		dbQuery.updateHeadEmailFromGroup(g_id);
 	}
 	

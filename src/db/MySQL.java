@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MySQL extends Database implements QueryOperation {
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 	Connection dbCon = null;
 	Statement stmt = null;
 	PreparedStatement prestmt = null;
