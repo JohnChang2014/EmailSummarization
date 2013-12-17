@@ -1,7 +1,7 @@
 From: Sarah Leahy <sarah@knote.com>
 Date: 2013-12-09 17:53:00
-To: a@sarva.c
-Cc: angus@knote.co
+To: a@sarva.co
+Cc: angus@knote.com
 Subject: Re: Re: Google innovations:
 Done
 

@@ -1,7 +1,7 @@
 From: Alex Goldberg <alexdgoldberg@gmail.com>
 Date: 2013-11-27 11:50:00
-To: angus.p.mcleod@gmail.co
-Cc: brian.buchwald@bomoda.com, jeremy@meetmoi.com, a@sarva.co, alain.rothstein@bomoda.co
+To: angus.p.mcleod@gmail.com
+Cc: brian.buchwald@bomoda.com, jeremy@meetmoi.com, a@sarva.co, alain.rothstein@bomoda.com
 Subject: Re: New Router
 Though, Brian?? some members of your team might only be able to access the 2.4GHz network. They should use
 that one if necessary. 

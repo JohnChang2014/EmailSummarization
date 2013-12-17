@@ -1,6 +1,6 @@
 From: Amol Sarva <a@sarva.co>
 Date: 2013-12-07 22:40:00
-To: angus.p.mcleod@gmail.co
+To: angus.p.mcleod@gmail.com
 Cc: 
 Subject: Re: New iOS design
 Any of these connect?

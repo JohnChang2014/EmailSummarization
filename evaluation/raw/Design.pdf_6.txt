@@ -1,6 +1,6 @@
 From: Vladimir Babic <vldbbc@gmail.com>
 Date: 2013-12-06 14:28:00
-To: angus.p.mcleod@gmail.co
+To: angus.p.mcleod@gmail.com
 Cc: 
 Subject: Re: New iOS design
 Give me some time to create png's and list with all font sizes etc

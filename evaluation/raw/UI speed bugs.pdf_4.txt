@@ -1,7 +1,7 @@
 From: Sarah Leahy <sarah@knote.com>
 Date: 2013-12-11 07:49:00
-To: marknguyen.dng@gmail.co
-Cc: a@knote.com, angus.p.mcleod@gmail.co
+To: marknguyen.dng@gmail.com
+Cc: a@knote.com, angus.p.mcleod@gmail.com
 Subject: Re: UI speed bugs
 Mark, 
 Please focus on this task. 

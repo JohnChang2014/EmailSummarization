@@ -1,7 +1,7 @@
 From: Martin Ceperley <martin@knote.com>
 Date: 2013-12-06 10:10:00
-To: a@sarva.c
-Cc: yan.make@gmail.com, angus@knote.co
+To: a@sarva.co
+Cc: yan.make@gmail.com, angus@knote.com
 Subject: New iOS design
 These looks good. Can we have someone help cut up the graphic elements from the PNG like for Mailable? Or are you good at this Yan?
 <Groups and Subtopics.jpg>

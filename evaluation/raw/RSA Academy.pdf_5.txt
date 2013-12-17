@@ -1,7 +1,7 @@
 From: Thomas Martin Ringer <martinringer@groupinstitute.com>
 Date: 2011-11-12 22:53:00
-To: jeffgunningham@gmail.co
-Cc: allenlyn@iinet.net.au, jamie.robertson@361degrees.com.au, hjphelan@iinet.net.au, Glen.McLeod@ssd.com, rely@mac.com, atterton@bigpond.net.au, Aaron.deRozario@communities.wa.gov.au, fm@echidna.id.au, harley.lacy@outbackecology.com, peter.davies@csaglobal.com, cdoran@smrc.com.au, alan@lourens.com.au, kerryely@mac.com, elena.douglas@uwa.edu.au, hannahr.lyles@gmail.com, angus.p.mcleod@gmail.com, hmilne@perth.anglican.org, rory.i.mcleod@gmail.co
+To: jeffgunningham@gmail.com
+Cc: allenlyn@iinet.net.au, jamie.robertson@361degrees.com.au, hjphelan@iinet.net.au, Glen.McLeod@ssd.com, rely@mac.com, atterton@bigpond.net.au, Aaron.deRozario@communities.wa.gov.au, fm@echidna.id.au, harley.lacy@outbackecology.com, peter.davies@csaglobal.com, cdoran@smrc.com.au, alan@lourens.com.au, kerryely@mac.com, elena.douglas@uwa.edu.au, hannahr.lyles@gmail.com, angus.p.mcleod@gmail.com, hmilne@perth.anglican.org, rory.i.mcleod@gmail.com
 Subject: Re: RSA Academy
 Hi all, 
 My belated contribution...

@@ -1,7 +1,7 @@
 From: Martin Ceperley <martin@knote.com>
 Date: 2013-12-06 12:48:00
-To: angus.p.mcleod@gmail.co
-Cc: yan.make@gmail.com, a@sarva.c
+To: angus.p.mcleod@gmail.com
+Cc: yan.make@gmail.com, a@sarva.co
 Subject: Re: New iOS design
 Yea I see the PSD's but I was asking about getting someone to cut up the PSD's into PNG's for us since I don't have photoshop. We'll need PNG's cut out for the backgrounds, PNG's
 with transparency for custom buttons, icons, etc. in both retina and non?retina sizes, and specifications about the exact fonts and font sizes used in the comps.

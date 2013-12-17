@@ -1,7 +1,7 @@
 From: Angus Patrick Mcleod <apm400@nyu.edu>
 Date: 2012-07-11 07:52:00
-To: angus.p.mcleod@gmail.co
-Cc: jdk401@nyu.edu, vikram.unni@gmail.com, aao294@nyu.edu, rg1972@nyu.edu, hrr249@nyu.edu, iyershruti.ilslaw@gmail.com, pp1233@nyu.edu, mbh357@nyu.ed
+To: angus.p.mcleod@gmail.com
+Cc: jdk401@nyu.edu, vikram.unni@gmail.com, aao294@nyu.edu, rg1972@nyu.edu, hrr249@nyu.edu, iyershruti.ilslaw@gmail.com, pp1233@nyu.edu, mbh357@nyu.edu
 Subject: Re: sukhothai
 Hey chaps,
 I get the impression that everyone is OK with Ecotel? Speak now, or forever hold your peace.

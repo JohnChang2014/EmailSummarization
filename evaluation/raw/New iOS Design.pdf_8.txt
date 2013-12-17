@@ -1,7 +1,7 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-12-06 15:17:00
-To: vldbbc@gmail.co
-Cc: a@sarva.co, nicole@knote.com, nicole@knote.co
+To: vldbbc@gmail.com
+Cc: a@sarva.co, nicole@knote.com, nicole@knote.com
 Subject: Re: New iOS design
 Ok sure. Also, about the group design you sent ? great work. Here are some changes / updates:
 1. Rather than have the + symbol on the group titles, put it on the end of the people card that the user is moving. If the plus symbol appears on each group title, the user may get

@@ -1,7 +1,7 @@
 From: Angus Patrick Mcleod <apm400@nyu.edu>
 Date: 2012-07-14 10:29:00
-To: raghavganesh26@gmail.co
-Cc: jdk401@nyu.edu, angus.p.mcleod@gmail.com, vikram.unni@gmail.com, hrr249@nyu.edu, iyershruti.ilslaw@gmail.com, aao294@nyu.edu, pp1233@nyu.edu, mbh357@nyu.ed
+To: raghavganesh26@gmail.com
+Cc: jdk401@nyu.edu, angus.p.mcleod@gmail.com, vikram.unni@gmail.com, hrr249@nyu.edu, iyershruti.ilslaw@gmail.com, aao294@nyu.edu, pp1233@nyu.edu, mbh357@nyu.edu
 Subject: Re: Re: sukhothai
 Hey Jared et al,
 Good thing you got some local info. Well, no trouble. We can do Sukothai on another trip perhaps.There's many

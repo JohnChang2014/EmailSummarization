@@ -1,6 +1,6 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-12-06 14:32:00
-To: martin@knote.com, yan.make@gmail.co
+To: martin@knote.com, yan.make@gmail.com
 Cc: 
 Subject: Re: New iOS design
 

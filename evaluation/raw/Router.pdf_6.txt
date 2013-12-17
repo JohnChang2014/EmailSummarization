@@ -1,7 +1,7 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-11-27 10:39:00
-To: jeremy@meetmoi.co
-Cc: brian.buchwald@bomoda.com, a@sarva.co, alain.rothstein@bomoda.com, alexdgoldberg@gmail.co
+To: jeremy@meetmoi.com
+Cc: brian.buchwald@bomoda.com, a@sarva.co, alain.rothstein@bomoda.com, alexdgoldberg@gmail.com
 Subject: Re: New Router
 Hello everyone,
 As per Jeremy's suggestions, I've set up the routers as follows:

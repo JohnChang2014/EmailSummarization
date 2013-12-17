@@ -1,7 +1,7 @@
 From: Amol Sarva <a@sarva.co>
 Date: 2013-12-09 05:56:00
-To: vldbbc@gmail.co
-Cc: angus.p.mcleod@gmail.co
+To: vldbbc@gmail.com
+Cc: angus.p.mcleod@gmail.com
 Subject: Re: New iOS design
 Cool. We'll use it
 

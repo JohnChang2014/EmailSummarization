@@ -1,7 +1,7 @@
 From: Amol Sarva <a@knote.com>
 Date: 2013-12-11 05:50:00
-To: marknguyen.dng@gmail.co
-Cc: sarah@knote.com, angus@knote.co
+To: marknguyen.dng@gmail.com
+Cc: sarah@knote.com, angus@knote.com
 Subject: Re: UI speed bugs
 Hmm.
 @sarah can you let mark focus here if other tasks are distracting him?

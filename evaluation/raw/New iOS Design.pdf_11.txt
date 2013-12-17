@@ -1,6 +1,6 @@
 From: Vladimir Babic <vldbbc@gmail.com>
 Date: 2013-12-07 04:17:00
-To: angus.p.mcleod@gmail.co
+To: angus.p.mcleod@gmail.com
 Cc: 
 Subject: Re: New iOS design
 Hey I did some work and came to this task: "

@@ -1,6 +1,6 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-12-05 18:34:00
-To: martin@knote.co
+To: martin@knote.com
 Cc: 
 Subject: Re: ObjectiveDDP ?> iPhone App talking directly to meteor
 Well done! This sounds really promising.

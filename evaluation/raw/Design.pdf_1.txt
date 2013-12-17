@@ -1,7 +1,7 @@
 From: ll <yan.make@gmail.com>
 Date: 2013-12-06 10:15:00
-To: martin@knote.co
-Cc: a@sarva.co, angus@knote.co
+To: martin@knote.com
+Cc: a@sarva.co, angus@knote.com
 Subject: Re: New iOS design
 Actually I am not. Amol, can you ask for PSD file?  Then we may cut
 PNGs we need.

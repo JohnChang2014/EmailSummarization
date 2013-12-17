@@ -1,7 +1,7 @@
 From: Amol Sarva <a@sarva.co>
 Date: 2013-12-09 17:37:00
-To: martin@knote.com, angus@knote.com, sarah@knote.co
-Cc: l@knote.com, forallandiyou@gmail.co
+To: martin@knote.com, angus@knote.com, sarah@knote.com
+Cc: l@knote.com, forallandiyou@gmail.com
 Subject: Re: Google innovations:
 Yes! Let's change this right away to s3
 Sarah/angus ? important card for Dev board ASAP 

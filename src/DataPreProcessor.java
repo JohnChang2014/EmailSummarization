@@ -16,25 +16,21 @@ public class DataPreProcessor {
 	private String storage_path1 = Config.storage_path1;
 	private String storage_path2 = Config.storage_path2;
 	
-	// dataset ignores Permathreads 2.mbox and permathreads.mbox temperarily
-	// works     => 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
-	// not works => 4(no need to remove whitespace)
-	/*
-	private static final String[] dataset = { 
-		"33 5th Floor.pdf", "Apt for Video Shoot.pdf", "Con Ed.pdf", 
-		"Counter Top.pdf", "ElevatorStairs Key.pdf", "Gigzolo rehearsal.pdf", 
-		"Introduction.pdf", "Jam Session.pdf", "Kim Charts.pdf", 
-		"Meet Wendy.pdf", "Office Setup.pdf", "Performance.pdf", 
-		"Re- Design.pdf", "Recruiting Premeds.pdf", "Stroke Patient Savings.pdf", 
-		"ThankYouForOrder.pdf", "wedding band.pdf", "Will be in around 12-30.pdf", 
-		"Work Stations.pdf" }; 
-	 */
+	// for training set here ignores Permathreads 2.mbox and permathreads.mbox
+	// since it is not in PDF format.
 	private static final DateTime dt = new DateTime();
 	private static Transaction mydb;
+	private int mode;
 	
-	public DataPreProcessor() {
+	public DataPreProcessor(int mode) {
+		this.mode = mode;
 		this.mydb = new Transaction();
-		if (!this.mydb.connect(Config.ip, Config.port, Config.db, Config.username, Config.password)) {
+		String dbname = "";
+		
+		if (mode == 0) dbname = Config.db_development;
+		else if (mode == 1) dbname = Config.db;
+		
+		if (!this.mydb.connect(Config.ip, Config.port, dbname, Config.username, Config.password)) {
 			System.out.println("failed to connect database!");
 			System.exit(0);
 		}
@@ -46,8 +42,6 @@ public class DataPreProcessor {
 		java.sql.Time time = new java.sql.Time(ds);
 		
 		//prestmt.setTime(index, date);
-		System.out.println(date);
-		System.out.println(time);
 		String datetime = date.toString() + " " + time.toString();
 		return datetime;
 	}
@@ -66,7 +60,7 @@ public class DataPreProcessor {
 	// a) parse data from raw email thread in PDF file
 	// b) write data from pdf into plain text file
 	// c) write data from pdf into MySQL database
-	public void transformDataSet(int mode) throws IOException, SQLException, ParseException {
+	public void transformDataSet() throws IOException, SQLException, ParseException {
 		String filename = new String();
 		FReader reader = new FReader();
 		Directory dir = new Directory();
@@ -81,8 +75,7 @@ public class DataPreProcessor {
 		for (String file : dir.getDirList(dataset_path + Config.datafile_path)) {
 			if (file.equals(".DS_Store")) continue;
 			n++;
-			if (n != 1) continue;
-
+			if (n >= 3) continue;
 			// parse raw data from PDF dataset
 			filename = dataset_path + Config.datafile_path + file;
 			System.out.println(filename);
@@ -253,11 +246,24 @@ public class DataPreProcessor {
 				.get("raw_content"), email.get("sendingtime") };
 		mydb.insert(data, "emails");
 	}
-
+	
+	public void run() {
+		try {
+			mydb.emptyData("emails");
+			transformDataSet();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) throws IOException, SQLException, ParseException {
-		DataPreProcessor dp = new DataPreProcessor();
-		//dp.transformDataSet(0);
-		dp.transformDataSet(1);
+		int mode = 0;
+		DataPreProcessor dp = new DataPreProcessor(mode);
+		dp.run();
 	}
 
 }

@@ -1,7 +1,7 @@
 From: Lars Kluge <l@larskluge.com>
 Date: 2013-12-06 11:01:00
-To: martin@knote.co
-Cc: a@sarva.co, yan.make@gmail.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.co
+To: martin@knote.com
+Cc: a@sarva.co, yan.make@gmail.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.com
 Subject: Re: ObjectiveDDP ?> iPhone App talking directly to meteor
 Meteor sends a heartbeat. 
 

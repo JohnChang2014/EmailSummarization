@@ -10,16 +10,18 @@ public class Config {
 	
 	// for development
 	public static final String db_development = "nlp_development";
-	public static final String ds_dir_development = "/data/clusters"; 
+	public static final String ds_dir_development = System.getProperty("user.dir") + "/development/clusters"; 
+	public static final String summary_dir_development = "./development/summary/";
 	public static final double threshold_development = 999999999.005;
 	
 	// for test & evaluation
 	public static final String db = "nlp";
-	public static final String ds_dir = "/evaluation/clusters";
+	public static final String ds_dir = System.getProperty("user.dir") + "/evaluation/clusters";
+	public static final String summary_dir = "./evaluation/summary/";
 	public static final double threshold = 999999999.005;
 	
 	// for data preprocessing
-	public static final String dataset_root_path = "./data/";
+	public static final String dataset_root_path = "./development/";
 	public static final String testset_root_path = "./evaluation/";
 	public static final String storage_path1 = "raw/";
 	public static final String storage_path2 = "content/";

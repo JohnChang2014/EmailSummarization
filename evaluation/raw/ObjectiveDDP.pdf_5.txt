@@ -1,7 +1,7 @@
 From: Martin Ceperley <martin@knote.com>
 Date: 2013-12-06 09:27:00
-To: yan.make@gmail.co
-Cc: a@sarva.co, l@larskluge.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.co
+To: yan.make@gmail.com
+Cc: a@sarva.co, l@larskluge.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.com
 Subject: Re: ObjectiveDDP ?> iPhone App talking directly to meteor
 Yes I agree Yan, in the future a good JSON REST API for this app and other knotable apps is the goal, probably
 with standard auth like Oauth2 for authentication. 

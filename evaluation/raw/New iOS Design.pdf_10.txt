@@ -1,7 +1,7 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-12-06 16:15:00
-To: vldbbc@gmail.co
-Cc: a@sarva.co, amol@knotable.com, nicole@knote.com, nicole@knote.co
+To: vldbbc@gmail.com
+Cc: a@sarva.co, amol@knotable.com, nicole@knote.com, nicole@knote.com
 Subject: Re: New iOS design
 Great. Thanks. Looking forward to it!
 Angus.

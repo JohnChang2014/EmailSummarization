@@ -1,7 +1,7 @@
 From: Jeremy Levy <jeremy@meetmoi.com>
 Date: 2013-11-26 18:15:00
-To: alexdgoldberg@gmail.co
-Cc: a@sarva.co, angus.p.mcleod@gmail.com, brian.buchwald@bomoda.com, alain.rothstein@bomoda.co
+To: alexdgoldberg@gmail.com
+Cc: a@sarva.co, angus.p.mcleod@gmail.com, brian.buchwald@bomoda.com, alain.rothstein@bomoda.com
 Subject: Re: New Router
 Wouldn't a better solution to have them use the same SSID and let our computers automatically choose the
 access point based on it's strength as the protocol is designed?

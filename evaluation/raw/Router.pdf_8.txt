@@ -1,7 +1,7 @@
 From: Angus McLeod <angus.p.mcleod@gmail.com>
 Date: 2013-11-27 10:54:00
-To: brian.buchwald@bomoda.co
-Cc: jeremy@meetmoi.com, a@sarva.co, alain.rothstein@bomoda.com, alexdgoldberg@gmail.co
+To: brian.buchwald@bomoda.com
+Cc: jeremy@meetmoi.com, a@sarva.co, alain.rothstein@bomoda.com, alexdgoldberg@gmail.com
 Subject: Re: New Router
 I suggest that you connect to the SSID "Knotable5GHz" (pwd: hellohello) as default. 5GHz wifi signals are
 always more reliable.

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MySQL extends Database implements QueryOperation {
-	private final static boolean DEBUG = true;
+	private final static boolean DEBUG = false;
 	Connection dbCon = null;
 	Statement stmt = null;
 	PreparedStatement prestmt = null;
@@ -30,7 +30,7 @@ public class MySQL extends Database implements QueryOperation {
 			setDataType();
 		} catch (Exception ex) {
 			// handle any errors
-
+			System.out.println("failed to build connection with dababase");
 		}
 	}
 	public static boolean isNotNullNotEmptyNotWhiteSpace(final String string) {
@@ -102,7 +102,6 @@ public class MySQL extends Database implements QueryOperation {
 		
 		HashMap<String, String> attrs = getColumnSet(table);
 		String strSQL = generateSQLInsertStatement(table, attrs);
-		System.out.println(strSQL);
 		prestmt = dbCon.prepareStatement(strSQL);
 		
 		// set values into preparedStatement
@@ -149,6 +148,16 @@ public class MySQL extends Database implements QueryOperation {
 		return rs;
 	}
 
+	public int dataManipulate(String strSQL) {
+		try {
+			stmt = dbCon.createStatement();
+			return stmt.executeUpdate(strSQL);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
 	private String generateSQLInsertStatement(String table, HashMap<String, String> attrs) {
 		String strSQL = "";
 		strSQL = "Insert Into " + table + " (";

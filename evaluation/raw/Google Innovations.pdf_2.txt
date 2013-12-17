@@ -1,7 +1,7 @@
 From: Martin Ceperley <martin@knote.com>
 Date: 2013-12-09 18:16:00
-To: a@sarva.c
-Cc: angus@knote.com, sarah@knote.com, l@knote.com, forallandiyou@gmail.co
+To: a@sarva.co
+Cc: angus@knote.com, sarah@knote.com, l@knote.com, forallandiyou@gmail.com
 Subject: Re: Re: Google innovations:
 Whoever is currently managing our Amazon account can add S3 and share the bucket name and private key with
 devs. We can add a DNS CNAME record to point a knotable.com subdomain to S3 like files.knotable.com .

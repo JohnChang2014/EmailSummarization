@@ -11,22 +11,22 @@ import java.util.Set;
 
 import parser.RegexMatches;
 import db.Transaction;
+import file.FWriter;
 import gate.Annotation;
 import gate.Corpus;
 import gate.Document;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.LanguageAnalyser;
-import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
 import gate.util.Out;
-import static gate.Utils.*;
 
 public class InferenceProcessor extends IEProcessor {
 	private final static boolean DEBUG = true;
 	private Transaction db;
 	private RegexMatches reg = new RegexMatches();
 	private int mode;
+	private String dataset_path;
 	
 	public InferenceProcessor(int mode) {
 		this.mode = mode;
@@ -59,7 +59,7 @@ public class InferenceProcessor extends IEProcessor {
 				peopleSet.add(combo1);
 			}
 		}
-		if (DEBUG)Out.println("\n");
+		if (DEBUG) Out.println("\n");
 		return peopleSet;
 	}
 	
@@ -70,14 +70,20 @@ public class InferenceProcessor extends IEProcessor {
 			for(Annotation senCandidate : doc.getAnnotations().get("SentenceCandidate")) {
 				// only pickup the sentence with score higher than average group word score
 				double s_sen = Double.valueOf(senCandidate.getFeatures().get("score").toString());
-				if (s_sen >= score) sentenceString += ",\"" + senCandidate.getFeatures().get("string") + "\"";
+				if (s_sen >= score) {
+					String tmp = senCandidate.getFeatures().get("string").toString();
+					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'");
+					sentenceString += ",\"" + tmp + "\"";
+				}
 			}
 		}
 		// if there is no sentence, then use annotation 'BackupSentence' instead
 		if (sentenceString.length() == 0) {
 			for (Document doc : corpus) {
 				for(Annotation senCandidate : doc.getAnnotations().get("BackupSentence")) {
-					sentenceString += ",\"" + senCandidate.getFeatures().get("string").toString() + "\"";
+					String tmp = senCandidate.getFeatures().get("string").toString();
+					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'");
+					sentenceString += ",\"" + tmp + "\"";
 				}
 			}
 		}
@@ -85,11 +91,26 @@ public class InferenceProcessor extends IEProcessor {
 		return sentenceString;
 	}
 	
+	public void outputSummary(int g_id, int n_emails, String summary) {
+		if (mode == 0) dataset_path = Config.summary_dir_development;
+		else if (mode == 1) dataset_path = Config.summary_dir;
+		try {
+			String subject = db.getEmailGroupSubject(g_id);
+			FWriter fw = new FWriter(dataset_path + subject + ".txt");
+
+			fw.write("Summary for group " + g_id + " (" + n_emails + " emails): \n");
+			fw.write(summary);
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public String summarize(int final_group, ArrayList<Document> docs) throws SQLException, ParseException, InterruptedException {
 		db             = new Transaction();
 		String summary = "";
-		
-		
 		
 		// 
 		String dbname = "";
@@ -99,7 +120,7 @@ public class InferenceProcessor extends IEProcessor {
 		if (db.connect(Config.ip, Config.port, dbname, Config.username, Config.password)) {
 			// assign groovy script file to Scriptable Controller
 			Corpus corpus  = run(Config.ifScriptController, docs);
-			//Thread.sleep(500000);
+			
 			// collect all sentences from corpus
 			double score = db.getGroupAverageScore(final_group);
 			String sentenceString = getSentencesFromCorpus(corpus, score);
@@ -112,7 +133,7 @@ public class InferenceProcessor extends IEProcessor {
 			HashMap<String, String> params = new HashMap<String, String>();
 			String table = "email_groups as a, emails as b, sentences as c";
 			params.put("cols", "a.g_id, b.e_id, b.sending_time, c.ann_id, c.sentence, b.sender, b.receiver, b.ccreceiver");
-			params.put("cond", "b.e_id = c.e_id And a.e_id = b.e_id And a.g_id = 1 And c.sentence in (" + sentenceString + ")");
+			params.put("cond", "b.e_id = c.e_id And a.e_id = b.e_id And a.g_id = " + final_group + " And c.sentence in (" + sentenceString + ")");
 			params.put("order", "b.e_id ASC, b.sending_time ASC, c.ann_id ASC");
 			ResultSet rs = db.query(table, params);
 			if (DEBUG) Out.println("\n\nSentence Candidates:");
@@ -145,6 +166,7 @@ public class InferenceProcessor extends IEProcessor {
 			if (db.checkSummaryExist(final_group, n_emails)) db.updateSummary(final_group, n_emails, summary);
 			else db.insert(data, "summaries");
 			
+			outputSummary(final_group, n_emails, summary);
 			if (DEBUG) Out.println("Summary for group " + final_group + " (" + n_emails + " emails): ");
 			if (DEBUG) Out.println(summary);
 		}

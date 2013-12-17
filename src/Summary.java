@@ -74,7 +74,6 @@ public class Summary {
 	
 	private boolean openDataStore(String dirname) {
 		Directory dir = new Directory();
-		dirname = System.getProperty("user.dir") + dirname;
 		if (dir.isEmpty(dirname)) {
 			return ds.createDataStore(dirname);
 		} else {
@@ -181,12 +180,12 @@ public class Summary {
 	}
 	
 	public String runInference(int final_group) throws PersistenceException, ResourceInstantiationException, InterruptedException {
+		System.out.println("==> " + final_group);
 		try {
 			inference = new InferenceProcessor(mode);
 			ArrayList<Document> docs = new ArrayList<Document>();
 			for (Document doc : ds.getCorpus(final_group - 1)) docs.add(doc);
 			String summary;
-
 			summary = inference.summarize(final_group, docs);
 			inference.cleanup();
 			return summary;
@@ -213,19 +212,17 @@ public class Summary {
 		return null;
 	}
 	
-	public void run(int e_id) {
+	public int runIEAndClustering(int e_id) {
+		int final_group = 0;
+		ArrayList<Document> docs = new ArrayList<Document>();
+		Document doc;
+		
 		try {
 			
-			int final_group = 0;
-/*
-			ArrayList<Document> docs = new ArrayList<Document>();
-			Document doc;
 			doc = getEmailData(e_id);
-
 			docs.add(doc);
 
 			if (DEBUG) Out.println("email ID: " + e_id);
-
 
 			if (DEBUG) Out.println("====== IE processing ======");
 			// information extraction from new email
@@ -243,55 +240,39 @@ public class Summary {
 			if (DEBUG) Out.println("=========================== \n\n");
 			
 			if (DEBUG) Out.println("Final Group --> " + final_group);
-*/
-			final_group = 1;
-			runInference(final_group);
 			
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return final_group;
+	}
+	
+	public void run(int e_id) {
+		try {
+			int final_group = runIEAndClustering(e_id);
+			if (final_group > 0) runInference(final_group);
+			else {
+				System.out.println("failed to proceed");
+			}
+		} catch (PersistenceException e) {
+			e.printStackTrace();
+		} catch (ResourceInstantiationException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public void close() throws PersistenceException {
-		db.close();
-		ds.closeDataStore();
-		ie.cleanup();
-		cluster.close();
-		inference.cleanup();
+		if (db != null) db.close();
+		if (ds != null) ds.closeDataStore();
+		if (ie != null) ie.cleanup();
+		if (cluster != null) cluster.close();
+		if (inference != null) inference.cleanup();
 		dh = null;
 		ie = null;
 		cluster = null;
 		dm = null;
 		inference = null;
-	}
-	
-	public static void main(String[] args) throws Exception {
-		int mode       = 1;
-		Transaction db = new Transaction();
-		if (mode == 0) db.connect(Config.ip, Config.port, Config.db_development, Config.username, Config.password);
-		else if (mode == 1) db.connect(Config.ip, Config.port, Config.db, Config.username, Config.password);
-		
-		int range1 = 0;
-		int range2 = 9;
-
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("cols", "content, e_id, subject");
-		params.put("order", "e_id ASC, sending_time ASC");
-		params.put("cond", "e_id <= " + range2 + " and e_id >" + range1);
-		ResultSet rs = db.query("emails", params);
-
-		while (rs.next()) {
-			Summary sumApp = new Summary(mode);
-			int e_id = rs.getInt("e_id");
-			sumApp.run(e_id);
-			sumApp.close();
-			sumApp = null;
-			Thread.sleep(500000);
-		}
-
-		db.close();
-		db = null;
-		
-		System.exit(0);
 	}
 }

@@ -2,12 +2,13 @@ Imports: {
 import static gate.Utils.*;
 }
 Phase: selectedSentences
-Input: Sentence VG TermCandidate Date NounChunk Person
+Input: Sentence VG TermCandidate Date Person Location
 Options: control = brill
 
 Rule: selectedSentences
 (
   (
+  { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate, Sentence contains Location } |
   { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate, Sentence contains Person } |
   { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate, Sentence contains Date } |
   { Sentence contains { VG.tense =~ "(Inf|Pre|PasCon)" }, Sentence contains TermCandidate }

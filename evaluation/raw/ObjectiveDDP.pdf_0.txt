@@ -1,6 +1,6 @@
 From: Martin Ceperley <martin@knote.com>
 Date: 2013-12-05 18:13:00
-To: yan.make@gmail.com, a@sarva.co, l@larskluge.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.co
+To: yan.make@gmail.com, a@sarva.co, l@larskluge.com, forallandiyou@gmail.com, angus.p.mcleod@gmail.com
 Cc: 
 Subject: ObjectiveDDP ?> iPhone App talking directly to meteor
 I've discovered a way for the iOS app to directly talk to the meteor server the same way the browser clients do,
