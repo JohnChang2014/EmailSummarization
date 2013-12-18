@@ -72,7 +72,7 @@ public class InferenceProcessor extends IEProcessor {
 				double s_sen = Double.valueOf(senCandidate.getFeatures().get("score").toString());
 				if (s_sen >= score) {
 					String tmp = senCandidate.getFeatures().get("string").toString();
-					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'");
+					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'").replaceAll("Ê\"", " '");
 					sentenceString += ",\"" + tmp + "\"";
 				}
 			}
@@ -82,7 +82,7 @@ public class InferenceProcessor extends IEProcessor {
 			for (Document doc : corpus) {
 				for(Annotation senCandidate : doc.getAnnotations().get("BackupSentence")) {
 					String tmp = senCandidate.getFeatures().get("string").toString();
-					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'");
+					tmp = tmp.replaceAll("\"(.+)\"", "\'$1\'").replaceAll("Ê\"", " '");
 					sentenceString += ",\"" + tmp + "\"";
 				}
 			}
@@ -96,7 +96,7 @@ public class InferenceProcessor extends IEProcessor {
 		else if (mode == 1) dataset_path = Config.summary_dir;
 		try {
 			String subject = db.getEmailGroupSubject(g_id);
-			FWriter fw = new FWriter(dataset_path + subject + ".txt");
+			FWriter fw = new FWriter(dataset_path + subject.replaceAll("/", " ") + ".txt");
 
 			fw.write("Summary for group " + g_id + " (" + n_emails + " emails): \n");
 			fw.write(summary);

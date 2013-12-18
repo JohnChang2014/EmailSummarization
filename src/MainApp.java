@@ -182,17 +182,18 @@ public class MainApp {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		int file_number = 1;
+		int file_number = 12;
 		int range[] = findDataRange(file_number);
-		reset();
+		//reset();
 		
-		runFirstTask(range[0], range[1]);
-		//runFirstTask(359, 375);
+		//runFirstTask(range[0], range[1]);
+		//runFirstTask(371, 379);
 		
 		//int g_id = 2;
-		//runSecondTask(file_number);
+		runSecondTask(file_number);
+		
+		//for (int n = 1; n <= 17; n++) runSecondTask(n);
 		Out.println("Program done!!");
-		//for (int n = 4; n <= 9; n++) runSecondTask(n);
 		if (DEBUG) Thread.sleep(400000);
 		System.exit(0);
 	}

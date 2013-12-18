@@ -184,7 +184,9 @@ public class Summary {
 		try {
 			inference = new InferenceProcessor(mode);
 			ArrayList<Document> docs = new ArrayList<Document>();
-			for (Document doc : ds.getCorpus(final_group - 1)) docs.add(doc);
+			//int corpus_index = final_group - 1;
+			int corpus_index = 11;
+			for (Document doc : ds.getCorpus(corpus_index)) docs.add(doc);
 			String summary;
 			summary = inference.summarize(final_group, docs);
 			inference.cleanup();

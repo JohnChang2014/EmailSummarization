@@ -261,7 +261,7 @@ public class DataPreProcessor {
 	}
 	
 	public static void main(String[] args) throws IOException, SQLException, ParseException {
-		int mode = 0;
+		int mode = 1;
 		DataPreProcessor dp = new DataPreProcessor(mode);
 		dp.run();
 	}
