@@ -16,9 +16,10 @@ public class Transaction extends MySQL {
 	public String getEmailGroupSubject(int g_id) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("cols", "b.subject");
-		params.put("cond", "a.g_id = " + g_id + " And a.e_id = b.e_id And a.head = 1");
+		params.put("cond", "a.g_id = " + g_id + " And a.e_id = b.e_id");
+		params.put("order", "b.sending_time ASC");
 		ResultSet rs = this.query("email_groups as a, emails as b", params);
-		if (rs.next()) return rs.getString(1);
+		if (rs.first()) return rs.getString(1);
 		return "";
 	}
 	
@@ -109,21 +110,6 @@ public class Transaction extends MySQL {
 		params.put("cond", "a.e_id=b.e_id And a.g_id = " + g_id);
 		return this.query("email_groups as a, emails as b", params);
 	}
-
-	// update a first email in a group as the head
-	public void updateHeadEmailFromGroup(int g_id) throws SQLException {
-		this.update("email_groups", "head = 0", "g_id = " + g_id);
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("cols", "b.e_id");
-		params.put("cond", "a.e_id=b.e_id And a.g_id = " + g_id);
-		params.put("order", "b.sending_time ASC");
-		ResultSet rs = this.query("email_groups as a, emails as b", params);
-		int e_id = 0;
-		if (rs.first()) {
-			e_id = rs.getInt("b.e_id");
-			this.update("email_groups", "head = 1", "e_id = " + e_id);
-		}
-	}
 	
 	// get email addresses including sender, receiver, ccreceiver of an email
 	public ResultSet getEmailAddressData(int e_id) throws SQLException {
@@ -208,7 +194,6 @@ public class Transaction extends MySQL {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("g_id", args[0]);
 		params.put("e_id", args[1]);
-		params.put("head", args[2]);
 		return params;
 	}
 

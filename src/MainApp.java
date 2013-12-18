@@ -31,6 +31,7 @@ public class MainApp {
 			
 		if (db.connect(Config.ip, Config.port, dbName, Config.username, Config.password)) {
 			db.emptyData("words");
+			db.emptyData("group_words");
 			db.emptyData("email_groups");
 			db.emptyData("sentences");
 			db.emptyData("summaries");
@@ -49,7 +50,7 @@ public class MainApp {
 	
 	// mode == 1 means running on test set
 	// mode == 0 means running on training set
-	public static int mode = 0; 
+	public static int mode = 1; 
 	
 	// batch process a group of emails
 	// make sure giving appropriate record range
@@ -186,10 +187,11 @@ public class MainApp {
 		reset();
 		
 		runFirstTask(range[0], range[1]);
+		//runFirstTask(359, 375);
 		
 		//int g_id = 2;
-		//runSecondTask(1);
-		System.out.println("Program done!!");
+		//runSecondTask(file_number);
+		Out.println("Program done!!");
 		//for (int n = 4; n <= 9; n++) runSecondTask(n);
 		if (DEBUG) Thread.sleep(400000);
 		System.exit(0);

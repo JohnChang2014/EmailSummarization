@@ -10,7 +10,7 @@ import parser.RegexMatches;
 import db.Transaction;
 
 public class ClusterProcessor {
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 	private Transaction dbQuery;
 	private RegexMatches reg = new RegexMatches();
 	private int mode;
@@ -45,24 +45,10 @@ public class ClusterProcessor {
 					// assign to this group
 					assignGroup(g_id, e_id, wordset);
 					return g_id;
-				} else {
-					ResultSet rs = dbQuery.getEmailAddressData(e_id);
-					if (rs.next()) {
-						String sender = reg.parseEmails(rs.getString("sender")).get(0);
-						ArrayList<String> receivers = reg.parseEmails(rs.getString("receiver") + "," + rs.getString("ccreceiver"));
-
-						for (String receiver : receivers) {
-							if (dbQuery.checkEmailPair(g_id, sender, receiver)) {
-								if (DEBUG) Out.println("case 3: email ids are a pair in a group");
-								assignGroup(g_id, e_id, wordset);
-								return g_id;
-							}
-						}
-					}
 				}
 			} while (grs.next());
 			
-			if (DEBUG) Out.println("case 4: create a new group");
+			if (DEBUG) Out.println("case 3: create a new group");
 			final_group = dbQuery.getNewIDGroup();
 			// revised each e_id field in the wordset as g_id before inserting
 			// data to the table 'group_words'
@@ -78,21 +64,15 @@ public class ClusterProcessor {
 	}
 	
 	private void assignGroup(int g_id, int e_id, ArrayList<String[]> wordset) throws SQLException, ParseException {
-		ArrayList<String[]> groupWordset = new ArrayList<String[]>();
 		String[] newGroup = { String.valueOf(g_id), String.valueOf(e_id), "0" };
-		for(String[] words : wordset) {
-			words[0] = String.valueOf(g_id);
-			groupWordset.add(words);
-		}
 		dbQuery.insert(newGroup, "email_groups");
-		dbQuery.insert(groupWordset, "group_words");
-		dbQuery.updateHeadEmailFromGroup(g_id);
 	}
 	
 	public boolean isSubjectSimilar(int g_id, String subject) throws SQLException {
 		HashMap<String, String> params = new HashMap<String, String>();
 		subject = subject.replaceAll("[rR][eE]:\\s?(.+)$", "$1");
-		params.put("cond", "a.e_id = b.e_id And a.g_id = " + g_id + " And a.head = 1 And b.subject like \"%" + subject + "%\"");
+		params.put("cols", "b.subject");
+		params.put("cond", "a.e_id = b.e_id And a.g_id = " + g_id + " And b.subject like \"%" + subject + "%\"");
 		ResultSet rs = dbQuery.query("email_groups as a, emails as b", params);
 		if (rs.next()) return true;
 		return false;

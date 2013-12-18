@@ -75,7 +75,7 @@ public class DataPreProcessor {
 		for (String file : dir.getDirList(dataset_path + Config.datafile_path)) {
 			if (file.equals(".DS_Store")) continue;
 			n++;
-			if (n >= 3) continue;
+			//if (n < 3) continue;
 			// parse raw data from PDF dataset
 			filename = dataset_path + Config.datafile_path + file;
 			System.out.println(filename);
